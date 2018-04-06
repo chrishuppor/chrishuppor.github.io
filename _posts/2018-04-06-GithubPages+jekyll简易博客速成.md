@@ -1,3 +1,10 @@
+---
+layout: post
+date:   2018-04-06 15:27:07 +0800
+categories: 教程
+---
+使用GithubPages搭载jekyll创建个人博客（不免费，域名要买的）
+
 # 为什么这样搭博客
 
 * 开销少  
@@ -30,7 +37,8 @@ https://www.zhihu.com/question/19551906/answer/31986656)
 
 1. 首先注册一个Github账号
     * eg: xiaoerge
-2. 在Github创建一个项目（repository）![new repository](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/newrepository.PNG)  
+2. 在Github创建一个项目（repository）  
+![](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/newrepository.PNG)  
 &#160;&#160;项目名称（
 Repository name）设为“账号.github.io"。(eg:xiaoerge.github.io)
 
