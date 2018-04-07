@@ -1,41 +1,39 @@
----
+﻿---
 layout: post
-date:   2018-04-07 15:27:07 +0800
-categories: �̳� �����
+date: 2018-04-07 15:27:07 +0800
+categories: 教程 环境搭建
 ---
 
-�����·�ԭ������ԭ�Ļ����Ͻ��е��޸ġ�[ԭ�ĵ�ַ](http://www.cnblogs.com/blacksunny/p/7215247.html)
+本文章非原创，在原文基础上进行的修改。[原文地址](http://www.cnblogs.com/blacksunny/p/7215247.html)
 
---------------------------------------------------------------------------------
+# 注意事项
+1. IDA必须是安装版的，我以前用的是免安装版的。
+2. python版本、IDA版本，IDAPyhton版本必须匹配。（没有对应python3的版本）
+3. python、IDA、IDAPython必须都是32位的或者都是64位的。
 
-# ע������
-  1. IDA�����ǰ�װ��ģ�����ǰ�õ����ⰲװ��ġ�
-  2. python�汾��IDA�汾��IDAPyhton�汾����ƥ�䡣��û�ж�Ӧpython3�İ汾��
-  3. python��IDA��IDAPython���붼��32λ�Ļ��߶���64λ�ġ�
+# 安装关键文件
+1. python27.dll（我安装的是python2.7,如果安装的是pyhton2.6那就是python26.dll）。
+	* 这个文件在system32中找（需要考虑重定位到sysWOW64）
+2. python.cfg文件。
+3. plugins中的python.plw和python.p64。
+4. python文件夹里的文件。
 
-# ��װ�ؼ��ļ�
-  1. python27.dll���Ұ�װ����python2.7,�����װ����pyhton2.6�Ǿ���python26.dll����
-  �� ����ļ���system32���ң���Ҫ�����ض�λ��sysWOW64��
-  2. python.cfg�ļ���
-  3. plugins�е�python.plw��python.p64��
-  4. python�ļ�������ļ���
+# 具体安装步骤
+示例IDA版本是6.6，python版本是2.7。
+1. 安装Python：Python官网http://www.python.org/getit/。
+	* 选择对应操作系统类型及位数。
+	* 只能下载python2，因为idapython还没有对应python3的版本
+2. 下载相应版本的IDAPython：https://github.com/idapython/bin。
+	* IDA版本和Python版本都要和自己机器上安装的版本相对应。
+3. 将IDAPython 压缩包解压，得到IDAPython文件夹。
+	1. 将解压后的Python文件夹内的所有内容覆盖掉IDA原有Python文件夹（IDA安装目录下）下面的内容。
+	2. 将解压后的Plugins文件夹的python.plw和python.p64拷贝到IDA原有Plugins文件夹（自定义，一般IDA安装目录下）下。
+	3. 将解压后的python.cfg文件拷贝到IDA原有cfg文件夹（IDA安装目录下）下。
+4. 把python27.dll复制到IDA安装目录下。
+	* python的系统位数要和IDAPython的系统位数相同。
 
-# ���尲װ����
-ʾ��IDA�汾��6.6��python�汾��2.7��
-  1. ��װPython��Python����http://www.python.org/getit/��
-	* ѡ���Ӧ����ϵͳ���ͼ�λ����
-	* ֻ������python2����Ϊidapython��û�ж�Ӧpython3�İ汾
-  2. ������Ӧ�汾��IDAPython��https://github.com/idapython/bin��
-	* IDA�汾��Python�汾��Ҫ���Լ������ϰ�װ�İ汾���Ӧ��
-  3. ��IDAPython ѹ������ѹ���õ�IDAPython�ļ��С�
-	1. ����ѹ���Python�ļ����ڵ��������ݸ��ǵ�IDAԭ��Python�ļ��У�IDA��װĿ¼�£���������ݡ�
-	2. ����ѹ���Plugins�ļ��е�python.plw��python.p64������IDAԭ��Plugins�ļ��У��Զ��壬һ��IDA��װĿ¼�£��¡�
-	3. ����ѹ���python.cfg�ļ�������IDAԭ��cfg�ļ��У�IDA��װĿ¼�£��¡�
-  4. ��python27.dll���Ƶ�IDA��װĿ¼�¡�
-	* python��ϵͳλ��Ҫ��IDAPython��ϵͳλ����ͬ��
-
-# Ч��
-����IDA��
-* File->Script Commandѡ���п���ѡ��ű�����Ϊpython
-*  File->Script filesѡ���п���ѡ��py�ļ���
+# 效果
+重启IDA后，
+* File->Script Command选项中可以选择脚本语言为python
+* File->Script files选项中可以选择py文件。
  
