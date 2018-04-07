@@ -36,7 +36,7 @@ https://www.zhihu.com/question/19551906/answer/31986656)
 # 创建GithubPages
 
 1. 首先注册一个Github账号
-    * eg: xiaoerge
+    - eg: xiaoerge
 2. 在Github创建一个项目（repository）  
 ![](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/newrepository.PNG)  
 &#160;&#160;项目名称（
