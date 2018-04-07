@@ -26,9 +26,9 @@ categories: 教程 环境搭建
 2. 下载相应版本的IDAPython：https://github.com/idapython/bin。
 	* IDA版本和Python版本都要和自己机器上安装的版本相对应。
 3. 将IDAPython 压缩包解压，得到IDAPython文件夹。
-	1. 将解压后的Python文件夹内的所有内容覆盖掉IDA原有Python文件夹（IDA安装目录下）下面的内容。
-	2. 将解压后的Plugins文件夹的python.plw和python.p64拷贝到IDA原有Plugins文件夹（自定义，一般IDA安装目录下）下。
-	3. 将解压后的python.cfg文件拷贝到IDA原有cfg文件夹（IDA安装目录下）下。
+	a. 将解压后的Python文件夹内的所有内容覆盖掉IDA原有Python文件夹（IDA安装目录下）下面的内容。
+	b. 将解压后的Plugins文件夹的python.plw和python.p64拷贝到IDA原有Plugins文件夹（自定义，一般IDA安装目录下）下。
+	c. 将解压后的python.cfg文件拷贝到IDA原有cfg文件夹（IDA安装目录下）下。
 4. 把python27.dll复制到IDA安装目录下。
 	* python的系统位数要和IDAPython的系统位数相同。
 
