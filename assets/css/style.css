@@ -64,7 +64,7 @@ body >header{width:100%;-webkit-box-shadow:2px 4px 5px rgba(3,3,3,0.2);box-shado
 .archive-title a:hover{color:#232323;-webkit-transition:color 0.5s;-moz-transition:color 0.5s;-o-transition:color 0.5s;-ms-transition:color 0.5s;transition:color 0.5s}
 .current{color:#ea6753 !important}
 @media only screen and (min-width:768px){.archive-part{min-height:200px}}
-@media only screen and (min-width:1024px){.archive-part{float:right;margin-left:2% !important}}
+@media only screen and (min-width:1024px){.archive-part{float:left;margin-left:2% !important}}
 .archive-part section.post{width:100%;}.archive-part section.post time{font-size:1.1em !important;float:left;}
 @media only screen and (max-width:568px){.archive-part section.post time{width:100%}}
 @media only screen and (min-width:568px){.archive-part section.post time{width:20%}}
