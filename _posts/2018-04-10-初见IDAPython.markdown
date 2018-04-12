@@ -50,7 +50,7 @@ for item in Strings():
     * GetInstructionList() #获取汇编指令表(一堆汇编指令助记符，没有操作数的)
 3. 操作数
     * idc.GetOpnd(ea，long n)：获取操作数的助记符，第一个参数是地址，第二个long n是操作数索引（第一个操作数索引是0和第二个是1）。
-    * idc.GetOpType(ea, n)：返回操作数类型
+    * idc.GetOpType(ea, n)：返回操作数类型（**PS：如果该指令有n个操作数，则操作数的index为0到n-1,GetOpType(ea, n)返回0**）
         * o_void：不含有操作数的指令返回0，如：retn
         * o_reg：寄存器，如：pop edi
         * o_mem：内存引用，如：cmp ds:dword_A152B8, 0
