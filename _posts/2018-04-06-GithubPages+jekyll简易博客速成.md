@@ -83,15 +83,15 @@ PS.参考文章中说要安装DEVKIT，但是选择WITH DEVKIT版本的installer
 
 # 绑定域名
 本人使用DNSpod进行域名绑定的
-1. 在github的xxx.github.io项目根目录下创建文件“CNAME”，文件内容为我们之前购买的域名
-    * 然后访问xxx.github.io时就会跳转到购买的域名
-        * 如果没有跳转，可能是浏览器缓存的原因，清空一下缓存（*PS:之后更新博客时也需要清空浏览器缓存，才能看到更新后的博客*）
+1. 在github的xxx.github.io项目根目录下创建文件“CNAME”，文件内容为我们之前购买的域名。这样访问xxx.github.io时就会跳转到购买的域名。
+    * 如果没有跳转，可能是浏览器缓存的原因，清空一下缓存（*PS:之后更新博客时也需要清空浏览器缓存，才能看到更新后的博客*）
+	* github-pages没有为每一个用户的github-pages分配IP，而是有一个github-pages解析服务器，然后这个服务器会根据域名查找对应github-pages返回。这个域名可以使xxx.github.io，也可以是项目下CNAME中的域名。
 2. 在DNSpod进行域名解析设定
     * 添加域名  
     输入购买好的域名
     * 添加记录
         * A记录  
-        A记录是将域名解析为IP地址的记录，记录名是IP地址（这里就是xxx.github.io的IP地址）
+        A记录是将域名解析为IP地址的记录，记录名是IP地址（这里就是github的GithubPages解析服务器的IP地址，就是PING xxx.github.io时返回的IP）
         * CNAME记录  
         CNAME记录是别名记录，记录值是别名，将本域名解析为记录值的域名。（购买好的域名的别名就是xxx.github.io）
 3. 设定购买的域名的dns服务器
