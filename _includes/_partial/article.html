@@ -5,14 +5,10 @@
     <article class="post-expand {{ item.layout }}" itemprop="articleBody"> 
         {% include _partial/post/header.html %}
     <div class="article-content">
-        {% if item.excerpt and index %}
-        {{ item.excerpt }}
-        {% else %}
         {{ item.content }}
-        {% endif %}
         
         <p class="article-more-link">
-          {% if item.excerpt and index and site.index.excerpt_link %}
+          {% if index and site.index.excerpt_link %}
             <a href="{{ site.baseurl }}{{ item.url }}#more">{{ site.index.excerpt_link }}</a>
           {% endif %}
        </p>
@@ -31,8 +27,6 @@
     {% if desc %}
      {% if item.description %}
       <p itemprop="description" >{{ item.description }}</p>
-      {% elsif item.excerpt %}
-       <p itemprop="description" >{{ item.excerpt | slice: 0, 140 }}</p>
       {% else %}
            <p itemprop="description" >{{ item.content | slice: 0, 140 }}</p>
       {% endif %}
