@@ -1,7 +1,8 @@
 ---
 layout: post
 date:   2018-04-10 15:27:07 +0800
-categories: 学习笔记 软件脚本 IDAPython
+categories: 学习笔记 软件脚本 
+tags: IDAPython
 ---
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;初见IDApython，对使用中学习的函数整理记录如下。
 

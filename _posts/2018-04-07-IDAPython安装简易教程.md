@@ -1,7 +1,8 @@
-﻿---
+---
 layout: post
 date: 2018-04-07 15:27:07 +0800
 categories: 教程 环境搭建
+tags: IDAPython
 ---
 
 本文章非原创，在原文基础上进行的修改。[原文地址](http://www.cnblogs.com/blacksunny/p/7215247.html)
@@ -36,4 +37,3 @@ categories: 教程 环境搭建
 重启IDA后，
 * File->Script Command选项中可以选择脚本语言为python
 * File->Script files选项中可以选择py文件。
- 
