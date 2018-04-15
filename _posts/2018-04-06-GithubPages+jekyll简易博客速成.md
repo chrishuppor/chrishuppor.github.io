@@ -2,6 +2,7 @@
 layout: post
 date:   2018-04-06 15:27:07 +0800
 categories: 教程 环境搭建
+tags: 博客搭建
 ---
 使用GithubPages搭载jekyll创建个人博客（不免费，域名要买的）
 
