@@ -186,6 +186,10 @@ for func in idautils.Functions(MinEA(), MaxEA()):
 # 其他
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;GetInputFileMD5() #获取输入文件的md5
 
+# 程序静态信息提取脚本
+
+[程序静态信息提取脚本示例:static_extract412.py](https://github.com/chrishuppor/src/blob/master/IDAPython/static_extract412.py)
+
 # 参考链接
 1. [idautils.py函数功能总结by真·技术宅](https://www.0xaa55.com/thread-1586-1-1.html)
 2. [IDAPython备忘byV191](http://blog.sina.com.cn/s/blog_9f5e368a0102wnmm.html):对于指令、操作数、函数、引用、查找、注释等常用的功能有全面的总结，是本文的主要参考
