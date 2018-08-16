@@ -97,7 +97,7 @@ int nCol = lvinfo.iSubItem; //列号
 * 函数功能：设定策略比较两个标志代表的item的大小，lParam1大则返回1，lParam2大则返回0
 * 操作说明 
   * lParam1和lParam2是为每一行绑定的标志，eg：要比较第一行和第二行，绑定的标志分别为1和2，则传进的参数为 lParam1 =1, lParam2=2
-  *  lParamThisDialog是传进来的参数
+  * lParamThisDialog是传进来的参数
 
 （总之就是：排序由SortItems完成，排序过程中如何判断两个值之间的大小由回调函数决定。）
 
@@ -182,15 +182,13 @@ LRESULT CFastDirOpenDlg::OnMyShowTask(WPARAM wParam, LPARAM lParam){
 	}
 
 	case WM_LBUTTONUP:  // 单击左键的处理
-            
+        iIsMainWindowShow = this->IsWindowVisible();
 		if(FALSE == iIsMainWindowShow){//如果窗口没有显示就显示出来
 			this->ShowWindow(SW_SHOWNORMAL);         // 显示主窗口
-			iIsMainWindowShow = TRUE;
 		}
 		else{//如果窗口显示就隐藏
 			this->ShowWindow(SW_HIDE);         // 隐藏主窗口
 			//SendMessage(WM_SYSCOMMAND, SC_MINIMIZE, 0); //使用SendMessage发消息也可以
-			iIsMainWindowShow = FALSE;
 		}
 		break;
 	}
@@ -354,6 +352,4 @@ BOOL CFastDirOpenDlg::PreTranslateMessage(MSG* pMsg)
 }
 ```
 
----
-
-示例项目源码移步my github>src>MyLittleTools>FastDirOpen
+[示例项目：FastDirOpen](https://github.com/chrishuppor/src/tree/master/MyLittleTools/FastDirOpen)
