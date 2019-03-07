@@ -114,6 +114,10 @@ links:
   FreeBuf: http://www.freebuf.com/
   Google: https://www.google.com.hk/
   百度一下: https://www.baidu.com/
+
+#### category
+category:
+   软件使用指南:1
   
 #### Comment
 duoshuo_shortname:    ## e.g. wuchong      your duoshuo short name.       website: http://duoshuo.com
