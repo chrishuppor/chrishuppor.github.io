@@ -1,9 +1,11 @@
 ---
 layout: post
-date:   2018-08-12 15:27:07 +0800
-categories:  编程积木
+title: "CListCtrl组件"
+date: 2018-08-12 15:27:07 +0800
+categories: Program
 tags: MFC
 ---
+MFC中CListCtrl组件常用的功能介绍及使用代码。*之所以会用到这个组件，主要是觉得windows的快速启动目录不好使，想自己做一个快速启动目录工具，于是就用这个组件打底做了一个*
 
 # CListCtrl组件
 

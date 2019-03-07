@@ -1,10 +1,11 @@
 ---
 layout: post
+title: "IDApython学习笔记"
 date:   2018-04-10 15:27:07 +0800
-categories: 学习笔记 软件脚本 
+categories: LearningNote Script 
 tags: IDAPython
 ---
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;初见IDApython，对使用中学习的函数整理记录如下。
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;IDApython，对使用中学习的函数整理记录如下。曾使用IDApython辅助程序分析，还是很好用的。
 
 # 普通地址操作
 1.  MinEA():获取本模块最小地址  

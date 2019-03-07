@@ -1,8 +1,11 @@
 ---
 layout: post
-date:   2018-04-08 15:27:07 +0800
-categories: 史馆
+title: "好好学英语"
+date: 2018-04-08 15:27:07
+categories: MyHistory
+tags: English
 ---
+英语学习的一些小感触。
 
 砍柴就是砍柴，即使磨了刀，即使树好砍，也得一刀刀的砍，偷不得懒。
 

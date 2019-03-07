@@ -1,11 +1,12 @@
 ---
 layout: post
+title: "IDApython安装"
 date: 2018-04-07 15:27:07 +0800
-categories: 教程 环境搭建
+categories: Guide Establish
 tags: IDAPython
 ---
 
-本文章非原创，在原文基础上进行的修改。[原文地址](http://www.cnblogs.com/blacksunny/p/7215247.html)
+安装IDApython，高版本的IDA自带IDApython。本文章非原创，在原文基础上进行的修改。[原文地址](http://www.cnblogs.com/blacksunny/p/7215247.html)
 
 # 注意事项
 1. IDA必须是安装版的，我以前用的是免安装版的。
