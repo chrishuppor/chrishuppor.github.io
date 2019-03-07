@@ -1,6 +1,6 @@
 ---
 layout: post
-date:   2018-04-06 15:27:07 +0800
+date: 2018-04-06 15:27:07 +0800
 categories: 教程 环境搭建
 tags: 博客搭建
 ---
@@ -18,7 +18,7 @@ tags: 博客搭建
 
 # 配件说明
 
-搭建博客需要三样东西：域名、空间、网页代码
+搭建博客需要三样东西:域名、空间、网页代码
 1. GithubPages提供主机空间
 2. jekyll用来构建网页代码
 3. 域名在网上购买
@@ -29,9 +29,9 @@ tags: 博客搭建
 
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;这一步不存在技术问题，主要是通过查阅资料找到一个**性价比**合适的网站。另外，无论使用哪个域名网站购买，都要注意搜一下**优惠码**，确实可以省一些钱。
 
-&#160;&#160;详情参考：[现在去哪里买 .com 域名最便宜？ - 知乎](
+&#160;&#160;详情参考:[现在去哪里买 .com 域名最便宜？ - 知乎](
 https://www.zhihu.com/question/19551906)\
-&#160;&#160;推荐参考：[现在去哪里买 .com 域名最便宜？ - 范进的回答 - 知乎](
+&#160;&#160;推荐参考:[现在去哪里买 .com 域名最便宜？ - 范进的回答 - 知乎](
 https://www.zhihu.com/question/19551906/answer/31986656)
 
 # 创建GithubPages
@@ -48,7 +48,7 @@ Repository name）设为“账号.github.io"。(eg:xiaoerge.github.io)
 # 搭建jekyll环境
 
 在本机搭建jekyll环境的主要目的是为了能够在本地查看博客网页的效果。  
-[参考文章： Github+Jekyll —— 创建个人免费博客（二）Ruby+Jekyll部署](https://blog.csdn.net/linshuhe1/article/details/51143274)
+[参考文章: Github+Jekyll —— 创建个人免费博客（二）Ruby+Jekyll部署](https://blog.csdn.net/linshuhe1/article/details/51143274)
 
 ## 安装ruby
 
@@ -65,8 +65,8 @@ PS.参考文章中说要安装DEVKIT，但是选择WITH DEVKIT版本的installer
 ## 安装jekyll
 1. 在cmd运行“gem install jekyll”
     * 可能出现“ERROR:Could not find a valid gem "jekyll <>=0> in any repository"”的问题
-        * 原因：国外的gems下载地址(https://rubygems.org/)往往很不稳定，需要切换使用中国的gems源下载地址(不只一个，可以多搜几个)
-        * 解决办法：
+        * 原因:国外的gems下载地址(https://rubygems.org/)往往很不稳定，需要切换使用中国的gems源下载地址(不只一个，可以多搜几个)
+        * 解决办法:
         ```
         gem sources --remove https://rubygems.org/
         gem sources -a https://ruby.taobao.org/
@@ -80,7 +80,7 @@ PS.参考文章中说要安装DEVKIT，但是选择WITH DEVKIT版本的installer
     ```
 另外，如果提示缺少什么，就是用gem安装就好。
 
-如有问题请参考：[在 Windows 上搭建本地 Jekyll 编译环境时问题汇总](https://blog.csdn.net/wudalang_gd/article/details/74619791)
+如有问题请参考:[在 Windows 上搭建本地 Jekyll 编译环境时问题汇总](https://blog.csdn.net/wudalang_gd/article/details/74619791)
 
 # 绑定域名
 本人使用DNSpod进行域名绑定的
@@ -96,7 +96,7 @@ PS.参考文章中说要安装DEVKIT，但是选择WITH DEVKIT版本的installer
         * CNAME记录  
         CNAME记录是别名记录，记录值是别名，将本域名解析为记录值的域名。（购买好的域名的别名就是xxx.github.io）
 3. 设定购买的域名的dns服务器
-    * 到购买域名的网站，将其DNS服务器修改为DNSpod的DNS服务器：f1g1ns1.dnspod.net 和 f1g1ns2.dnspod.net
+    * 到购买域名的网站，将其DNS服务器修改为DNSpod的DNS服务器:f1g1ns1.dnspod.net 和 f1g1ns2.dnspod.net
     * DNSpod中有修改dns服务器的教程
 4. 等待...国际域名服务器更新大概要等待72小时，所以72小时后再访问购买的域名，看看是否被解析到了xxx.github.io的地址。
 
@@ -108,7 +108,7 @@ PS.参考文章中说要安装DEVKIT，但是选择WITH DEVKIT版本的installer
 1. 在cmd中进入自己喜欢的目录下，运行“jekyll new yyy”
     * 这个yyy文件夹用来在本地存放博客全部内容
     * 也可以是其他名字
-2. 在yyy目录下运行“jekyll serve”就可以在本地查看博客效果（地址：127.0.0.1:4000）
+2. 在yyy目录下运行“jekyll serve”就可以在本地查看博客效果（地址:127.0.0.1:4000）
 3. 将github上的项目xxx.github.io清空（留着CNAME），将yyy文件夹内的全部内容上传到该项目
 4. 访问xxx.github.io即可看到博客内容(此时需要清空CNAME,清空浏览器缓存才能访问成功)
 ***
