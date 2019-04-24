@@ -1,0 +1,55 @@
+# RE工具整理
+
+## 程序扫描
+
+* VirusTotal ：程序扫描网站
+
+  网址：[https://www.virustotal.com](https://www.virustotal.com)
+
+## hash值计算
+
+* MD5Calc
+  - 下载地址 [https://raw.githubusercontent.com/chrishuppor/src/master/MyLittleTools/bin/MD5Calc.exe](https://raw.githubusercontent.com/chrishuppor/src/master/MyLittleTools/bin/MD5Calc.exe)
+  - 功能
+    - 计算文件MD5
+    - 计算一段字符串的MD5
+* md5deep
+  * 下载地址 [http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/)
+  * 功能
+    * 计算文件的hash值，包括 [MD5](http://md5deep.sourceforge.net/#md5), [SHA-1](http://md5deep.sourceforge.net/#sha1), [SHA-256](http://md5deep.sourceforge.net/#sha256), [Tiger](http://md5deep.sourceforge.net/#tiger), or [Whirlpool](http://md5deep.sourceforge.net/#whirlpool)。
+    * 计算文件夹中所有文件的hash值
+    * 比较一个文件和一个文件集
+* WinMD5
+  * 下载地址 [http://www.winmd5.com/](http://www.winmd5.com/)
+  * 功能
+    * 计算文件的md5值，支持大小超过4GB的文件
+
+## 字符串提取
+
+* strings
+
+  * 下载地址 [https://docs.microsoft.com/en-us/sysinternals/downloads/strings](https://docs.microsoft.com/en-us/sysinternals/downloads/strings)
+  * 功能
+    * 提取二进制文件中的字符串
+
+  （IDAPython和OD也都有获取字符串的功能）
+
+## PE结构
+
+* PEiD
+
+  * 下载地址 [https://github.com/chrishuppor/TheirToolsCollection/tree/master/PE_anlysis/PEiD-0.95-20081103](https://github.com/chrishuppor/TheirToolsCollection/tree/master/PE_anlysis/PEiD-0.95-20081103)
+  * 功能
+    * 查看PE文件是否加壳
+    * 检测文件的壳类型
+    * 检测文件由什么编译器编译而来
+    * 检测文件中的加密算法
+
+  （已经停止更新，没有官网了）
+
+* Dependency Walker
+  * 下载地址 [http://www.dependencywalker.com/](http://www.dependencywalker.com/)
+  * 功能
+    * 扫描PE文件，获取其依赖模块，并列出依赖模块中被使用的函数
+    * 当程序加载出现问题时，可以使用depend检查是否有依赖模块缺失或无效模块
+  * 缺点：分析的太慢了。

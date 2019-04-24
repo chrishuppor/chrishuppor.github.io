@@ -1,0 +1,342 @@
+# API隐藏调用
+
+## 简单的API隐藏
+
+原理：GetProcAddress与LoadLibrary搭配，通过函数地址动态调用API。
+
+优点：简单易行
+
+缺点：直接调用GetProcAddress很容易在动态调试中被定位到
+
+## 稍复杂的API隐藏
+
+原理：根据序号导入API函数，这样在导入表中也不会有对应的函数名称出现。
+
+优点：简单
+
+缺点：编程人员需要知道目标API对应的序号；动态分析时，分析人员也可以根据序号一个一个的查
+
+示例：
+```
+HMODULE hMod = LoadLibrary(TEXT("user32.dll"));
+MYMESSAGEBOXA FUNC = (MYMESSAGEBOXA)GetProcAddress((HMODULE)hMod, (char *)2160);
+FUNC(NULL, "S","S", 0);
+```
+可以使用dependency walker获得函数序号，例如：
+![查询API序号](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-24_16-35-42.PNG)
+
+## 0导入函数
+
+原理：通过LDR表获得kernel32.dll中GetProcAddress和GetModuleHandle函数地址，然后通过MyGetProcAddress函数获得一切函数的地址。
+
+优点：隐蔽性很高，LoadLibrary和GetProcAddress不会出现在导入表；因为函数是自己实现的，动态分析时也不会被识别出来。（当然，有的大佬可以根据参数看出来）
+
+缺点：被杀软查的厉害
+
+使用方法：系统中一定有kernel32.dll，所以用GetModuleHandle获取其hMod，然后使用MyGetProcAddress获取LoadLibraryA的地址，然后就回到了GetProcAddress+LoadLibraryA的模式。
+
+```c
+#include "stdafx.h"
+//API动态引入测试
+
+
+/********************************
+功能：定义函数类型，获取函数地址并调用
+目的：这样调用的 API函数不会出现在导入表中，同时在call函数时不会暴露函数功能（起始熟悉API的人一看便知。。。）
+      配合字符串翻转编码可以达到静态分析无法获取调用的API信息
+缺点：动态分析呵呵哒
+参数：
+__in FUNC: 函数名; __inDLLHANDLE:Dll句柄; __in DEFNAME:定义的函数类型名; __in RET:函数返回类型;
+__in ARGLIST:函数参数类型列表; __out FunAddr:函数地址;  __in REALARG:函数实际参数; __out RETDATA:函数返回值
+PS:如果地址获取失败则FunAddr = 0
+*********************************/
+#define CALL_API(FUNC, DLLHANDLE, DEFNAME, RET, ARGLIST, FunAddr, REALARG, RETDATA) \
+{\
+	typedef RET (WINAPI *DEFNAME) ARGLIST; \
+	UINT64 FunAddr = (UINT64)GetProcAddress(DLLHANDLE, FUNC);\
+	if(FunAddr)\
+		(RET)RETDATA = ((DEFNAME)FunAddr)REALARG;\
+	else\
+		FunAddr = 0;\
+}
+
+
+void ThrowMes(TCHAR *errStr) {
+
+	TCHAR mes[1024];
+	int err = GetLastError();
+	FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, err, 1033, mes, 1024, NULL);
+
+	MessageBox(NULL, mes, errStr, 0);
+	_tprintf(TEXT("%s:%s\n"), errStr, mes);
+}
+
+/*****************************the GetModuleHandle begin here*****************************/
+
+/********************************************
+GetModuleHandle需要的各种的结构体
+********************************************/
+
+//1. 用于存储DllFullName
+typedef struct _UNICODE_STR
+{
+	USHORT Length;
+	USHORT MaximumLength;
+	PWSTR pBuffer;
+} UNICODE_STR, *PUNICODE_STR;
+
+
+//2. 存放dll信息结构体
+typedef struct _LDR_DATA_TABLE_ENTRY
+{
+	//LIST_ENTRY InLoadOrderLinks; // As we search from PPEB_LDR_DATA->InMemoryOrderModuleList we dont use the first entry.
+	LIST_ENTRY InMemoryOrderModuleList; //如果使用InInitializationOrderModuleList列表，则整个成员也要去掉（这个难说明白，自己去OD看内存结构就知道了）
+	LIST_ENTRY InInitializationOrderModuleList;
+	PVOID DllBase; //dll加载基址
+	PVOID EntryPoint; //dll入口点
+	ULONG SizeOfImage; 
+	UNICODE_STR FullDllName; //dll绝对路径
+	BYTE r4[8];
+	PVOID r5[3];
+	union{
+		ULONG CheckSum;
+		PVOID r6;
+	};
+	ULONG TimeDateStamp;
+} LDR_DATA_TABLE_ENTRY, *PLDR_DATA_TABLE_ENTRY;
+
+
+//3. PEB.LDR对应的LDR信息结构体
+typedef struct _PEB_LDR_DATA // 7 elements, 0x28 bytes
+{
+	DWORD dwLength;
+	DWORD dwInitialized;
+	LPVOID lpSsHandle;
+	LIST_ENTRY InLoadOrderModuleList;
+	LIST_ENTRY InMemoryOrderModuleList;
+	LIST_ENTRY InInitializationOrderModuleList;
+	LPVOID lpEntryInProgress;
+} PEB_LDR_DATA, *PPEB_LDR_DATA;
+
+
+//4. PEB结构体
+typedef struct _PEB_FREE_BLOCK // 2 elements, 0x8 bytes
+{
+	struct _PEB_FREE_BLOCK * pNext;
+	DWORD dwSize;
+} PEB_FREE_BLOCK, *PPEB_FREE_BLOCK;
+
+typedef struct __PEB // 65 elements, 0x210 bytes
+{
+	BYTE bInheritedAddressSpace;
+	BYTE bReadImageFileExecOptions;
+	BYTE bBeingDebugged;
+	BYTE bSpareBool;
+	LPVOID lpMutant;
+	LPVOID lpImageBaseAddress;
+	PPEB_LDR_DATA pLdr;
+	LPVOID lpProcessParameters;
+	LPVOID lpSubSystemData;
+	LPVOID lpProcessHeap;
+	PRTL_CRITICAL_SECTION pFastPebLock;
+	LPVOID lpFastPebLockRoutine;
+	LPVOID lpFastPebUnlockRoutine;
+	DWORD dwEnvironmentUpdateCount;
+	LPVOID lpKernelCallbackTable;
+	DWORD dwSystemReserved;
+	DWORD dwAtlThunkSListPtr32;
+	PPEB_FREE_BLOCK pFreeList;
+	DWORD dwTlsExpansionCounter;
+	LPVOID lpTlsBitmap;
+	DWORD dwTlsBitmapBits[2];
+	LPVOID lpReadOnlySharedMemoryBase;
+	LPVOID lpReadOnlySharedMemoryHeap;
+	LPVOID lpReadOnlyStaticServerData;
+	LPVOID lpAnsiCodePageData;
+	LPVOID lpOemCodePageData;
+	LPVOID lpUnicodeCaseTableData;
+	DWORD dwNumberOfProcessors;
+	DWORD dwNtGlobalFlag;
+	LARGE_INTEGER liCriticalSectionTimeout;
+	DWORD dwHeapSegmentReserve;
+	DWORD dwHeapSegmentCommit;
+	DWORD dwHeapDeCommitTotalFreeThreshold;
+	DWORD dwHeapDeCommitFreeBlockThreshold;
+	DWORD dwNumberOfHeaps;
+	DWORD dwMaximumNumberOfHeaps;
+	LPVOID lpProcessHeaps;
+	LPVOID lpGdiSharedHandleTable;
+	LPVOID lpProcessStarterHelper;
+	DWORD dwGdiDCAttributeList;
+	LPVOID lpLoaderLock;
+	DWORD dwOSMajorVersion;
+	DWORD dwOSMinorVersion;
+	WORD wOSBuildNumber;
+	WORD wOSCSDVersion;
+	DWORD dwOSPlatformId;
+	DWORD dwImageSubsystem;
+	DWORD dwImageSubsystemMajorVersion;
+	DWORD dwImageSubsystemMinorVersion;
+	DWORD dwImageProcessAffinityMask;
+	DWORD dwGdiHandleBuffer[34];
+	LPVOID lpPostProcessInitRoutine;
+	LPVOID lpTlsExpansionBitmap;
+	DWORD dwTlsExpansionBitmapBits[32];
+	DWORD dwSessionId;
+	ULARGE_INTEGER liAppCompatFlags;
+	ULARGE_INTEGER liAppCompatFlagsUser;
+	LPVOID lppShimData;
+	LPVOID lpAppCompatInfo;
+	UNICODE_STR usCSDVersion;
+	LPVOID lpActivationContextData;
+	LPVOID lpProcessAssemblyStorageMap;
+	LPVOID lpSystemDefaultActivationContextData;
+	LPVOID lpSystemAssemblyStorageMap;
+	DWORD dwMinimumStackCommit;
+} _PEB, *_PPEB;
+/********************************************/
+
+
+/********************************************
+MyGetModuleHandle中调用的函数
+********************************************/
+//1. 将输入的LPTSTR的str转为LPWSTR的str
+void LPTSTR2LPWSTR(const LPTSTR lpIn, const int iLen, __out LPWSTR lpwOut){
+
+	for (int i = 0; i < iLen; i++) {
+		*((WCHAR *)lpwOut + i) = *((TCHAR *)lpIn + i);
+	}
+}
+
+
+//2. 将字符串转换为纯大写
+void GetUpperStrW(__in __out LPWSTR lpwStr, int iLen){
+
+	for(int i = 0; i < iLen; i++){
+		if(lpwStr[i] >= L'a' && lpwStr[i] <= L'z'){
+			lpwStr[i] = lpwStr[i] - (L'a' - L'A');
+		}
+	}
+
+}
+/********************************************/
+
+/**************************************************************
+功能：同GetModuleHandle，获取本进程中某个dll的基址（或叫句柄）
+参数：
+LPTSTR lpModuleName:dll名称、相对路径或绝对路径，如果lpModuleName为NULL则返回主模块基址
+返回值：模块基址
+**************************************************************/
+DWORD MyCtmGetModuleHandle(LPTSTR lpModuleName){
+
+	DWORD dwRet = 0;
+	//1. get peb
+	_PPEB pPeb = (_PPEB)__readfsdword(0x30);
+
+	if(NULL == lpModuleName){
+		dwRet =(DWORD)(pPeb->lpImageBaseAddress);
+	}
+	else{
+		//1. 将输入的LPTSTR的name转为LPWSTR的name
+		int iLen = _tcslen(lpModuleName);
+		LPWSTR lpwModName = new WCHAR[iLen + 1];
+		RtlZeroMemory(lpwModName, (iLen + 1) * sizeof(WCHAR));
+	
+		LPTSTR2LPWSTR(lpModuleName, iLen, lpwModName);
+		GetUpperStrW(lpwModName, iLen);
+		//wprintf(L"input : %s\n", lpwModName);
+
+		//2. 在LDR中搜索
+		//2.1 LDR
+		PPEB_LDR_DATA pLdr = pPeb->pLdr;
+		//2.2 遍历ldr.dll列表
+		PLDR_DATA_TABLE_ENTRY pDllInfo = (PLDR_DATA_TABLE_ENTRY)(pLdr->InMemoryOrderModuleList.Blink);//ldr中一共有三种DLL信息列表，使用哪一个都行，但是要与遍历时使用的列表一致
+		while ((DWORD)pDllInfo != (DWORD)&(pLdr->InMemoryOrderModuleList)) {
+			//2.3 name匹配
+			int i = iLen - 1, j = pDllInfo->FullDllName.Length / 2 - 1;
+			BOOL bFind = FALSE;
+
+			GetUpperStrW(pDllInfo->FullDllName.pBuffer, pDllInfo->FullDllName.Length);
+
+			while(lpwModName[i] == pDllInfo->FullDllName.pBuffer[j]){
+				//全路径匹配
+				if(i == 0 && j == 0){
+					bFind = TRUE;
+					break;
+				}
+				//相对路径匹配
+				if(i == 0 && pDllInfo->FullDllName.pBuffer[j - 1] == L'\\'){
+					bFind = TRUE;
+					break;
+				}
+
+				i--;
+				j--;
+			}
+			//2.4 匹配成功
+			if(bFind){
+				dwRet = (DWORD)pDllInfo->DllBase;
+				break;
+			}
+
+			pDllInfo = (PLDR_DATA_TABLE_ENTRY)(pDllInfo->InMemoryOrderModuleList.Blink);
+		}
+
+		if(lpwModName)
+			delete[] lpwModName;
+
+	}
+	return dwRet;
+}
+
+
+/********************************************
+以下是读PE导出表
+********************************************/
+/**************************************************************
+功能：同GetProcAddress，获取某个dll中函数的地址
+参数：
+HMODULE hMod : dll句柄
+LPSTR lpFuncName : 函数名称
+返回值：函数地址，如果没有这个函数就返回0
+**************************************************************/
+DWORD MyGetProcAddress(DWORD hMod, LPSTR lpFuncName){//尽管HMODULE是dll的加载基址，本质是DWORD，但是在加减时，HMODULE是按指针指向的空间为单位进行移动不是以字节为单位的移动，所以这里使用DWORD，方便以字节为单位进行加减操作
+
+	//1. 读取PE头，定位导出表
+	PIMAGE_DOS_HEADER pIDH = (PIMAGE_DOS_HEADER)hMod;
+	PIMAGE_OPTIONAL_HEADER pIOH = (PIMAGE_OPTIONAL_HEADER)(hMod + pIDH->e_lfanew + 0x18);
+
+	IMAGE_DATA_DIRECTORY export_IDD = pIOH->DataDirectory[0];
+
+	PIMAGE_EXPORT_DIRECTORY pIED = (PIMAGE_EXPORT_DIRECTORY)(hMod + export_IDD.VirtualAddress);
+	//printf("%x", pIED->AddressOfNames);
+	//2. 根据导出表信息查询导出名称
+	DWORD dwRetAddress = 0;
+	//2.1 遍历导出函数名称索引表，找到匹配的函数名
+	for (int i = 0; i < pIED->NumberOfNames; i++) {
+		LPSTR lpName = (LPSTR)(hMod + *(DWORD *)(hMod + pIED->AddressOfNames + i * 4));
+		if (stricmp(lpName, lpFuncName) == 0) {
+			//根据导出名称索引表与导出序号表的对应关系，从序号表中取出对应函数的序号
+			WORD wOrd = *(WORD *)(hMod + pIED->AddressOfNameOrdinals + i * 2);
+			//根据导出函数对应的序号，从导出函数地址表中取出函数地址
+			dwRetAddress = (DWORD)hMod + *(DWORD *)(hMod + pIED->AddressOfFunctions + wOrd * 4);
+
+		}
+	}
+
+	return dwRetAddress;
+}
+
+```
+使用示例：
+```c
+DWORD hMod = MyCtmGetModuleHandle(TEXT("kernel32.dll"));	
+printf("%x %x\n", (hMod + 0x14EE0), GetProcAddress);
+
+//为了隐藏GetProcAddress，可以使用GetProcAddress的地址调用GetProcAddress函数，这个地址就是kernel32.dll的基址+0x14EE0
+//其中，0x14EE0是GetProcAddress函数入口在kernel32.dll中的偏移地址，所以只与kernel32.dll有关
+//所以不同版本的GetProcAddress的偏移地址可能不一样，为了应对这个不同，可以使用导出表匹配的方式获取GetProcAddress地址,但这种方式仍能被发现调用了GetProcAddress
+//最好的办法就是自己实现GetProcAddress
+DWORD theLoadLibrary = MyGetProcAddress(hMod, "LoadLibraryA");//
+printf("%x %x\n", theLoadLibrary, LoadLibraryA);
+```
