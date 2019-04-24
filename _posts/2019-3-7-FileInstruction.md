@@ -11,7 +11,7 @@ All My Little Tools
 
 所有小工具的可执行程序获取地址：[https://github.com/chrishuppor/src/tree/master/MyLittleTools/bin](https://github.com/chrishuppor/src/tree/master/MyLittleTools/bin)
 
-以下带*的工具仅为本人机器开发。
+以下带*的工具仅为本人机器开发，即src下的“专用小工具”
 
 # FormatErrCode
 
