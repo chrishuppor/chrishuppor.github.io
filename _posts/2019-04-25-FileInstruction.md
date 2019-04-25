@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MyLittleToolsInstruction"
-date: 2019-3-7 22:49:51
+date: 2019-04-25 8:8:8
 categories: MyLittleTools
 tags: Instruction
 ---
@@ -95,5 +95,12 @@ ps:不值一提的工具，纯粹为了个人方便，不用在需要时去网�
 # CompletePost*
 
 * 目的：按照jeklly搭建的博客的post文件格式编写文件不符合正常的文件编写习惯，所以用这个py来将“正常”编写的draft完善成post
-* 操作：将_drafts文件夹拖到本py上
+* 操作：python3将_drafts文件夹拖到本py上
 * 结果：将已经编好名字和内容的md文件完善成jeklly搭建的博客post文件的格式，并添加到_posts文件夹中
+
+# UpdatePostTime*
+
+- 目的：博文写完了之后不是一成不变的，总会修修补补。修补完了之后肯定希望文件中与时间相关的信息能够更新，但手动修改又会破坏写博文的流畅体验，所以用这个py来自动将文件中时间相关信息修改为文档的更新时间。
+- 操作：python3下直接运行
+- 结果：将更新过的post中的文件时间相关字符串替换为最新的时间。
+
