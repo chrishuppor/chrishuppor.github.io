@@ -3,7 +3,7 @@ layout: post
 title: "Reversing.kr"
 date: 2019-4-29 16:2:22
 categories: WriteUp
-tags: Reversing.kr
+tags: Reversing.kr 
 ---
 
 微简RE challenge网站，write up如下。
@@ -136,3 +136,18 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
 ## Easy Unpack.exe
 
+这是个简单的带壳程序，会被杀软查杀，因此分析时需要关闭杀软，关闭windows defender
+
+### 破解过程
+
+1. 查看ReadMe
+
+   要求找到OEP（说明这是个加壳文件）
+
+2. 查壳
+
+   使用PEiD查看程序，没有发现喜闻乐见的壳，看来只能自己找。
+
+   ![Snipaste_2019-04-29_21-52-09.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_21-52-09.PNG)
+
+3. 
