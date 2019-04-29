@@ -3,7 +3,7 @@ layout: post
 title: "Reversing.kr"
 date: 2019-4-29 16:2:22
 categories: WriteUp
-tags: REBaby
+tags: Reversing.kr
 ---
 
 微简RE challenge网站，write up如下。
