@@ -6,7 +6,7 @@ categories: WriteUp
 tags: Reversing.kr 
 ---
 
-微简RE challenge网站，write up如下。
+微简RE challenge网站，my_4ear_3hr1s 就系我啦，部分write up如下。
 
 # Reversing.kr
 
@@ -126,7 +126,7 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
        aName = aName + chr(integer ^ XorList[j])
        j = j + 1
    
-   print (aName) #K3yg3nm3
+   print (aName)
    ```
 
 ### 小结
@@ -150,4 +150,9 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
    ![Snipaste_2019-04-29_21-52-09.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_21-52-09.PNG)
 
-3. 
+3. 拖进OD，使用OD自解压直接获得OEP
+
+### 小结
+
+* 使用OD自解压功能
+* 也可以自己看，这个壳十分简单，脱壳后有一个明显的JMP
