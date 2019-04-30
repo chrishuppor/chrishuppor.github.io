@@ -6,7 +6,7 @@ categories: LearningNote
 tags: UpdateCode
 ---
 
-通过学习CleanCode，对整洁代码有了清楚的认识和理解，现将学习心得记录在此。
+通过学习CleanCode，对整洁代码有了清楚的认识和理解，现将学习心得记录在此。
 
 # Clean Code学习笔记
 
