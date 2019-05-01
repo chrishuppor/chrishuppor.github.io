@@ -2,7 +2,7 @@
 layout: post
 title: "博客搭建"
 date: 2018-04-06 8:8:8
-categories: Guide_Installtion
+categories: GuideInstalltion
 tags: Blog
 ---
 使用GithubPages搭载jekyll创建个人博客（不免费，域名要买的）。
