@@ -2,7 +2,7 @@
 layout: post
 title: "IDApython安装"
 date: 2018-04-07 8:8:8
-categories: Guide Establish
+categories: Guide_Installtion
 tags: IDAPython
 ---
 

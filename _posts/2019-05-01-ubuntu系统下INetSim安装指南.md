@@ -2,7 +2,7 @@
 layout: post
 title: "ubuntu系统下INetSim安装指南"
 date: 2019-5-1 21:55:19
-categories: Guide
+categories: Guide_Installtion
 tags: INetSim
 ---
 

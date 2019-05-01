@@ -2,7 +2,7 @@
 layout: post
 title: "IDApython学习笔记"
 date: 2018-04-10 8:8:8
-categories: LearningNote Script 
+categories: LearningNote
 tags: IDAPython
 ---
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;IDApython，对使用中学习的函数整理记录如下。曾使用IDApython辅助程序分析，还是很好用的。
