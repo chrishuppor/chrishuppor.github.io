@@ -6,7 +6,7 @@ categories: Guide
 tags: INetSim
 ---
 
-ubuntu系统下INetSim安装指南。
+ubuntu系统下INetSim安装指南。
 
 # ubuntu系统下INetSim安装指南
 
