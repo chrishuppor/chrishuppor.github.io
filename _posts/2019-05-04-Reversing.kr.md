@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Reversing.kr"
-date: 2019-4-29 16:2:22
+date: 2019-05-04 8:8:8
 categories: WriteUp
 tags: Reversing.kr 
 ---
 
-微简RE challenge网站，my_4ear_3hr1s 就系我啦，部分write up如下。
+微简RE challenge网站，my_4ear_3hr1s 就系我啦，解题过程及题后思考记录如下。
 
 # Reversing.kr
 
@@ -156,3 +156,94 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
 * 使用OD自解压功能
 * 也可以自己看，这个壳十分简单，脱壳后有一个明显的JMP
+
+## Music Player
+
+### 破解过程
+
+1. 运行程序
+
+   这是一个MP3播放程序，将MP3文件播放一分钟后会弹出一个提示框。Readme要求绕过“一分钟”的限制。
+
+   猜测关键位置应该是一个cmp和je系列指令的组合——先比较时间，然后进行跳转：如果不到一分钟就继续播放，过了一分钟就进行检测，通过检测就给出Flag，不通过就弹出提示框。
+
+   ![程序](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_19-24-56.PNG)
+
+2. 拖进PEiD
+
+   这是个VB程序，没有加壳。
+
+   ![Snipaste_2019-05-04_19-08-05.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_19-08-05.PNG)
+
+3. 拖进VB Decompile
+
+   如图，可以看到两个带有“TIMER”字样的函数。既然破解目的是突破时间限制，那么这很可能是关键代码所在位置。查看其它函数，发现确实没有感兴趣的地方。
+
+   在TMR_POS_Timer中，可以看到一个与60000的比较。注意到60000ms = 60s，所以这里应该就是时间控制的跳转——如果时间大于60s，则停止播放，并弹出提示框。但这不是Flag的提示框，所以我们要控制程序直接跳到4045FE。
+
+   ![Snipaste_2019-05-04_19-37-58.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_19-37-58.PNG)
+
+   到此，其他地方没有看出问题，直接拖进OD吧。
+
+4. 拖进OD
+
+   1. 修改0x40456B的跳转，使其直接跳转到0x4045FE。删除0x40456b断点，继续运行程序，看看会发生什么。（需要忽略所有异常才能正常运行。）如图，成功突破60s的限制，但是没有弹出Flag，而是弹出来一个运行异常提示框。
+
+      ![Snipaste_2019-05-04_20-12-33.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_20-12-33.PNG)
+
+      弹出这个提示框后，点击确定，程序会退出。在程序中搜索字符串，也无法找到相关字符。经过Google得知这个提示框是windows系统弹出的，用于提示用户发生了异常。
+
+      保存修改的程序。
+
+   2. 如果想弹出Flag，就不能弹出这个异常，就需要知道这个异常是谁抛出的，然后绕过它。
+
+      需要在RaiseException处下断点，运行修改程序。程序中断后，查看堆栈中函数的返回地址，依次查询直到该地址落在主模块领域。
+
+      结果发现RaiseException的触发在0x4046B9的vbaHresultCheckObj函数调用中。
+
+      经查询，vbaHresultCheckObj函数是一个对象检查函数，如果该对象没有通过检查则触发异常。如图，在vbaHresultCheckObj上方有一个条件跳转，如果满足条件则会跳过vbaHresultCheckObj调用，现在直接将其修改为jmp。
+
+      ![Snipaste_2019-05-04_23-04-10.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_23-04-10.PNG)
+
+      保存修改结果，运行修改后的程序。
+
+5. Flag
+
+   如图，Flag不是用MsgBox弹出，而是使用修改对话框标题的方式给出的。这就防止破解者通过查找MsgBox调用地址直接找到关键位置。
+
+
+
+![Flag](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_18-59-44.PNG)
+
+### 小结
+
+在破解程序时，遇到了如下困难：
+
+* P-CODE模式的VB程序的反编译
+
+  * 之前没有接触过VB程序——既没有编写过也没有破解过，无所适从。
+
+    最初用IDA根本看不到有意义的伪代码，IDA也无法识别函数。经过搜索才知道，VB程序有两种编译模式，伪代码编译的VB程序使用一种特殊的伪代码，运行时该程序会运行在VB虚拟机中。IDA难以自动反编译这种模式的程序。
+
+  * 解决办法
+
+    * 如果IDA不能识别一个函数，可以手动告诉IDA这里是一个函数，在这个地址上按下 P 键，再使用 F5 就可以看到伪代码了。但是这个需要知道哪些汇编代码是一个函数里的。
+    * 使用VB Decompiler工具
+
+* Flag的定位
+
+  * 此前接触的Flag往往以printf或MsgBox的方式给出，因此尝试使用MsgBox定位到Flag的方法不再适用
+
+在寻找关键位置的过程中进行过如下尝试：
+
+* 在查找MsgBox调用位置时，由于调用列表很长，直接从调用列表中查找有些困难，因此采用了查看返回地址的方法：
+
+  1. 如图查找MsgBox地址，在函数入口地址下断点。
+
+  ![Snipaste_2019-05-04_21-19-46.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_21-19-46.PNG)
+
+  2. 继续运行程序，中断在MsgBox入口，此时转到栈中返回地址就可以找到一个MsgBox的调用。
+
+     ![Snipaste_2019-05-04_21-25-29.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_21-25-29.PNG)
+
+  3. 指向该调用，右键“查找引用->调用目标”就可以查看该函数的所有调用了。
