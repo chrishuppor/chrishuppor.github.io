@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reversing.kr5-"
+title: "Reversing.kr-Replace"
 date: 2019-5-5 22:29:21
 categories: WriteUp
 tags: Reversing.kr
@@ -8,7 +8,7 @@ tags: Reversing.kr
 
 微简RE challenge网站，my_4ear_3hr1s 就系我啦，5题解题过程及题后思考记录如下。
 
-# Reversing.kr
+# Reversing.kr-Replace
 
 ## 5.Replace
 
