@@ -6,7 +6,7 @@ categories: WriteUp
 tags: Reversing.kr
 ---
 
-微简RE challenge网站，my_4ear_3hr1s 就系我啦，6题解题过程及题后思考记录如下。
+微简RE challenge网站，my_4ear_3hr1s 就系我啦，第6题解题过程及题后思考记录如下。
 
 # Reversing.kr_ImagePrc
 
