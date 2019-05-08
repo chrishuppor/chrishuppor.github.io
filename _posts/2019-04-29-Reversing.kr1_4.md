@@ -8,7 +8,7 @@ tags: Reversing.kr
 
 微简RE challenge网站，my_4ear_3hr1s 就系我啦，1-4题解题过程及题后思考记录如下。
 
-# Reversing.kr
+# Reversing.kr_1-4
 
 ## 1. Easy_CrackMe.exe
 
