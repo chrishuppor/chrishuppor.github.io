@@ -3,7 +3,7 @@ layout: post
 title: "Reversing.kr_1-4"
 date: 2019-04-29 8:8:8
 categories: WriteUp
-tags: Reversing.kr 
+tags: Reversing_kr 
 ---
 
 微简RE challenge网站，my_4ear_3hr1s 就系我啦，1-4题解题过程及题后思考记录如下。

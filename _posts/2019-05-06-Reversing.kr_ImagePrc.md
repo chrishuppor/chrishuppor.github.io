@@ -3,7 +3,7 @@ layout: post
 title: "Reversing.kr_ImagePrc"
 date: 2019-5-6 22:42:37
 categories: WriteUp
-tags: Reversing.kr
+tags: Reversing_kr
 ---
 
 微简RE challenge网站，my_4ear_3hr1s 就系我啦，第6题解题过程及题后思考记录如下。
