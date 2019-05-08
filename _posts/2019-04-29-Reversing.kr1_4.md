@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reversing.kr"
+title: "Reversing.kr_1-4"
 date: 2019-04-29 8:8:8
 categories: WriteUp
 tags: Reversing.kr 
