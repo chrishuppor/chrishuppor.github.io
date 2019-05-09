@@ -29,7 +29,7 @@ tags: Reversing_kr
 
       看到两个有意思的字符串：Game Over和Game Clear。这很可能是游戏结束和游戏胜利的提示。
 
-      ![Snipaste_2019-05-08_22-28-20.PNG](..\image\Snipaste_2019-05-08_22-28-20.PNG)
+      ![Snipaste_2019-05-08_22-28-20.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-08_22-28-20.PNG)
 
    2. 追到Game Over的引用
 
@@ -37,7 +37,7 @@ tags: Reversing_kr
 
       如图，在一个if条件中显示出GameOver。联想到FPS中主角死亡时GameOver，也就是主角HP = 0时会GameOver，所以myBlood_407020一定是用于存储主角HP的。
 
-      ![Snipaste_2019-05-08_22-56-18.PNG](..\image\Snipaste_2019-05-08_22-56-18.PNG)
+      ![Snipaste_2019-05-08_22-56-18.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-08_22-56-18.PNG)
 
       if ( myBlood_407020 <= 0 )之外的部分，也就是主角还活着的时候，应该是游戏正常运转所需要的各种操作，例如游戏画面更新、主角信息更新、怪物信息更新等的处理，并且在进行这些处理的过程中肯定要有游戏结束的判断，如果胜利则给出Flag。
 
