@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "IDApython学习笔记"
-date: 2018-04-10 8:8:8
+date: 2019-05-09 8:8:8
 categories: LearningNote
 tags: IDAPython
 ---
@@ -41,7 +41,21 @@ for item in Strings():
     print Strings.StringItem.__str__(item) #这个也行
 ```
 
+# 内存数据
+
+1. dump内存数据
+```python
+import idaapi
+data = idaapi.dbg_read_memory(start_address, data_length)
+# data就是内存数据了，不过是将十六进制的数据按字符的格式来存储的，比如'\x00'
+```
+2. 以整数的形式获取指定内存数据
+```python
+Byte(<地址>) #获取的结果是整数，例如：0xff
+```
+
 # 指令
+
 1. 指令地址
     * idc.NextHead(ea)返回下一条指令地址
     * idc.PrevHead(ea)返回上一条指令地址
