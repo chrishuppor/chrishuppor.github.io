@@ -209,5 +209,6 @@ tags: Reversing_kr
     outstr = ''
     for i in range(0, 50):
         outstr = outstr + chr(Byte(flag +i) ^ Byte(0x1139184 +i * 132 * 4))
+        
     print(outstr)
     ```
