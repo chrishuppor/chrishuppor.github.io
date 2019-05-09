@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Reversing.kr_Direct3DFPS"
-date: 2019-5-8 14:58:4
+date: 2019-05-09 8:8:8
 categories: WriteUp
 tags: Reversing_kr
 ---
@@ -209,6 +209,5 @@ tags: Reversing_kr
     outstr = ''
     for i in range(0, 50):
         outstr = outstr + chr(Byte(flag +i) ^ Byte(0x1139184 +i * 132 * 4))
-    
     print(outstr)
     ```

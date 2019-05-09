@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Clean Code学习笔记"
-date: 2019-4-30 14:20:51
+date: 2019-05-09 8:8:8
 categories: LearningNote
 tags: UpdateCode
 ---
@@ -91,9 +91,9 @@ tags: UpdateCode
 
 * 并发编程——难点在于共享信息同步
 
-  * （具体信息如图，[原图地址](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/2019-4-30.png))
+  * （具体信息如图，[原图地址](https://chrishuppor.github.io/image/2019-4-30.png))
 
-  ![并发编程脑图](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/2019-4-30.png)
+  ![并发编程脑图](https://chrishuppor.github.io/image/2019-4-30.png)
 
 ## 代码生长范例
 

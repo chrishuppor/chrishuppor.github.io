@@ -22,7 +22,7 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
    运行程序，发现这是个验证码程序——输入一个字符串，点击按钮进行验证；如果失败会弹框提示。
 
-   ![程序功能](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_15-28-32.PNG)
+   ![程序功能](https://chrishuppor.github.io/image/Snipaste_2019-04-29_15-28-32.PNG)
 
 2. 猜测关键API
 
@@ -32,27 +32,27 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
    获取字符串时可能用到GetDlgItemText、GetWindowText等函数。查看其IAT，如下图，发现使用的是GetDlgItemText。因此定位到GetDlgItemText的调用就可以了。
 
-   ![IAT](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_15-32-00.PNG)
+   ![IAT](https://chrishuppor.github.io/image/Snipaste_2019-04-29_15-32-00.PNG)
 
 3. 拖入IDA
 
    1. 按G键，输入“GetDlgItemTextA”，跳转到GetDlgItemTextA地址
 
-      ![G](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_15-36-42.PNG)
+      ![G](https://chrishuppor.github.io/image/Snipaste_2019-04-29_15-36-42.PNG)
 
    2. 按X键，查看GetDlgItemText引用情况，跳转到GetDlgItemText引用位置
 
-      ![X](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_15-38-18.PNG)
+      ![X](https://chrishuppor.github.io/image/Snipaste_2019-04-29_15-38-18.PNG)
 
    3. 按F5，反编译该段代码
 
       如下图，红框中表达式如果为真，则弹出Congratulation(通过查看Text可知)；为假则弹出Incorrect Password。可见，这里红框中表达式就是比较的核心逻辑。
 
-      ![核心](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_15-39-38.PNG)
+      ![核心](https://chrishuppor.github.io/image/Snipaste_2019-04-29_15-39-38.PNG)
 
       通过GetDlgItemTextA可知，input_str就是输入的字符串。如下图，根据红线可知，v3在input_str所在地址的下一个位置，&input_str指向第一个字符，&v3指向输入字符串的第二个字符，&v4指向第三个字符，&v5指向第五个字符。比较表达式为真，则要求v3是a, v4是5，*((&v4)+1)是y，&v5指向R3versing，input_str为E——所以输入应为：Ea5yR3versing。
 
-      ![char_ptr](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_15-43-06.PNG)
+      ![char_ptr](https://chrishuppor.github.io/image/Snipaste_2019-04-29_15-43-06.PNG)
 
 ### 小结
 
@@ -68,7 +68,7 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
    输入name和serial，如果不匹配就输出wrong
 
-   ![程序功能](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_16-32-9.PNG)
+   ![程序功能](https://chrishuppor.github.io/image/Snipaste_2019-04-29_16-32-9.PNG)
 
 2. 猜测关键点
 
@@ -80,17 +80,17 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
    没壳（其实想也知道没壳）
 
-   ![查壳](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_16-35-54.PNG)
+   ![查壳](https://chrishuppor.github.io/image/Snipaste_2019-04-29_16-35-54.PNG)
 
 4. 拖进IDA
 
    1. 查看string，找到wrong
 
-      ![string](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_16-39-27.PNG)
+      ![string](https://chrishuppor.github.io/image/Snipaste_2019-04-29_16-39-27.PNG)
 
    2. 查看wrong的引用
 
-      ![Snipaste_2019-04-29_16-41-09.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_16-41-09.PNG)
+      ![Snipaste_2019-04-29_16-41-09.PNG](https://chrishuppor.github.io/image/Snipaste_2019-04-29_16-41-09.PNG)
 
    3. wrong唯一的引用在main函数中，main函数流程如下：
 
@@ -100,13 +100,13 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
          依次将字符与指定字符异或，并以“%02X”的形式输出到v13中
 
-         ![Snipaste_2019-04-29_16-53-37.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_16-53-37.PNG)
+         ![Snipaste_2019-04-29_16-53-37.PNG](https://chrishuppor.github.io/image/Snipaste_2019-04-29_16-53-37.PNG)
 
       3. 接收serial
 
       4. 比较serial和处理后的name
 
-         ![Snipaste_2019-04-29_16-54-56.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_16-54-56.PNG)
+         ![Snipaste_2019-04-29_16-54-56.PNG](https://chrishuppor.github.io/image/Snipaste_2019-04-29_16-54-56.PNG)
 
 5. readme要求获得指定serial对应的name，所以需要自行编写name处理逻辑的逆算法
 
@@ -148,7 +148,7 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
    使用PEiD查看程序，没有发现喜闻乐见的壳，看来只能自己找。
 
-   ![Snipaste_2019-04-29_21-52-09.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-04-29_21-52-09.PNG)
+   ![Snipaste_2019-04-29_21-52-09.PNG](https://chrishuppor.github.io/image/Snipaste_2019-04-29_21-52-09.PNG)
 
 3. 拖进OD，使用OD自解压直接获得OEP
 
@@ -167,13 +167,13 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
    猜测关键位置应该是一个cmp和je系列指令的组合——先比较时间，然后进行跳转：如果不到一分钟就继续播放，过了一分钟就进行检测，通过检测就给出Flag，不通过就弹出提示框。
 
-   ![程序](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_19-24-56.PNG)
+   ![程序](https://chrishuppor.github.io/image/Snipaste_2019-05-04_19-24-56.PNG)
 
 2. 拖进PEiD
 
    这是个VB程序，没有加壳。
 
-   ![Snipaste_2019-05-04_19-08-05.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_19-08-05.PNG)
+   ![Snipaste_2019-05-04_19-08-05.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-04_19-08-05.PNG)
 
 3. 拖进VB Decompile
 
@@ -181,7 +181,7 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
    在TMR_POS_Timer中，可以看到一个与60000的比较。注意到60000ms = 60s，所以这里应该就是时间控制的跳转——如果时间大于60s，则停止播放，并弹出提示框。但这不是Flag的提示框，所以我们要控制程序直接跳到4045FE。
 
-   ![Snipaste_2019-05-04_19-37-58.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_19-37-58.PNG)
+   ![Snipaste_2019-05-04_19-37-58.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-04_19-37-58.PNG)
 
    到此，其他地方没有看出问题，直接拖进OD吧。
 
@@ -189,7 +189,7 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
    1. 修改0x40456B的跳转，使其直接跳转到0x4045FE。删除0x40456b断点，继续运行程序，看看会发生什么。（需要忽略所有异常才能正常运行。）如图，成功突破60s的限制，但是没有弹出Flag，而是弹出来一个运行异常提示框。
 
-      ![Snipaste_2019-05-04_20-12-33.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_20-12-33.PNG)
+      ![Snipaste_2019-05-04_20-12-33.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-04_20-12-33.PNG)
 
       弹出这个提示框后，点击确定，程序会退出。在程序中搜索字符串，也无法找到相关字符。经过Google得知这个提示框是windows系统弹出的，用于提示用户发生了异常。
 
@@ -203,7 +203,7 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
       经查询，vbaHresultCheckObj函数是一个对象检查函数，如果该对象没有通过检查则触发异常。如图，在vbaHresultCheckObj上方有一个条件跳转，如果满足条件则会跳过vbaHresultCheckObj调用，现在直接将其修改为jmp。
 
-      ![Snipaste_2019-05-04_23-04-10.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_23-04-10.PNG)
+      ![Snipaste_2019-05-04_23-04-10.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-04_23-04-10.PNG)
 
       保存修改结果，运行修改后的程序。
 
@@ -213,7 +213,7 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
 
 
-![Flag](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_18-59-44.PNG)
+![Flag](https://chrishuppor.github.io/image/Snipaste_2019-05-04_18-59-44.PNG)
 
 ### 小结
 
@@ -240,10 +240,10 @@ RE除了技术还有很大一方面是**社会工程学：分析编写者和编�
 
   1. 如图查找MsgBox地址，在函数入口地址下断点。
 
-  ![Snipaste_2019-05-04_21-19-46.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_21-19-46.PNG)
+  ![Snipaste_2019-05-04_21-19-46.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-04_21-19-46.PNG)
 
   2. 继续运行程序，中断在MsgBox入口，此时转到栈中返回地址就可以找到一个MsgBox的调用。
 
-     ![Snipaste_2019-05-04_21-25-29.PNG](https://raw.githubusercontent.com/chrishuppor/imgDepot/master/Snipaste_2019-05-04_21-25-29.PNG)
+     ![Snipaste_2019-05-04_21-25-29.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-04_21-25-29.PNG)
 
   3. 指向该调用，右键“查找引用->调用目标”就可以查看该函数的所有调用了。
