@@ -6,7 +6,7 @@ categories: WriteUp
 tags: TSCTF2019
 ---
 
-2019年TSCTF的一道Reverse.
+2019年TSCTF的一道Reverse.[[题目及IDB文件下载](https://github.com/chrishuppor/attachToBlog/tree/master/BlackTea)]
 
 # BlackTea
 
@@ -120,7 +120,7 @@ tags: TSCTF2019
 
   * TEA解密
 
-    根据TEA加密算法可知，加密过程中- 0x5D2CED22应该为 + 0xa2d312de；int_v8 -= 0x61C88647应该为int_v8 +=0x9e3779b9，32轮循环后int_v8为0x9e3779b9 * 32。
+    根据TEA加密算法可知，加密过程中- 0x5D2CED22应该为 + 0xa2d312de；int_v8 -= 0x61C88647应该为int_v8 +=0x9e3779b9，32轮循环后int_v8为0x9e3779b9 * 32。（如果不确定自己搞的key是否正确，可以使用gdb动态加载程序，定位到加密时的循环，直接从内存中获取key。）
 
     解密代码如下
 
