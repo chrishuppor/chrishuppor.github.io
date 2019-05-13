@@ -6,7 +6,7 @@ categories: WriteUp
 tags: TSCTF2019
 ---
 
-2019年TSCTF的一道Reverse.
+2019年TSCTF的一道Reverse.
 
 # BlackTea
 
