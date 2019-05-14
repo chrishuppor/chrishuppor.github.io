@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "IDApython学习笔记"
-date: 2018-04-10 8:8:8
+date: 2019-05-14 8:8:8
 categories: LearningNote
 tags: IDAPython
 ---
@@ -41,7 +41,7 @@ for item in Strings():
     print Strings.StringItem.__str__(item) #这个也行
 ```
 
-# 内存数据
+# 二进制数据操作
 
 1. dump内存数据
 ```python
@@ -52,6 +52,12 @@ data = idaapi.dbg_read_memory(start_address, data_length)
 2. 以整数的形式获取指定内存数据
 ```python
 Byte(<地址>) #获取的结果是整数，例如：0xff
+```
+
+3. 将指定地址开始的数据修改为x
+```python
+import ida_bytes
+ida_bytes.put_bytes(ea, x) #其中type(x) == str
 ```
 
 # 指令
@@ -208,5 +214,5 @@ for func in idautils.Functions(MinEA(), MaxEA()):
 # 参考链接
 1. [idautils.py函数功能总结by真·技术宅](https://www.0xaa55.com/thread-1586-1-1.html)
 2. [IDAPython备忘byV191](http://blog.sina.com.cn/s/blog_9f5e368a0102wnmm.html):对于指令、操作数、函数、引用、查找、注释等常用的功能有全面的总结，是本文的主要参考
-3. [IDAPython模块+函数+结构说明文档](https://www.hex-rays.com/products/ida/support/idapython_docs/index.html):很奇怪，有的不可用，有的查不到，仅做参考
+3. [IDAPython模块+函数+结构说明文档](https://www.hex-rays.com/products/ida/support/idapython_docs/index.html):有的查不到，仅做参考;使用函数时注意import对应的库
 4. [Python idaapi.BADADDR() Examples](https://www.programcreek.com/python/example/84850/idaapi.BADADDR):英文资料，不明觉厉就列在这里充门面...
