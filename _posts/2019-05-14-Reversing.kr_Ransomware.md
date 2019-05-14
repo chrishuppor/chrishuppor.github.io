@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Reversing.kr_Ransomware"
+date: 2019-5-14 8:8:8
+categories: WriteUp
+tags: Reversing_kr
+---
+
 微简RE challenge网站，my_4ear_3hr1s 就系我啦，第9题解题过程及题后思考记录如下。
 
 # Reversing.kr_Ransomware
@@ -97,11 +105,79 @@
              ea = idc.NextHead(ea)
          ```
 
-      2. 
+      2. 此时main函数就变得十分清晰了——接收一个输入，打开文件并读取文件信息，将读取的信息进行变换，将变换后的数据写入原文件中。
 
-4. 
+         代码如下
+
+         ```c
+           //接收输入
+           printf("Key : ");
+           scanf("%s", byte_44D370);
+           v5 = strlen(byte_44D370);
+           v6 = 0;
+           File = fopen("file", "rb");
+           if ( !File )
+           {
+             printf(asc_44C1C4);
+             exit(0);
+           }
+           fseek(File, 0, 2);
+           ftell(File);
+           rewind(File);
+           while ( !feof(File) )
+             byte_5415B8[v6++] = fgetc(File);
+           for ( i = 0; i < v4; ++i )
+           {
+             byte_5415B8[i] ^= byte_44D370[i % v5];
+             byte_5415B8[i] = ~byte_5415B8[i];
+           }
+           fclose(File);
+           v3 = fopen("file", "wb");
+           for ( j = 0; j < v4; ++j )
+           {
+             savedregs = v3;
+             fputc(byte_5415B8[j], v3);
+           }
+           printf(asc_44C1E8);
+         ```
+
+         如下，解密操作即文件数据与输入信息异或，然后自身取反。
+
+         ```
+           for ( i = 0; i < v4; ++i )
+           {
+             byte_5415B8[i] ^= byte_44D370[i % v5];
+             byte_5415B8[i] = ~byte_5415B8[i];
+           }
+         ```
+
+         所以输入的字符=（密文取反）^(明文)。
+
+4. 接下来就是通过密文和明文求输入字符。
+
+   密文可以直接从file中获取，明文去哪里找？根据readme提示，file是一个exe文件，而所有的exe都在固定的位置有一个字符串“This program cannot be run in DOS mode”，所以可以通过这段明文求解，其密文即为file中对应位置的字节。
+
+   解密代码如下：
+
+   ```python
+   m = "This program cannot be run in DOS mode"
+   c = [0xC7, 0xF2, 0xE2, 0xFF, 0xAF, 0xE3, 0xEC, 0xE9, 0xFB, 0xE5, 0xFB, 0xE1, 0xAC, 0xF0, 0xFB, 0xE5, 0xE2, 0xE0, 0xE7, 0xBE, 0xE4, 0xF9, 0xB7, 0xE8, 0xF9, 0xE2, 0xB3, 0xF3, 0xE5, 0xAC, 0xCB, 0xDC, 0xCD, 0xA6, 0xF1, 0xF8, 0xFE, 0xe9]
+   rc = ''
+   for i in range(0, 38):
+       rc = rc + chr(ord(m[i])^((~c[i])%0x100)) #注意这里要%0x100，否则~c[i]大小会超过1B
+   print (rc)
+   ```
+
+   将密钥输入验证，发现居然不是Flag。
+
+5. 既然file是一个exe，那么密钥可能是这个程序给出的。
+
+   运行run.exe，输入密钥，得到解密的file。修改file后缀，运行file.exe。输出了一个字符串，根据提示信息，这个就是Flag了。*(作者的Flag不叫flag，而是key，我又孤陋寡闻了...)*
 
 ## 小结
 
 * 刚开始看readme时会一头雾水，因为把Decrypt File理解成了“解密某个文件”，而实际上这里的File是文件中的file的文件名。*（如果是解密某个文件，应该为Decrypt a File。英语还得学呀，要不然注意不到这些细节的差别。）*
-* 代码混淆——垃圾代码
+* 代码混淆的一种——程序中含有大量的垃圾代码
+  * 当函数中含有大量垃圾代码时，函数会变得特别大，进而IDA反编译失败。此时需要越过垃圾代码，将函数入口的机器码复制到函数有意义的代码前面，调整函数起始地址，然后就可以反编译了。
+  * 当整个函数都是垃圾代码时，可以将该函数的所有调用从程序中删除。
+
