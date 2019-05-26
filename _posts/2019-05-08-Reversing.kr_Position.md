@@ -32,13 +32,13 @@ tags: Reversing_kr
 
       如图，很容易就发现了提示信息 correct和wrong。
 
-      ![Snipaste_2019-05-08_08-48-40.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-08_08-48-40.PNG)
+      ![图1 搜索字符串](https://chrishuppor.github.io/image/Snipaste_2019-05-08_08-48-40.PNG)
 
    2. 转到wrong的引用，查看周围代码。
 
       如图，这是一个结构清晰的分支代码：如果验证成功就显示correct，不成功就跳转到显示wrong。
 
-      ![Snipaste_2019-05-08_08-50-04.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-08_08-50-04.PNG)
+      ![图2 wrong的引用](https://chrishuppor.github.io/image/Snipaste_2019-05-08_08-50-04.PNG)
 
       查看jz之前的代码，发现是在call 00BA1740之后进行jz的，所以这个函数很可能是验证码比对函数。
 

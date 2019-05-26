@@ -39,7 +39,7 @@ tags: Reversing_kr
 
       string很少，但还是有一个关键的字符串“key:”。
 
-      ![Snipaste_2019-05-14_11-06-25.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-14_11-06-25.PNG)
+      ![图1 string列表](https://chrishuppor.github.io/image/Snipaste_2019-05-14_11-06-25.PNG)
 
    3. 转到key的引用，按F5，但是因为函数太大而反编译失败。
 

@@ -93,7 +93,7 @@ tags: UpdateCode
 
   * （具体信息如图，[原图地址](https://chrishuppor.github.io/image/2019-4-30.png))
 
-  ![并发编程脑图](https://chrishuppor.github.io/image/2019-4-30.png)
+  ![图1 并发结构整洁代码编写脑图](https://chrishuppor.github.io/image/2019-4-30.png)
 
 ## 代码生长范例
 

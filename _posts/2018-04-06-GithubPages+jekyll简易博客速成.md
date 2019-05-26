@@ -40,7 +40,7 @@ https://www.zhihu.com/question/19551906/answer/31986656)
 1. 首先注册一个Github账号
     - eg: xiaoerge
 2. 在Github创建一个项目（repository）  
-  ![](https://chrishuppor.github.io/image/newrepository.PNG)  
+  ![图1 新建repo](https://chrishuppor.github.io/image/newrepository.PNG)  
   &#160;&#160;项目名称（Repository name）设为“账号.github.io"。(eg:xiaoerge.github.io)
 
 这样就可以使用“用户名.github.io”访问项目主页了。

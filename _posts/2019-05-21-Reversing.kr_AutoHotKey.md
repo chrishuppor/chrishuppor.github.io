@@ -134,11 +134,11 @@ Reversing.kr的第十三题，一个需要静态分析配合动态调试的题�
 
    1. 因为之前在IAT中看到了GetWindowTextA，而且从EDIT中获取字符串的函数仅此一个，所以在这个函数下断点一定可以定位到字符串check的部分。
 
-      ![断点](https://chrishuppor.github.io/image/Snipaste_2019-05-21_22-20-29.PNG)
+      ![图1 GetWindowTextA断点](https://chrishuppor.github.io/image/Snipaste_2019-05-21_22-20-29.PNG)
 
    2. 在GetWindowTextA处下断点，运行程序至返回。
 
-      ![Snipaste_2019-05-21_22-21-09.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-21_22-21-09.PNG)
+      ![图2 返回用户模块](https://chrishuppor.github.io/image/Snipaste_2019-05-21_22-21-09.PNG)
 
    3. 在存储输入字符串的内存地址下内存断点，运行程序。程序中断在对输入数据的操作地址0x457A00，接下来将输入数据与[ECX]进行比较。此时发现，[ECX]中存储了一个32字节的字符串。所以这里很可能就是另一个MD5了。
 

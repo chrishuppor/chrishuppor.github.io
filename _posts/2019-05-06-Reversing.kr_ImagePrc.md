@@ -84,7 +84,7 @@ tags: Reversing_kr
 
    2. 拖进OD，运行至GetDIBits，查看栈中参数可知这个图像宽200高150，是个RGB图像
 
-      ![Snipaste_2019-05-06_20-17-27.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-06_20-17.PNG)
+      ![图1 GetDIBits](https://chrishuppor.github.io/image/Snipaste_2019-05-06_20-17.PNG)
 
    3. 将RH中的数据复制到文件中，使用python脚本将十六进制数转变为24位RGB图像，得到的图像上果然有Flag。
 

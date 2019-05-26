@@ -158,15 +158,15 @@ Reversing.kr的第十四题，是一个简单但巧妙的题，利用了“白�
 
            1. 打开cshop.exe，使用spylite获取其窗口。
 
-              ![spylite获取cshop.exe窗口](https://chrishuppor.github.io/image/Snipaste_2019-05-23_08-44-23.PNG)
+              ![图1 spylite获取cshop.exe窗口](https://chrishuppor.github.io/image/Snipaste_2019-05-23_08-44-23.PNG)
 
            2. 在“窗口”中查看“子窗口”，很容易就能找到Button对应的子窗口。
 
-              ![子窗口列表](https://chrishuppor.github.io/image/Snipaste_2019-05-23_08-46-21.PNG)
+              ![图2 子窗口列表](https://chrishuppor.github.io/image/Snipaste_2019-05-23_08-46-21.PNG)
 
            3. 选择button子窗口，进入“消息”选项，在窗口状态中选择”最大化“，此时会将button铺满整个客户区域。
 
-              ![窗口状态](https://chrishuppor.github.io/image/Snipaste_2019-05-23_08-47-36.PNG)
+              ![图3 窗口状态](https://chrishuppor.github.io/image/Snipaste_2019-05-23_08-47-36.PNG)
 
            4. 在cshop.exe区域中点击，然后将最大化去掉就可以看到flag了。
 

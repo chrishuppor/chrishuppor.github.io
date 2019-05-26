@@ -30,7 +30,7 @@ tags: Reversing_kr
 
       这个代码十分简单——从输入框获取数字，调用sub_404689和sub_40466F两个函数。其中，sub_404689函数就是将输入的数字加一，而sub_40466F却无法反编译。
 
-      ![Snipaste_2019-05-05_21-29-33.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-05_21-29-33.PNG)
+      ![图1 check顶层代码](https://chrishuppor.github.io/image/Snipaste_2019-05-05_21-29-33.PNG)
 
       根据```*(_DWORD *)sub_40466F = 0xC39000C6```可知，sub_40466F函数的起始地址被写为C39000C6，即sub_40466F函数起始的机器码变为C39000C6，然后被调用。这里可能是关键点。
 
@@ -51,7 +51,7 @@ tags: Reversing_kr
 
       如图，首先将输入的整数赋值给[0x4084D0]，然后调用0x40466F。
 
-      ![Snipaste_2019-05-05_21-39-51.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-05_21-39-51.PNG)
+      ![图2 输入整数赋值给[0x4084D0]](https://chrishuppor.github.io/image/Snipaste_2019-05-05_21-39-51.PNG)
 
       跟进0x40466F，发现该函数是对[0x4084D0]进行了加的操作。该函数结束后，[0x4084D0]变为[0x4084D0]+4+0x601605c7。
 
@@ -61,7 +61,7 @@ tags: Reversing_kr
 
       此时0x40466F处的机器码已被修改，如图，sub_40466F的功能变为了将[EAX]修改为90。而90正式NOP，这是我们希望的0x401071处的代码，也就是说如果EAX = 0x401071，则能够实现程序逻辑篡改。
 
-      ![Snipaste_2019-05-05_22-01-22.PNG](https://chrishuppor.github.io/image/Snipaste_2019-05-05_22-01-22.PNG)
+      ![图3 0x40466F处的机器码](https://chrishuppor.github.io/image/Snipaste_2019-05-05_22-01-22.PNG)
 
       然而0x401071的机器码是两个字节长度，一个NOP是不够的。查看0x4046A9后续代码，发现恰好之后会对EAX加一并再次调用0x40466F。说明这个思路是正确的，作者已经为我们篡改代码铺好了道路，只需要我们去触发。
 
