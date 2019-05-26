@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Reversing.kr_HateIntel"
+date: 2019-5-26 22:30:43
+categories: WriteUp
+tags: Reversing_kr
+---
+
 Reversing.kr的第十六题，是一个mac系统的程序，之前从未见过mac相关的逆向，可能是我经验不够，不过这个题目难度与EasyELF有一拼。
 
 # Reversing.kr_HateIntel
