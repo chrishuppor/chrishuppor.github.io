@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MyLittleToolsInstruction"
-date: 2019-05-26 8:8:8
+date: 2019-05-30 8:8:8
 categories: Instruction_Tools
 tags: MyLittleTools
 ---
@@ -94,11 +94,17 @@ PS>点解会有呢个程序嚟？还不是因为windows的快速访问太烂，�
 
 ps:不值一提的工具，纯粹为了个人方便，不用在需要时去网上搜那些挑花了眼运行又慢的工具
 
-# CompletePost*
+# CompletePost-v2*
 
 * 目的：按照jeklly搭建的博客的post文件格式编写文件不符合正常的文件编写习惯，所以用这个py来将“正常”编写的draft完善成post
 * 操作：python3将_drafts文件夹拖到本py上
 * 结果：将已经编好名字和内容的md文件完善成jeklly搭建的博客post文件的格式，并添加到_posts文件夹中
+* 更新
+  - 内容
+    - 修复了无法区分摘要和正文的BUG——之前生成的post文件上传到博客后，摘要和正文混做一片。
+    - 添加了自动补全image路径的功能。
+  - 时间
+    - 2019-05-30
 
 # UpdatePostTime*
 
