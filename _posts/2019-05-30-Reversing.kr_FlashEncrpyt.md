@@ -6,10 +6,12 @@ categories: WriteUp
 tags: Reversing_kr
 ---
 
-Reversing.kr的FlashEncrpyt，一个地地道道的Misc签到题。
+
+Reversing.kr的FlashEncrpyt，一个地地道道的Misc签到题。
 
 
-# Reversing.kr_FlashEncrpyt
+
+# Reversing.kr_FlashEncrpyt
 
 ## 解题过程
 
