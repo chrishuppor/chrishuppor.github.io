@@ -1,12 +1,15 @@
 ---
 layout: post
 title: "Reversing.kr_AutoHotKey2"
-date: 2019-5-30 10:21:53
+date: 2019-5-30 10:29:24
 categories: WriteUp
 tags: Reversing_kr
 ---
 
-Reversing.kr的AutoHotKey2，当年绕过的坎总要再走一遍。
+
+
+
+Reversing.kr的AutoHotKey2，当年绕过的坎总要再走一遍。
 
 # Reversing.kr_AutoHotKey2
 
@@ -18,7 +21,7 @@ tags: Reversing_kr
 
    1. 查找提示信息“EXE corrupted”，转到其引用。
 
-      ![图1 EXE corrupted引用](https://chrishuppor.github.io/image/Snipaste_2019-05-29_18-53-38.PNG)
+      ![图1 EXE corrupted引用](https://chrishuppor.github.io/image/https://chrishuppor.github.io/image/Snipaste_2019-05-29_18-53-38.PNG)
 
    2. 根据之前对AutoHotKey的分析可知，之所以会提示EXE corrupted，是因为解密文件时未通过校验，而校验函数正是sub_4508C7。只要sub_4508C7执行成功，程序就能正常运行了。
 
@@ -158,7 +161,7 @@ tags: Reversing_kr
 
 5. 将文件修改好，直接运行得到如下信息。Flag就是这段话描述的人的名字，而且是小写不带空格的。*（权游爱好者实锤了）*
 
-   ![图2 Flag信息](https://chrishuppor.github.io/image/Snipaste_2019-05-30_09-30-11.PNG)
+   ![图2 Flag信息](https://chrishuppor.github.io/image/https://chrishuppor.github.io/image/Snipaste_2019-05-30_09-30-11.PNG)
 
 ## 启示
 
