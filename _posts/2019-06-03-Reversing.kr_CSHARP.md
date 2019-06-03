@@ -1,12 +1,13 @@
 ---
 layout: post
 title: "Reversing.kr_CSHARP"
-date: 2019-6-3 16:44:37
-categories: 1
-tags: 1
+date: 2019-6-3 16:46:53
+categories: hello
+tags: hello
 ---
 
-Reversing.kr的CSHARP，是一个动态解密并调用函数的程序。
+
+Reversing.kr的CSHARP，是一个动态解密并调用函数的程序。
 
 
 # Reversing.kr_CSHARP
