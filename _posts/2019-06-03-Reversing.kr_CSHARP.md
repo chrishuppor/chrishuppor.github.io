@@ -1,12 +1,13 @@
 ---
 layout: post
 title: "Reversing.kr_CSHARP"
-date: 2019-6-3 16:37:14
+date: 2019-6-3 16:41:36
 categories: 1
-tags: 1
+tags: 2
 ---
 
 
+
 Reversing.kr的CSHARP，是一个动态解密并调用函数的c#程序。
 
 # Reversing.kr_CSHARP
@@ -17,3 +18,4 @@ tags: 1
 2. 拖入dnSpy，发现这个程序还是很简单的，只有一个Form1的类。但是这个类中有一个成员函数MetMett无法解析，肯定有猫腻。
 3. 从按键响应函数入手，发现输入的数据被传到MetMetMet函数中处理，并且该函数会给出最终的匹配结果。所以关键逻辑就在这个函数里面了。
 4. 
+
