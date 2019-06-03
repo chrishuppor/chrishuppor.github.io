@@ -10,7 +10,7 @@ tags: hello
 Reversing.kr的CSHARP，是一个动态解密并调用函数的程序。
 
 
-# Reversing.kr_CSHARP
+# Reversing.kr_CSHARP
 
 ## 解题过程
 
