@@ -334,7 +334,7 @@ body >header{
 /*the topcard padding*/
 @media only screen and (min-width:1024px){
 	body >header{
-		padding:1.2em 0 0.2em
+		padding:10.2em 0 10.2em
 	}
 }
 body >header >div{
@@ -368,29 +368,21 @@ body >header a{
 
 @media only screen and (min-width:1024px){
 	#imglogo{
-	width:5.5em
-}
-
+		width:5.5em
+	}
 }
 #imglogo img{
-	width:4em;
-	
+	width:4em;	
 }
-
-
 @media only screen and (min-width:768px){
 	#imglogo img{
-	width:5em
+		width:5em
+	}
 }
-
-}
-
-
 @media only screen and (min-width:1024px){
 	#imglogo img{
-	width:5.5em
-}
-
+		width:5.5em
+	}
 }
 
 #textlogo{
