@@ -325,12 +325,12 @@ body >header a{
 	font-family:"FontAwesome";
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	color:#ffffff;
+	color:#1b1b1b;
 	font-size:100%;
 	padding-right:.3em}.category-icon:before{content:"\f07b"}.tag-icon:before{content:"\f02c"}.archive-icon:before{content:"\f187"}.archive-title{
 		margin:1em 0;
 		padding:2em;
-		background:#fafafa;
+		background:#ea6753;
 		border-left:.5em solid #ffffff;
 		}
 @media only screen and (min-width:1024px){.archive-title{margin:2em 0;width:18.5%;padding-left:.5%;float:left}}.archive-title h2{
