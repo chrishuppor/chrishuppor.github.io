@@ -435,13 +435,10 @@ body >header a{
 	top:1em;
 	padding:.5em;
 }
-
-
 @media only screen and (min-width:1024px){
 	.navbar{
-	display:none
-}
-
+		display:none
+	}
 }
 .navbutton::before{
 	font-family:"FontAwesome";
@@ -463,34 +460,26 @@ header nav{
 	-o-transition:max-height 1s ease-out;
 	-ms-transition:max-height 1s ease-out;
 	transition:max-height 1s ease-out;
-	
 }
-
 
 @media only screen and (min-width:568px){
 	header nav{
-	width:50%
+		width:50%
+	}
 }
-
-}
-
-
 @media only screen and (min-width:1024px){
 	header nav{
-	float:right;
-	width:auto;
-	margin-top:1em;
-	max-height:none
+		float:right;
+		width:auto;
+		margin-top:1em;
+		max-height:none
+	}
 }
-
-}
-
 
 @media only screen and (min-width:1024px){
 	header nav ul{
-	float:right
-}
-
+		float:right
+	}
 }
 
 
@@ -669,10 +658,10 @@ header nav ul li a:hover{
 }
 #main article.post-expand .article-more-link a{
 	display:inline-block;
-	line-height:1em;
-	padding:6px 15px;
-	-webkit-border-radius:15px;
-	border-radius:15px;
+	line-height:0.1em;
+	padding:2px 2px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
 	background:#ddd;
 	color:#817c7c;
 	text-decoration:none;
