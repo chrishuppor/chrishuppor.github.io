@@ -619,7 +619,7 @@ header nav ul li a:hover{
 }
 #main section.post a h1{
 	color:#2ca6cb;
-	line-height:20
+	line-height:2
 }
 #main section.post a p{
 	color:#817c7c
@@ -632,8 +632,7 @@ header nav ul li a:hover{
 }
 #main article.post-expand{
 	background:#fafafa;
-	margin-bottom:3.5em;
-	
+	margin-bottom:0.5em;	
 }
 #main article.post-expand .img-logo{
 	max-width:180px;
@@ -659,7 +658,7 @@ header nav ul li a:hover{
 	display:inline-block;
 	line-height:0.1em;
 	padding:2px 2px;
-	-webkit-border-radius:5px;
+	-webkit-border-radius:15px;
 	border-radius:5px;
 	background:#ddd;
 	color:#817c7c;
@@ -672,7 +671,7 @@ header nav ul li a:hover{
 	text-decoration:none
 }
 #archive-page section.post a{
-	font-size:.9em;
+	font-size:10.9em;
 	padding:.5em !important;
 	
 }
