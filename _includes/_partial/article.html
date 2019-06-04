@@ -10,12 +10,13 @@
         {% else %}
         {{ item.content }}
         {% endif %}
-        
+        <!--
         <p class="article-more-link">
           {% if item.excerpt and index and site.index.excerpt_link %}
             <a href="{{ site.baseurl }}{{ item.url }}#more">{{ site.index.excerpt_link }}</a>
           {% endif %}
        </p>
+	   -->
     </div>
     {% assign index = true %}
     {% include _partial/post/footer.html %}
