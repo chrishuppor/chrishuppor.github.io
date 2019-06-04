@@ -56,7 +56,8 @@ small{font-size:80%}
 sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
 sup{top:-.5em;padding-left:.3em}
 sub{bottom:-.25em}
-a{text-decoration:none;color:#eeeeee;}
+
+a{text-decoration:none;color:#eeeeee;background:transparent}
 a:hover,a:focus{
 	outline:0;
 	text-decoration:none;
@@ -72,6 +73,7 @@ a:hover:before{
 	-o-transition:color 0.25s, background 0.5s;
 	-ms-transition:color 0.25s, background 0.5s;
 	transition:color 0.25s, background 0.5s}
+
 input:focus{outline:none}
 input,button{margin:0;padding:0;}
 input::-moz-focus-inner,button::-moz-focus-inner{border:0;padding:0}
@@ -82,15 +84,14 @@ h1{font-size:1.5em}.fa{
 	font-weight:normal;
 	line-height:1;
 	-webkit-font-smoothing:antialiased;
-	background:#1b1b1b;
 	-moz-osx-font-smoothing:grayscale
 	}.clearfix{zoom:1}.clearfix:before,.clearfix:after{content:"";display:table}.clearfix:after{clear:both}::-webkit-input-placeholder{
 		color:#eeeeee;
 		padding:2px 0 0 4px
 		}::-moz-placeholder{
-			color:#dddddd;
+			color:#eeeeee;
 			padding:2px 0 0 4px}:-ms-input-placeholder{
-				color:#dddddd;
+				color:#eeeeee;
 				padding:2px 0 0 4px
 				}::-webkit-input-placeholder::before{
 					font-family:"FontAwesome";
@@ -113,7 +114,7 @@ h1{font-size:1.5em}.fa{
 								-webkit-font-smoothing:antialiased;
 								-moz-osx-font-smoothing:grayscale;
 								content:'\f00d';
-								color:#dddddd;
+								color:#eeeeee;
 								padding-right:4px}/* css3 animate */
 .animated{
 	-webkit-animation-fill-mode:both;
@@ -302,13 +303,14 @@ body >header a{
 @media only screen and (min-width:1024px){header nav{float:right;width:auto;margin-top:1em;max-height:none}}
 @media only screen and (min-width:1024px){header nav ul{float:right}}
 @media only screen and (min-width:1024px){header nav ul li{float:left}}header nav ul li a{padding:.2em 0 .2em 1em;}
-@media only screen and (min-width:1024px){header nav ul li a{padding:.2em 1.5em}}header nav ul li a:hover{
+@media only screen and (min-width:1024px){header nav ul li a{padding:.2em 1.5em}}
+header nav ul li a:hover{
 	background:transparent;color:#e9cd4c
 	}.shownav{max-height:40em}.search{padding:.1em 0 0 1em;}.search input{
 		-webkit-appearance:textfield;
 		font-size:.87em;
 		line-height:1.7;
-		border:1px solid #dddddd;
+		border:1px solid #eeeeee;
 		color:#dddddd;
 		background:transparent;
 		width:80%;
