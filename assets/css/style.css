@@ -611,16 +611,15 @@ header nav ul li a:hover{
 
 @media only screen and (min-width:768px){
 	#main section.post a{
-	padding:1em
-}
-
+		padding:1em
+	}
 }
 #main section.post a:hover{
 	border-left:.5em solid #2ca6cb
 }
 #main section.post a h1{
 	color:#2ca6cb;
-	line-height:2
+	line-height:20
 }
 #main section.post a p{
 	color:#817c7c
