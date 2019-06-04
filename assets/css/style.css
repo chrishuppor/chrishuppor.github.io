@@ -599,13 +599,13 @@ header nav ul li a:hover{
 }
 #main section.post a{
 	display:block;
-	border-left:.5em solid #ccc;
+	border-left:.1em solid #fafafa;
 	-webkit-transition:border-left 0.45s;
 	-moz-transition:border-left 0.45s;
 	-o-transition:border-left 0.45s;
 	-ms-transition:border-left 0.45s;
 	transition:border-left 0.45s;
-	padding:.5em;
+	padding:.1em;
 	
 }
 
@@ -621,7 +621,7 @@ header nav ul li a:hover{
 }
 #main section.post a h1{
 	color:#2ca6cb;
-	line-height:1.5
+	line-height:1.0
 }
 #main section.post a p{
 	color:#817c7c
@@ -709,14 +709,14 @@ header nav ul li a:hover{
 }
 #page-nav a{
 	display:inline-block;
-	padding:.5em 1em
+	padding:.5em .1em
 }
 #page-nav a{
 	color:#2ca6cb;
 	
 }
 #page-nav a:hover{
-	background:#ccc;
+	background:#fafafa;
 	color:#2ca6cb
 }
 #page-nav .prev{
@@ -913,12 +913,12 @@ header nav ul li a:hover{
 article header.article-info >h1{
 	padding:.2em 3%;
 	font-size:170%;
-	line-height:1.5;
+	line-height:1.0;
 	word-wrap:break-word;
 	word-break:normal;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	border-left:5px solid #2ca6cb
+	border-left:2px solid #2ca6cb
 }
 
 
