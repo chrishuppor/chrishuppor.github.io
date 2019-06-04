@@ -77,7 +77,7 @@ index:
   expand: true           ## default is unexpanding,so you can only see the short description of each post.
   excerpt_link: Read More
 
-close_aside: false  #close sidebar in post page if true
+close_aside: true  #close sidebar in post page if true
 mathjax: true      #enable mathjax if true
 share_to: true #enable share-to buttons if true
 
@@ -85,13 +85,13 @@ share_to: true #enable share-to buttons if true
 author:
   name: CH   ## e.g. wuchong Author name
   #intro_line1:  "Hello ,I'm Larry Page in Google."    ## your introduction on the bottom of the page
-  intro_line1:  "This is my first blog, only for recording. I want everything that is fun pushed here." 
+  intro_line1:  "This is a blog for learning record." 
   weibo:      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   weibo_verifier:  ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
   tsina:      ## e.g. 2176287895  Your weibo ID,It will be used in share button.
   douban:     ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
   zhihu:      ## e.g. jark  for http://www.zhihu.com/people/jark
-  email:      ## e.g. imjark@gmail.com
+  email:      chrishuppor@163.com ## e.g. imjark@gmail.com
   twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
   github:     chrishuppor  ## e.g. wuchong for https://github.com/wuchong
   facebook:   ## e.g. imjark for https://facebook.com/imjark
