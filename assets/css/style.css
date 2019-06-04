@@ -56,7 +56,7 @@ small{font-size:80%}
 sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
 sup{top:-.5em;padding-left:.3em}
 sub{bottom:-.25em}
-a{text-decoration:none;color:#eeeeee;background:transparent}
+a{text-decoration:none;color:#eeeeee;}
 a:hover,a:focus{
 	outline:0;
 	text-decoration:none;
@@ -82,6 +82,7 @@ h1{font-size:1.5em}.fa{
 	font-weight:normal;
 	line-height:1;
 	-webkit-font-smoothing:antialiased;
+	background:#1b1b1b;
 	-moz-osx-font-smoothing:grayscale
 	}.clearfix{zoom:1}.clearfix:before,.clearfix:after{content:"";display:table}.clearfix:after{clear:both}::-webkit-input-placeholder{
 		color:#eeeeee;
