@@ -672,8 +672,9 @@ header nav ul li a:hover{
 	color:#ea6753;
 	text-decoration:none
 }
+
 #archive-page section.post a{
-	font-size:0.9em;
+	font-size:0.1em;
 	padding:.5em !important;
 	
 }
