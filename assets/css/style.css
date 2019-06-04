@@ -580,20 +580,21 @@ header nav ul li a:hover{
 
 @media only screen and (min-width:1024px){
 	#main{
-	margin:2em 0 0;
-	width:75%;
-	float:left;
-	-webkit-transition:margin 0.5s ease-out;
-	-moz-transition:margin 0.5s ease-out;
-	-o-transition:margin 0.5s ease-out;
-	-ms-transition:margin 0.5s ease-out;
-	transition:margin 0.5s ease-out
+		margin:2em 0 0;
+		width:75%;
+		float:left;
+		-webkit-transition:margin 0.5s ease-out;
+		-moz-transition:margin 0.5s ease-out;
+		-o-transition:margin 0.5s ease-out;
+		-ms-transition:margin 0.5s ease-out;
+		transition:margin 0.5s ease-out
+	}
 }
 
-}
+/*主页*/
 #main section.post{
 	background:#fafafa;
-	margin-bottom:.125em;
+	margin-bottom:.05em;
 	
 }
 #main section.post a{
@@ -614,6 +615,7 @@ header nav ul li a:hover{
 		padding:1em
 	}
 }
+
 #main section.post a:hover{
 	border-left:.2em solid #2ca6cb
 }
@@ -655,7 +657,8 @@ header nav ul li a:hover{
 	clear:right
 }
 
-/*readmore*/
+/*readmore 已被删除*/
+/*
 #main article.post-expand .article-more-link a{
 	display:inline-block;
 	line-height:0.7em;
@@ -672,9 +675,10 @@ header nav ul li a:hover{
 	color:#ea6753;
 	text-decoration:none
 }
+*/
 
 #archive-page section.post a{
-	font-size:0.1em;
+	font-size:0.9em;
 	padding:.5em !important;
 	
 }
@@ -690,12 +694,13 @@ header nav ul li a:hover{
 	margin-left:10% !important
 }
 .unexpand .prev{
-	border-left:.5em solid #ccc;
+	border-left:.5em solid #cccccc;
 	
 }
 .unexpand .prev:hover{
 	border-left:.5em solid #2ca6cb
 }
+
 #page-nav{
 	background:#fafafa;
 	text-align:center;
