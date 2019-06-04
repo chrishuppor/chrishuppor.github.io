@@ -615,11 +615,11 @@ header nav ul li a:hover{
 	}
 }
 #main section.post a:hover{
-	border-left:.5em solid #2ca6cb
+	border-left:.2em solid #2ca6cb
 }
 #main section.post a h1{
 	color:#2ca6cb;
-	line-height:2
+	line-height:1.5
 }
 #main section.post a p{
 	color:#817c7c
@@ -656,22 +656,22 @@ header nav ul li a:hover{
 }
 #main article.post-expand .article-more-link a{
 	display:inline-block;
-	line-height:0.1em;
+	line-height:0.5em;
 	padding:2px 2px;
 	-webkit-border-radius:15px;
 	border-radius:15px;
-	background:#ddd;
+	background:#817c7c;
 	color:#817c7c;
 	text-decoration:none;
 	
 }
 #main article.post-expand .article-more-link a:hover{
-	background:#2ca6cb;
-	color:#fff;
+	background:#ffffff;
+	color:#ea6753;
 	text-decoration:none
 }
 #archive-page section.post a{
-	font-size:10.9em;
+	font-size:0.9em;
 	padding:.5em !important;
 	
 }
@@ -688,6 +688,7 @@ header nav ul li a:hover{
 }
 .unexpand .prev{
 	border-left:.5em solid #ccc;
+	
 }
 .unexpand .prev:hover{
 	border-left:.5em solid #2ca6cb
