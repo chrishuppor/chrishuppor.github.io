@@ -29,7 +29,7 @@ paginate: 20
 
 #### Site
 title : Christine
-tagline: 如果大脑建不了记忆宫殿，那就搬到网上吧
+tagline: This is Christine Huppor.
 assets: /assets
 url: http://www.ChristineHuppor.com
 baseurl:
@@ -77,7 +77,7 @@ index:
   expand: true           ## default is unexpanding,so you can only see the short description of each post.
   excerpt_link: Read More
 
-close_aside: true  #close sidebar in post page if true
+close_aside: false  #close sidebar in post page if true
 mathjax: true      #enable mathjax if true
 share_to: true #enable share-to buttons if true
 
