@@ -331,10 +331,10 @@ body >header{
 	
 }
 
-
+/*the topcard padding*/
 @media only screen and (min-width:1024px){
 	body >header{
-		padding:0.1em 0 0.5em
+		padding:0.5em 0 0.5em
 	}
 }
 body >header >div{
@@ -342,15 +342,12 @@ body >header >div{
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
-	
 }
-
 
 @media only screen and (min-width:1024px){
 	body >header >div{
-	width:93%
-}
-
+		width:93%
+	}
 }
 body >header a{
 	display:block;
