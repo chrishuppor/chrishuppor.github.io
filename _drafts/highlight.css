@@ -1,4 +1,4 @@
-.highlight table td { padding: 5px; }
+.highlight table td { padding: 2px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
   color: #999999;
@@ -135,34 +135,34 @@
   color: #a6e22e;
 }
 .highlight .vc {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 .highlight .nn {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 .highlight .nl {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 .highlight .ni {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 .highlight .bp {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 .highlight .vg {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 .highlight .vi {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 .highlight .nv {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 .highlight .w {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 .highlight {
-  color: #ffffff;
+  color: #1b1b1b;
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
