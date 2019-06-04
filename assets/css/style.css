@@ -654,19 +654,21 @@ header nav ul li a:hover{
 	float:right;
 	clear:right
 }
+
+/*readmore*/
 #main article.post-expand .article-more-link a{
 	display:inline-block;
-	line-height:0.5em;
+	line-height:0.7em;
 	padding:2px 2px;
 	-webkit-border-radius:15px;
 	border-radius:15px;
 	background:#817c7c;
-	color:#817c7c;
+	color:#ffffff;
 	text-decoration:none;
 	
 }
 #main article.post-expand .article-more-link a:hover{
-	background:#ffffff;
+	background:#dddddd;
 	color:#ea6753;
 	text-decoration:none
 }
