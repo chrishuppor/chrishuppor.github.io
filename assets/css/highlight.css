@@ -1,4 +1,4 @@
-.highlight table td { padding: 2px; }
+.highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
   color: #999999;
@@ -162,10 +162,10 @@
   color: #ffffff;
 }
 .highlight {
-  color: #ffffff;
+  color: #000000;
 }
 .highlight .n, .highlight .py, .highlight .nx {
-  color: #ffffff;
+  color: #dddddd;
 }
 .highlight .ow {
   color: #f92672;
