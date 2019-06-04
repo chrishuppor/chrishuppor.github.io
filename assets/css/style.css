@@ -335,15 +335,15 @@ body >header a{
 		}
 @media only screen and (min-width:1024px){.archive-title{margin:2em 0;width:18.5%;padding-left:.5%;float:left}}.archive-title h2{
 	width:90%;
-	color:#1b1b1b;font-size:120%
+	color:#dddddd;font-size:120%
 	}.archive-title a{
-		color:#1b1b1b;
+		color:#dddddd;
 		-webkit-transition:color 0.5s;
 		-moz-transition:color 0.5s;
 		-o-transition:color 0.5s;
 		-ms-transition:color 0.5s;
 		transition:color 0.5s;}.archive-title a:hover{
-			color:#1b1b1b;
+			color:#dddddd;
 			-webkit-transition:color 0.5s;
 			-moz-transition:color 0.5s;
 			-o-transition:color 0.5s;
