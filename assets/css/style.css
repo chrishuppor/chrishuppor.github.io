@@ -325,13 +325,13 @@ body >header a{
 	font-family:"FontAwesome";
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	color:#cccccc;
+	color:#ffffff;
 	font-size:100%;
 	padding-right:.3em}.category-icon:before{content:"\f07b"}.tag-icon:before{content:"\f02c"}.archive-icon:before{content:"\f187"}.archive-title{
 		margin:1em 0;
 		padding:2em;
 		background:#fafafa;
-		border-left:.5em solid #cccccc;
+		border-left:.5em solid #ffffff;
 		}
 @media only screen and (min-width:1024px){.archive-title{margin:2em 0;width:18.5%;padding-left:.5%;float:left}}.archive-title h2{
 	width:90%;
@@ -360,7 +360,7 @@ body >header a{
 @media only screen and (max-width:1024px){#totop{display:none !important}}
 article .article-content img.emoji {
     padding: 0px;
-    margin: 0em 0.2em 0.25em 0.2em;
+    margin: 0em 0.1em 0.1em 0.1em;
 }
 @media only screen and (min-width: 1024px)
 .github-card {
