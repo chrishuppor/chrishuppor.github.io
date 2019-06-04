@@ -25,7 +25,7 @@ defaults:
       layout: "post"
 
 #### Pagination
-paginate: 20
+paginate: 10
 
 #### Site
 title : Christine
@@ -67,8 +67,8 @@ rss: /atom.xml ## RSS address.
 imglogo:
   enable: false             ## display image logo true/false.
   src: img/mylogo.jpg        ## `.svg` and `.png` are recommended,please put image into the theme folder `/jacman/source/img`.
-favicon: #img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.
-apple_icon: #img/mylogo.jpg ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
+favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.
+apple_icon: img/mylogo.jpg ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
 author_img: img/record.png ## size:220px*220px.display author avatar picture.if don't want to display,please don't set this.
 banner_img: img/banner.jpg ## size:1920px*200px+. Banner Picture
 
