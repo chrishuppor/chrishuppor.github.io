@@ -659,7 +659,7 @@ header nav ul li a:hover{
 	line-height:0.1em;
 	padding:2px 2px;
 	-webkit-border-radius:15px;
-	border-radius:5px;
+	border-radius:15px;
 	background:#ddd;
 	color:#817c7c;
 	text-decoration:none;
@@ -688,7 +688,6 @@ header nav ul li a:hover{
 }
 .unexpand .prev{
 	border-left:.5em solid #ccc;
-	
 }
 .unexpand .prev:hover{
 	border-left:.5em solid #2ca6cb
