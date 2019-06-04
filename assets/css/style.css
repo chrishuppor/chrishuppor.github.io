@@ -426,11 +426,13 @@ body >header a{
 		font-size:110%
 	}
 }
+
+/*tag之间的缝隙*/
 .navbar{
 	position:absolute;
-	width:2em;
+	width:1em;
 	right:0;
-	top:10em;
+	top:1em;
 	padding:.5em;
 }
 
