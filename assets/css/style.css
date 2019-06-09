@@ -894,7 +894,6 @@ article header.article-info >p.article-time:before{
 /*文章内容格式，包括摘要卡片上的内容*/
 article .article-content{
 	padding:1.0em 3%;
-	margin-top:0;
 	color:#413f3f;
 	font-size:100%;
 }
@@ -1367,8 +1366,9 @@ footer.article-footer{
 	display:block;
 	overflow:hidden}
 .article-nav .prev a:hover,.article-nav .next a:hover{
-	background:#2ca6cb;
-	color:#fff}
+	background:transparent;
+	color:#ea6753
+}
 .article-nav .prev{
 	width:100%;
 	float:left;
