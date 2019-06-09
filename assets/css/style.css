@@ -843,9 +843,11 @@ header nav ul li a:hover{
 	article header.article-info{
 	border-bottom:1px solid #dbdbdb}
 }
+
+/*主页摘要卡片*/
 article header.article-info >h1{
 	padding:.2em 3%;
-	font-size:150%;
+	font-size:180%;
 	line-height:1.5;
 	word-wrap:break-word;
 	word-break:normal;
@@ -855,7 +857,7 @@ article header.article-info >h1{
 }
 @media only screen and (min-width:1024px){
 	article header.article-info >h1{
-	font-size:150%;
+	font-size:180%;
 	padding-top:.3em}
 }
 article header.article-info >p.article-author{
@@ -888,7 +890,7 @@ article header.article-info >p.article-time:before{
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale}
 article .article-content{
-	padding:1.5em 4%;
+	padding:1.0em 3%;
 	color:#413f3f;
 	font-size:100%;
 }
