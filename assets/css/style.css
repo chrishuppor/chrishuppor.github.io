@@ -1290,6 +1290,7 @@ footer.article-footer{
 	margin-right:1em !important}
 }
 
+/*tag 图标*/
 .article-tags{
 	color:#d6d6d6;
 }
@@ -1318,17 +1319,19 @@ footer.article-footer{
 	content:"\f02c"
 }
 
-/*随着文章一起的tag和cate*/
+/*随着文章一起的tag文字*/
 .article-tags a{
 	float:left;
 	padding:0 .3em;
 	margin:.3em;
 	background:transparent;
+	color: #817c7c;
 }
 .article-tags a:hover{
 	color:#ea6753;
 	background:transparent
 }
+/*图标*/
 .article-categories{
 	color:#d6d6d6;
 	margin-top:.3em;
@@ -1338,15 +1341,19 @@ footer.article-footer{
 	font-family:"FontAwesome";
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	content:"\f07b"}
+	content:"\f07b"
+}
+/*文字*/
 .article-category-link{
 	padding:.5em;
 	margin:0 .3em;
+	color: #817c7c;
 }
 .article-category-link:hover{
 	color:#ea6753 !important;
 	background:transparent
 }
+
 .article-nav{
 	padding:0 10%;
 }
