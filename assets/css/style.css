@@ -748,74 +748,59 @@ header nav ul li a:hover{
 	padding-right:.3em
 }
 .category-icon:before{
-	content:"\f07b"}
+	content:"\f07b"
+}
 .tag-icon:before{
-	content:"\f02c"}
+	content:"\f02c"
+}
 .archive-icon:before{
-	content:"\f187"}
-.archive-title{
-	
-		margin:1em 0;
-	
-		padding:2em;
-	
-		background:#1b1b1b;
-	
-		border-left:.5em solid #eeeeee;
-	
-	}
+	content:"\f187"
+}
+.archive-title{	
+	margin:1em 0;	
+	padding:2em;	
+	background:#fafafa;	
+	border-left:.5em solid #ccc;	
+}
 
 @media only screen and (min-width:1024px){
 	.archive-title{
-	margin:2em 0;
-	width:18.5%;
-	padding-left:.5%;
-	float:left}
+		margin:2em 0;
+		width:18.5%;
+		padding-left:.5%;
+		float:left
+	}
 }
-.archive-title h2{
-	
-	width:90%;
-	
-	color:#dddddd;
+.archive-title h2{	
+	width:90%;	
+	color:#2ca6cb;
 	font-size:120%
 }
-.archive-title a{
-	
-		color:#dddddd;
-	
-		-webkit-transition:color 0.5s;
-	
-		-moz-transition:color 0.5s;
-	
-		-o-transition:color 0.5s;
-	
-		-ms-transition:color 0.5s;
-	
-		transition:color 0.5s;
+.archive-title a{	
+	color:#2ca6cb;	
+	-webkit-transition:color 0.5s;	
+	-moz-transition:color 0.5s;	
+	-o-transition:color 0.5s;	
+	-ms-transition:color 0.5s;	
+	transition:color 0.5s;
 }
-.archive-title a:hover{
-	
-			color:#dddddd;
-	
-			-webkit-transition:color 0.5s;
-	
-			-moz-transition:color 0.5s;
-	
-			-o-transition:color 0.5s;
-	
-			-ms-transition:color 0.5s;
-	
-			transition:color 0.5s
-		}
+.archive-title a:hover{	
+	color:#2ca6cb;	
+	-webkit-transition:color 0.5s;	
+	-moz-transition:color 0.5s;	
+	-o-transition:color 0.5s;	
+	-ms-transition:color 0.5s;	
+	transition:color 0.5s
+}
 .current{
 	
-				color:#ea6753 !important}
- /*#ea6753*/
+	color:#ea6753 !important
+}
 @media only screen and (min-width:768px){
 	.archive-part{
-	min-height:200px}
+	min-height:200px
+	}
 }
-
 @media only screen and (min-width:1024px){
 	.archive-part{
 	float:right;
@@ -845,18 +830,18 @@ header nav ul li a:hover{
 	margin-top:1em}
 }
 /* tags&categories layout */
-
 .all-list-box{
-	min-height:400px}
+	min-height:400px
+}
 .post,.page,.link,.photo{
-	background:#1b1b1b;
+	background:#fafafa;
 }
 .post a,.page a,.link a,.photo a{
-	color:#dddddd;
+	color:#2ca6cb;
 }
 .post a:hover,.page a:hover,.link a:hover,.photo a:hover{
-	color:#ea6753}
-
+	color:#ea6753
+}
 @media only screen and (min-width:768px){
 	article header.article-info{
 	border-bottom:1px solid #dbdbdb}
@@ -869,7 +854,8 @@ article header.article-info >h1{
 	word-break:normal;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	border-left:5px solid #1b1b1b}
+	border-left:2px solid #2ca6cb
+}
 @media only screen and (min-width:1024px){
 	article header.article-info >h1{
 	font-size:200%;

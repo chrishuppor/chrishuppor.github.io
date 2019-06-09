@@ -771,15 +771,13 @@ header nav ul li a:hover{
 	
 }
 
-
 @media only screen and (min-width:1024px){
 	.archive-title{
-	margin:2em 0;
-	width:18.5%;
-	padding-left:.5%;
-	float:left
-}
-
+		margin:2em 0;
+		width:18.5%;
+		padding-left:.5%;
+		float:left
+	}
 }
 .archive-title h2{
 	width:90%;
