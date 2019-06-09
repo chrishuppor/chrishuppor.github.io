@@ -568,7 +568,8 @@ header nav ul li a:hover{
 	}
 }
 
-/*归档&tag&cata页面的文档连接*/
+/*main应该是指主要部分，而不是主页*/
+/*归档&tag&cata页面的主要部分——文档连接*/
 #main section.post{
 	background:#fafafa;
 	margin-bottom:.05em;
@@ -605,8 +606,6 @@ header nav ul li a:hover{
 	margin:.5em 0;
 	font-size:.9em
 }
-
-/*主页？*/
 #main article.post-expand{
 	background:#fafafa;
 	margin-bottom:0.5em;
@@ -616,8 +615,8 @@ header nav ul li a:hover{
 	max-width:180px;	
 	max-height:96px;	
 	display:block !important;	
-	margin-right:.07em;	
-	margin-left:.07em;	
+	margin-right:.7em;	
+	margin-left:.7em;	
 	padding:0;	
 	float:right;	
 	clear:right
@@ -632,7 +631,6 @@ header nav ul li a:hover{
 	float:right;	
 	clear:right
 }
-
 /*readmore 已被删除*/
 /*
 #main article.post-expand .article-more-link a{
@@ -654,10 +652,9 @@ header nav ul li a:hover{
 	text-decoration:none
 }
 */
-
 #archive-page section.post a{
 	font-size:.9em;
-	padding:.5em !important;
+	padding:.005em !important;
 }
 
 @media only screen and (min-width:768px){
