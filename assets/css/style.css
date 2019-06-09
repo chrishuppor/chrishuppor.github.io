@@ -65,11 +65,11 @@ body{
 	background:#ddd;	
 	font-family:"Helvetica Neue","Helvetica","Microsoft YaHei","WenQuanYi Micro Hei",Arial,sans-serif;
 	font-size:100%;	
-	color:#817c7c;	
+	color:#000000;/*#817c7c*/	
 	line-height:1.5 /*here*/
 }
 iframe{
-	margin-top:10px /*here*/
+	margin-top:1px /*here*/
 }
 
 small{
