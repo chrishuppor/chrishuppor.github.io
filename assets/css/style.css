@@ -582,7 +582,7 @@ header nav ul li a:hover{
 	-o-transition:border-left 0.45s;	
 	-ms-transition:border-left 0.45s;	
 	transition:border-left 0.45s;	
-	padding:.1em;	
+	padding:.01em;	
 }
 @media only screen and (min-width:768px){
 	#main section.post a{
@@ -595,7 +595,7 @@ header nav ul li a:hover{
 
 #main section.post a h1{
 	color:#2ca6cb;
-	line-height:1
+	line-height:1.5
 }
 
 #main section.post a p{
