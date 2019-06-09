@@ -595,7 +595,7 @@ header nav ul li a:hover{
 
 #main section.post a h1{
 	color:#2ca6cb;
-	line-height:1.5
+	line-height:2
 }
 
 #main section.post a p{
@@ -606,7 +606,7 @@ header nav ul li a:hover{
 	color:#817c7c;
 	display:block;
 	margin:.5em 0;
-	font-size:.5em
+	font-size:.9em
 }
 
 #main article.post-expand{
@@ -614,41 +614,26 @@ header nav ul li a:hover{
 	margin-bottom:0.5em;
 }
 
-#main article.post-expand .img-logo{
-	
-	max-width:180px;
-	
-	max-height:96px;
-	
-	display:block !important;
-	
-	margin-right:.7em;
-	
-	margin-left:.7em;
-	
-	padding:0;
-	
-	float:right;
-	
-	clear:right}
-
-#main article.post-expand .img-topic{
-	
-	max-width:300px;
-	
-	max-height:1800px;
-	
-	display:block !important;
-	
-	margin-left:.7em;
-	
-	margin-right:.7em;
-	
-	padding:0;
-	
-	float:right;
-	
-	clear:right}
+#main article.post-expand .img-logo{	
+	max-width:180px;	
+	max-height:96px;	
+	display:block !important;	
+	margin-right:.7em;	
+	margin-left:.7em;	
+	padding:0;	
+	float:right;	
+	clear:right
+}
+#main article.post-expand .img-topic{	
+	max-width:300px;	
+	max-height:1800px;	
+	display:block !important;	
+	margin-left:.7em;	
+	margin-right:.7em;	
+	padding:0;	
+	float:right;	
+	clear:right
+}
 
 /*readmore 已被删除*/
 /*
@@ -679,7 +664,8 @@ header nav ul li a:hover{
 
 @media only screen and (min-width:768px){
 	#archive-page section.post a time{
-	padding-left:1em}
+	padding-left:1em
+	}
 }
 .moveMain{
 	margin-left:10% !important}
@@ -687,7 +673,8 @@ header nav ul li a:hover{
 	border-left:.5em solid #ccc;
 }
 .unexpand .prev:hover{
-	border-left:.5em solid #1b1b1b}
+	border-left:.5em solid #2ca6cb
+}
 #page-nav{
 	background:#fafafa;
 	text-align:center;
@@ -695,7 +682,8 @@ header nav ul li a:hover{
 }
 #page-nav a{
 	display:inline-block;
-	padding:.5em 1em}
+	padding:.5em .1em
+}
 #page-nav a{
 	color:#1b1b1b;
 }
