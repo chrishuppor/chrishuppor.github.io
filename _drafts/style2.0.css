@@ -560,7 +560,6 @@ header nav ul li a:hover{
 	line-height:1.8;	
 }
 
-
 @media only screen and (min-width:1024px){
 	#main{
 		margin:2em 0 0;
@@ -591,14 +590,11 @@ header nav ul li a:hover{
 	padding:.1em;
 	
 }
-
-
 @media only screen and (min-width:768px){
 	#main section.post a{
 		padding:1em
 	}
 }
-
 #main section.post a:hover{
 	border-left:.2em solid #2ca6cb
 }
@@ -687,7 +683,6 @@ header nav ul li a:hover{
 	background:#fafafa;
 	text-align:center;
 	overflow:hidden;
-	
 }
 #page-nav a{
 	display:inline-block;
@@ -708,7 +703,6 @@ header nav ul li a:hover{
 	-o-transition:border-left 0.5s;
 	-ms-transition:border-left 0.5s;
 	transition:border-left 0.5s;
-	
 }
 #page-nav .prev span:before{
 	font-family:"FontAwesome";
@@ -719,7 +713,6 @@ header nav ul li a:hover{
 }
 #page-nav .next{
 	float:right;
-	
 }
 #page-nav .next span:before{
 	font-family:"FontAwesome";
@@ -731,15 +724,12 @@ header nav ul li a:hover{
 #page-nav .page-number{
 	display:none;
 	padding:.5em 1em;
-	
 }
-
 
 @media only screen and (min-width:768px){
 	#page-nav .page-number{
 	display:inline-block
-}
-
+	}
 }
 #page-nav .current{
 	color:#b8b8b8;
@@ -749,7 +739,6 @@ header nav ul li a:hover{
 	color:#2ca6cb
 }
 /* page layout */
-
 @media only screen and (min-width:1024px){
 	.page{
 	margin-left:10% !important

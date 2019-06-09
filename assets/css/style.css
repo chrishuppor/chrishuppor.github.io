@@ -685,11 +685,12 @@ header nav ul li a:hover{
 	padding:.5em .1em
 }
 #page-nav a{
-	color:#1b1b1b;
+	color:#2ca6cb;
 }
 #page-nav a:hover{
-	background:#eeeeee;
-	color:#1b1b1b}
+	background:#fafafa;
+	color:#2ca6cb
+}
 #page-nav .prev{
 	float:left;
 	-webkit-transition:border-left 0.5s;
@@ -703,7 +704,8 @@ header nav ul li a:hover{
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	content:"\f053";
-	padding-right:.5em}
+	padding-right:.5em
+}
 #page-nav .next{
 	float:right;
 }
@@ -712,7 +714,8 @@ header nav ul li a:hover{
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	content:"\f054";
-	padding-left:.5em}
+	padding-left:.5em
+}
 #page-nav .page-number{
 	display:none;
 	padding:.5em 1em;
@@ -720,32 +723,30 @@ header nav ul li a:hover{
 
 @media only screen and (min-width:768px){
 	#page-nav .page-number{
-	display:inline-block}
+	display:inline-block
+	}
 }
 #page-nav .current{
-	color:eeeeee;
-	font-weight:bold}
+	color:#b8b8b8;
+	font-weight:bold
+}
 #page-nav .space{
-	color:#1b1b1b}
+	color:#2ca6cb
+}
 /* page layout */
 @media only screen and (min-width:1024px){
 	.page{
 	margin-left:10% !important}
 }
 /* archive layout */
-.category-icon:before,.tag-icon:before,.archive-icon:before{
-	
-	font-family:"FontAwesome";
-	
-	-webkit-font-smoothing:antialiased;
-	
-	-moz-osx-font-smoothing:grayscale;
-	
-	color:#ea6753;
-	
-	font-size:100%;
-	
-	padding-right:.3em}
+.category-icon:before,.tag-icon:before,.archive-icon:before{	
+	font-family:"FontAwesome";	
+	-webkit-font-smoothing:antialiased;	
+	-moz-osx-font-smoothing:grayscale;	
+	color:#ea6753;	
+	font-size:100%;	
+	padding-right:.3em
+}
 .category-icon:before{
 	content:"\f07b"}
 .tag-icon:before{
