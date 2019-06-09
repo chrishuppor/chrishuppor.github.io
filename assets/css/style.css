@@ -430,10 +430,10 @@ body >header a{
 /*tag之间的缝隙*/
 .navbar{
 	position:absolute;
-	width:1em;
+	width:.5em;
 	right:0;
-	top:1em;
-	padding:.5em;
+	top:.5em;
+	padding:.2em;
 }
 
 @media only screen and (min-width:1024px){
