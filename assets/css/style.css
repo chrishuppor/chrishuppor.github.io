@@ -584,31 +584,34 @@ header nav ul li a:hover{
 	transition:border-left 0.45s;	
 	padding:.1em;	
 }
-
 @media only screen and (min-width:768px){
 	#main section.post a{
-	padding:1em}
+		padding:1em
+	}
+}
+#main section.post a:hover{
+	border-left:.2em solid #2ca6cb
 }
 
-#main section.post a:hover{
-	border-left:.5em solid #1b1b1b}
-
 #main section.post a h1{
-	color:#1b1b1b;
-	line-height:2}
+	color:#2ca6cb;
+	line-height:2
+}
 
 #main section.post a p{
-	color:#817c7c}
+	color:#817c7c
+}
 
 #main section.post a time{
 	color:#817c7c;
 	display:block;
 	margin:.5em 0;
-	font-size:.9em}
+	font-size:.9em
+}
 
 #main article.post-expand{
-	background:#1b1b1b;
-	margin-bottom:3.5em;
+	background:#fafafa;
+	margin-bottom:0.5em;
 }
 
 #main article.post-expand .img-logo{
