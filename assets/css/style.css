@@ -69,7 +69,7 @@ body{
 	line-height:1.5 /*here*/
 }
 iframe{
-	margin-top:1px /*here*/
+	margin-top:1px /*10 here*/
 }
 
 small{
@@ -91,7 +91,7 @@ sub{
 
 a{
 	text-decoration:none;
-	color:#817c7c;
+	color:#000000;
 	background:transparent
 }
 
