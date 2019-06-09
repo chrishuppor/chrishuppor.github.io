@@ -571,7 +571,7 @@ header nav ul li a:hover{
 /*main应该是指主要部分，而不是主页*/
 /*归档&tag&cata页面的主要部分——文档连接*/
 #main section.post{
-	background:#fafafa;
+	background:#817c7c;
 	margin-bottom:.05em;
 }
 #main section.post a{	
@@ -607,7 +607,7 @@ header nav ul li a:hover{
 	font-size:.9em
 }
 #main article.post-expand{
-	background:#fafafa;
+	background:#817c7c;
 	margin-bottom:0.5em;
 }
 
@@ -669,10 +669,11 @@ header nav ul li a:hover{
 	border-left:.5em solid #ccc;
 }
 .unexpand .prev:hover{
-	border-left:.5em solid #2ca6cb
+	border-left:.5em solid #2ca6cb;
+	background:transparent
 }
 #page-nav{
-	background:#fafafa;
+	background:#817c7c;
 	text-align:center;
 	overflow:hidden;
 }
@@ -684,7 +685,7 @@ header nav ul li a:hover{
 	color:#2ca6cb;
 }
 #page-nav a:hover{
-	background:#fafafa;
+	background:#817c7c;
 	color:#2ca6cb
 }
 #page-nav .prev{
@@ -755,7 +756,7 @@ header nav ul li a:hover{
 .archive-title{	
 	margin:1em 0;	
 	padding:2em;	
-	background:#fafafa;	
+	background:#817c7c;	
 	border-left:.5em solid #ccc;	
 }
 
@@ -829,7 +830,7 @@ header nav ul li a:hover{
 	min-height:400px
 }
 .post,.page,.link,.photo{
-	background:#fafafa;
+	background:#817c7c;
 }
 .post a,.page a,.link a,.photo a{
 	color:#2ca6cb;
@@ -843,7 +844,7 @@ header nav ul li a:hover{
 }
 article header.article-info >h1{
 	padding:.2em 3%;
-	font-size:170%;
+	font-size:100%;
 	line-height:1.5;
 	word-wrap:break-word;
 	word-break:normal;
