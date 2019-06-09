@@ -430,24 +430,22 @@ body >header a{
 /*tag之间的缝隙*/
 .navbar{
 	position:absolute;
-	width:.2em;
+	width:.1em;
 	right:0;
-	top:.2em;
-	padding:.2em;
+	top:.1em;
+	padding:.1em;
 }
-
 @media only screen and (min-width:1024px){
 	.navbar{
-	display:none}
+	display:none
+	}
 }
-.navbutton::before{
-	
-	font-family:"FontAwesome";
-	
-	-webkit-font-smoothing:antialiased;
-	
+.navbutton::before{	
+	font-family:"FontAwesome";	
+	-webkit-font-smoothing:antialiased;	
 	-moz-osx-font-smoothing:grayscale;
-	content:"\f0c9"}
+	content:"\f0c9"
+}
 .navmobile::before{
 	
 		padding-left:1em
