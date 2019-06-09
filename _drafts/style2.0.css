@@ -473,31 +473,24 @@ header nav{
 		max-height:none
 	}
 }
-
 @media only screen and (min-width:1024px){
 	header nav ul{
 		float:right
 	}
 }
-
-
 @media only screen and (min-width:1024px){
 	header nav ul li{
 	float:left
-}
-
+	}
 }
 header nav ul li a{
 	padding:.2em 0 .2em 1em;
 	
 }
-
-
 @media only screen and (min-width:1024px){
 	header nav ul li a{
 	padding:.2em 1.5em
-}
-
+	}
 }
 header nav ul li a:hover{
 	background:#1b7f9e;
@@ -508,7 +501,6 @@ header nav ul li a:hover{
 }
 .search{
 	padding:.1em 0 0 1em;
-	
 }
 .search input{
 	-webkit-appearance:textfield;
@@ -523,7 +515,7 @@ header nav ul li a:hover{
 }
 
 @media only screen and (min-width:1024px){
-	.search input{
+.search input{
 	width:8em;
 	-webkit-transition:0.5s width;
 	-moz-transition:0.5s width;
@@ -533,8 +525,7 @@ header nav ul li a:hover{
 }
 .search input:focus{
 	width:15em
-}
-
+	}
 }
 .search label{
 	display:none
@@ -544,35 +535,29 @@ header nav ul li a:hover{
 	width:95%;
 	margin:0 auto;
 	overflow:hidden;
-	
 }
-
 @media only screen and (min-width:768px){
 	#container{
-	width:96%
-}
-
+		width:96%
+	}
 }
 
 
 @media only screen and (min-width:1024px){
 	#container{
-	width:94%
-}
-
+		width:94%
+	}
 }
 
 
 @media only screen and (min-width:1560px){
 	#container{
-	width:82%
-}
-
+		width:82%
+	}
 }
 #main{
 	margin:1em 0 0;
-	line-height:1.8;
-	
+	line-height:1.8;	
 }
 
 
