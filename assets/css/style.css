@@ -597,9 +597,8 @@ header nav ul li a:hover{
 	line-height:1.9 
 }/*文档标题*/
 #main section.post a p{
-	color:#000000
+	color:#817c7c
 }
-
 #main section.post a time{
 	color:#817c7c;
 	display:block;
@@ -609,7 +608,7 @@ header nav ul li a:hover{
 
 #main article.post-expand{
 	background:#fafafa;
-	margin-bottom:0.5em;
+	margin-bottom:0.05em;
 }
 
 #main article.post-expand .img-logo{	
