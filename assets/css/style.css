@@ -1326,7 +1326,7 @@ footer.article-footer{
 	background:transparent;
 }
 .article-tags a:hover{
-	color:#dcdf33;
+	color:#ea6753;
 	background:transparent
 }
 .article-categories{
@@ -1344,7 +1344,7 @@ footer.article-footer{
 	margin:0 .3em;
 }
 .article-category-link:hover{
-	color:#dcdf33 !important;
+	color:#ea6753 !important;
 	background:transparent
 }
 .article-nav{
