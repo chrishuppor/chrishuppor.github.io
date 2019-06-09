@@ -894,6 +894,7 @@ article header.article-info >p.article-time:before{
 /*文章内容格式，包括摘要卡片上的内容*/
 article .article-content{
 	padding:1.0em 3%;
+	margin-top:0.5em;
 	color:#413f3f;
 	font-size:100%;
 }
@@ -1325,13 +1326,12 @@ footer.article-footer{
 	padding:0 .3em;
 	margin:.3em;
 	background:transparent;
-	color: #817c7c;
 }
 .article-tags a:hover{
 	color:#ea6753;
 	background:transparent
 }
-/*图标*/
+/*cate图标*/
 .article-categories{
 	color:#d6d6d6;
 	margin-top:.3em;
@@ -1343,11 +1343,10 @@ footer.article-footer{
 	-moz-osx-font-smoothing:grayscale;
 	content:"\f07b"
 }
-/*文字*/
+/*cate文字*/
 .article-category-link{
 	padding:.5em;
 	margin:0 .3em;
-	color: #817c7c;
 }
 .article-category-link:hover{
 	color:#ea6753 !important;
