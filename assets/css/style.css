@@ -849,13 +849,12 @@ article header.article-info >h1{
 	word-wrap:break-word;
 	word-break:normal;
 	-webkit-font-smoothing:antialiased;
-	-moz-osx-font-smoothing:grayscale;
 	border-left:2px solid #2ca6cb
 }
 @media only screen and (min-width:1024px){
 	article header.article-info >h1{
 	font-size:100%;
-	padding-top:.03em}
+	padding-top:.3em}
 }
 article header.article-info >p.article-author{
 	padding:.3em 4% .3em 0;
