@@ -335,35 +335,25 @@ body >header{
 /*the topcard padding*/
 @media only screen and (min-width:1024px){	
 	body >header{
-	padding:1.3em 0 0.5em
+	padding:1.3em 0 0.3em
 	}
 }
-
 body >header >div{
-	
-	width:95%;
-	
-	margin:0 auto;
-	
-	position:relative;
-	
-	overflow:hidden;
-	
+	width:95%;	
+	margin:0 auto;	
+	position:relative;	
+	overflow:hidden;	
 }
 
-@media only screen and (min-width:1024px){
-	
+@media only screen and (min-width:1024px){	
 	body >header >div{
-	width:93%}
-
+	width:93%
+	}
 }
-
 body >header a{
-	
-	display:block;
-	
-	color:#dddddd}
-
+	display:block;	
+	color:#fff
+}
 #imglogo{
 	float:left;
 	width:4em;
@@ -371,15 +361,15 @@ body >header a{
 }
 
 @media only screen and (min-width:768px){
-	
 	#imglogo{
-	width:5em}
-
+	width:5em
+	}
 }
 
 @media only screen and (min-width:1024px){
 	#imglogo{
-	width:5.5em}
+	width:5.5em
+	}
 }
 #imglogo img{
 	width:4em;
@@ -387,63 +377,60 @@ body >header a{
 
 @media only screen and (min-width:768px){
 	#imglogo img{
-	width:5em}
+	width:5em
+	}
 }
 
 @media only screen and (min-width:1024px){
 	#imglogo img{
-	width:5.5em}
+	width:5.5em
+	}
 }
 
+/*"christine"shown in topcard*/
 #textlogo{
 	float:left;
 	width:75%;
 	margin-left:.5em;
 }
 
-#textlogo h1.site-name{
-	
-	width:86%;
-	
-	font-family:"covered_by_your_graceregular";
-	
-	font-size:200%;
-	
-	line-height:1.5;
-	
-	-webkit-font-smoothing:antialiased;
-	
-	-moz-osx-font-smoothing:grayscale;
-	
+#textlogo h1.site-name{	
+	width:86%;	
+	font-family:"covered_by_your_graceregular";	
+	font-size:200%;	
+	line-height:1.5;	
+	-webkit-font-smoothing:antialiased;	
+	-moz-osx-font-smoothing:grayscale;	
 }
-
 @media only screen and (min-width:768px){
 	#textlogo h1.site-name{
-	font-size:240%}
+	font-size:240%
+	}
 }
-
 @media only screen and (min-width:1024px){
 	#textlogo h1.site-name{
-	font-size:280%}
+	font-size:280%
+	}
 }
-
 #textlogo h2.blog-motto{
-	font-size:.7em;
+	font-size:.9em;
 	font-weight:normal;
 }
-
 @media only screen and (min-width:768px){
 	#textlogo h2.blog-motto{
-	font-size:100%}
+	font-size:100%
+	}
 }
-
 @media only screen and (min-width:1024px){
 	#textlogo h2.blog-motto{
-	font-size:110%}
+	font-size:110%
+	}
 }
+
+/*tag之间的缝隙*/
 .navbar{
 	position:absolute;
-	width:2em;
+	width:1em;
 	right:0;
 	top:1em;
 	padding:.5em;

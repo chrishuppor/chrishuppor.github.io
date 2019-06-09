@@ -384,11 +384,11 @@ body >header a{
 	}
 }
 
+/*"christine"shown in topcard*/
 #textlogo{
 	float:left;
 	width:75%;
-	margin-left:.5em;
-	
+	margin-left:.5em;	
 }
 
 #textlogo h1.site-name{
@@ -410,7 +410,6 @@ body >header a{
 		font-size:280%
 	}
 }
-
 #textlogo h2.blog-motto{
 	font-size:.9em;
 	font-weight:normal;	
