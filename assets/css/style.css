@@ -843,14 +843,14 @@ header nav ul li a:hover{
 	border-bottom:1px solid #dbdbdb}
 }
 article header.article-info >h1{
-	padding:.2em 3%;
+	padding:0;/*.2em 3%;*/
 	font-size:130%;
 	line-height:1.5;
 	word-wrap:break-word;
 	word-break:normal;
 	-webkit-font-smoothing:antialiased;
-	-moz-osx-font-smoothing:grayscale/*;
-	border-left:2px solid #2ca6cb*/
+	-moz-osx-font-smoothing:grayscale;
+	border-left:2px solid #2ca6cb
 }
 @media only screen and (min-width:1024px){
 	article header.article-info >h1{
