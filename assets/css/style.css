@@ -841,7 +841,12 @@ header nav ul li a:hover{
 }
 @media only screen and (min-width:768px){
 	article header.article-info{
-	border-bottom:1px solid #dbdbdb}
+		border-bottom:1px solid #dbdbdb
+	}
+}
+
+article header{
+	padding:1px solid #dbdbdb
 }
 
 /*主页摘要卡片*/
@@ -889,8 +894,10 @@ article header.article-info >p.article-time:before{
 	content:"\f017";
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale}
+
+/*文章内容格式，包括摘要卡片上的内容*/
 article .article-content{
-	padding:1.0em 2%;
+	padding:1.0em 3%;
 	color:#413f3f;
 	font-size:100%;
 }
@@ -1087,7 +1094,9 @@ footer.article-footer{
 	background:#fafafa;
 	padding:0 4%;
 	margin:0;
-	border-top:1px solid #dbdbdb}
+	border-top:1px solid #dbdbdb
+}
+	
 .article-share{
 	float:right;
 	width:100%;
@@ -1173,12 +1182,18 @@ footer.article-footer{
 	content:"\f18b"}
 .article-share-renren:hover{
 	background:#369;
-	text-shadow:0 1px #29527a}
+	text-shadow:0 1px #29527a
+}
+
+/*back to top*/
 .article-back-to-top:before{
 	content:"\f062"}
 .article-back-to-top:hover{
 	background:#762c54;
-	text-shadow:0 1px #5e2343}
+	text-shadow:0 1px #5e2343
+}
+
+
 .qrcode{
 	width:15em;
 	height:15em;
@@ -1274,11 +1289,11 @@ footer.article-footer{
 	padding:.5em 0;
 	float:left;
 }
-
 @media only screen and (max-width:568px){
 	.article-tags,.article-categories{
 	margin-right:1em !important}
 }
+
 .article-tags{
 	color:#d6d6d6;
 }
