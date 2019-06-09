@@ -845,10 +845,6 @@ header nav ul li a:hover{
 	}
 }
 
-article header{
-	padding:1px solid #dbdbdb
-}
-
 /*主页摘要卡片*/
 article header.article-info >h1{
 	padding:.2em 3%;
@@ -1319,16 +1315,20 @@ footer.article-footer{
 	left:50%;
 	margin-top:-.6em;
 	margin-left:-.6em;
-	content:"\f02c"}
+	content:"\f02c"
+}
+
+/*随着文章一起的tag和cate*/
 .article-tags a{
 	float:left;
 	padding:0 .3em;
 	margin:.3em;
-	background:#e6e6e6;
+	background:transparent;
 }
 .article-tags a:hover{
-	color:#fff;
-	background:#2ca6cb}
+	color:#dcdf33;
+	background:transparent
+}
 .article-categories{
 	color:#d6d6d6;
 	margin-top:.3em;
@@ -1344,8 +1344,9 @@ footer.article-footer{
 	margin:0 .3em;
 }
 .article-category-link:hover{
-	color:#fff !important;
-	background:#2ca6cb}
+	color:#dcdf33 !important;
+	background:transparent
+}
 .article-nav{
 	padding:0 10%;
 }
