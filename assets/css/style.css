@@ -652,9 +652,10 @@ header nav ul li a:hover{
 	text-decoration:none
 }
 */
+/**/
 #archive-page section.post a{
-	font-size:.9em;
-	padding:.005em !important;
+	font-size:.8em;
+	padding:.5em !important;
 }
 
 @media only screen and (min-width:768px){
