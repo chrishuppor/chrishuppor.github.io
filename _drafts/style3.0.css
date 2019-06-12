@@ -65,11 +65,11 @@ body{
 	background:#ddd;	
 	font-family:"Helvetica Neue","Helvetica","Microsoft YaHei","WenQuanYi Micro Hei",Arial,sans-serif;
 	font-size:100%;	
-	color:#817c7c;	
+	color:#817C7C;/*#817c7c*/	
 	line-height:1.5 /*here*/
 }
 iframe{
-	margin-top:10px /*here*/
+	margin-top:1px /*10 here*/
 }
 
 small{
@@ -568,12 +568,12 @@ header nav ul li a:hover{
 	}
 }
 
-/*主页*/
+/*main应该是指主要部分，而不是主页*/
+/*归档&tag&cata页面的主要部分——文档连接*/
 #main section.post{
 	background:#fafafa;
 	margin-bottom:.05em;
 }
-
 #main section.post a{	
 	display:block;	
 	border-left:.1em solid #fafafa;	
@@ -582,33 +582,31 @@ header nav ul li a:hover{
 	-o-transition:border-left 0.45s;	
 	-ms-transition:border-left 0.45s;	
 	transition:border-left 0.45s;	
-	padding:.1em;	
+	padding:.0em;	
 }
 @media only screen and (min-width:768px){
 	#main section.post a{
 		padding:1em
 	}
 }
+
 #main section.post a:hover{
 	border-left:.2em solid #2ca6cb
-}
+}/*归档文档列表左侧边界*/
 
 #main section.post a h1{
 	color:#2ca6cb;
-	line-height:2
-}
-
+	line-height:1.9 
+}/*文档标题*/
 #main section.post a p{
 	color:#817c7c
 }
-
 #main section.post a time{
 	color:#817c7c;
 	display:block;
 	margin:.5em 0;
 	font-size:.9em
 }
-
 #main article.post-expand{
 	background:#fafafa;
 	margin-bottom:0.5em;
@@ -634,7 +632,6 @@ header nav ul li a:hover{
 	float:right;	
 	clear:right
 }
-
 /*readmore 已被删除*/
 /*
 #main article.post-expand .article-more-link a{
@@ -656,9 +653,9 @@ header nav ul li a:hover{
 	text-decoration:none
 }
 */
-
+/**/
 #archive-page section.post a{
-	font-size:.9em;
+	font-size:.8em;
 	padding:.5em !important;
 }
 
@@ -673,7 +670,8 @@ header nav ul li a:hover{
 	border-left:.5em solid #ccc;
 }
 .unexpand .prev:hover{
-	border-left:.5em solid #2ca6cb
+	border-left:.5em solid #2ca6cb;
+	background:transparent
 }
 #page-nav{
 	background:#fafafa;
@@ -743,7 +741,7 @@ header nav ul li a:hover{
 	font-family:"FontAwesome";	
 	-webkit-font-smoothing:antialiased;	
 	-moz-osx-font-smoothing:grayscale;	
-	color:#ea6753;	
+	color:#ccc;	
 	font-size:100%;	
 	padding-right:.3em
 }
@@ -843,21 +841,24 @@ header nav ul li a:hover{
 }
 @media only screen and (min-width:768px){
 	article header.article-info{
-	border-bottom:1px solid #dbdbdb}
+		border-bottom:1px solid #dbdbdb
+	}
 }
+
+/*主页摘要卡片*/
 article header.article-info >h1{
 	padding:.2em 3%;
-	font-size:170%;
+	font-size:180%;
 	line-height:1.5;
 	word-wrap:break-word;
 	word-break:normal;
 	-webkit-font-smoothing:antialiased;
-	-moz-osx-font-smoothing:grayscale;
+	/*-moz-osx-font-smoothing:grayscale;*/
 	border-left:2px solid #2ca6cb
 }
 @media only screen and (min-width:1024px){
 	article header.article-info >h1{
-	font-size:200%;
+	font-size:180%;
 	padding-top:.3em}
 }
 article header.article-info >p.article-author{
@@ -889,8 +890,10 @@ article header.article-info >p.article-time:before{
 	content:"\f017";
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale}
+
+/*文章内容格式，包括摘要卡片上的内容*/
 article .article-content{
-	padding:1.5em 4%;
+	padding:1.0em 3%;
 	color:#413f3f;
 	font-size:100%;
 }
@@ -1087,7 +1090,9 @@ footer.article-footer{
 	background:#fafafa;
 	padding:0 4%;
 	margin:0;
-	border-top:1px solid #dbdbdb}
+	border-top:1px solid #dbdbdb
+}
+	
 .article-share{
 	float:right;
 	width:100%;
@@ -1173,12 +1178,18 @@ footer.article-footer{
 	content:"\f18b"}
 .article-share-renren:hover{
 	background:#369;
-	text-shadow:0 1px #29527a}
+	text-shadow:0 1px #29527a
+}
+
+/*back to top*/
 .article-back-to-top:before{
 	content:"\f062"}
 .article-back-to-top:hover{
 	background:#762c54;
-	text-shadow:0 1px #5e2343}
+	text-shadow:0 1px #5e2343
+}
+
+
 .qrcode{
 	width:15em;
 	height:15em;
@@ -1274,11 +1285,12 @@ footer.article-footer{
 	padding:.5em 0;
 	float:left;
 }
-
 @media only screen and (max-width:568px){
 	.article-tags,.article-categories{
 	margin-right:1em !important}
 }
+
+/*tag 图标*/
 .article-tags{
 	color:#d6d6d6;
 }
@@ -1304,16 +1316,21 @@ footer.article-footer{
 	left:50%;
 	margin-top:-.6em;
 	margin-left:-.6em;
-	content:"\f02c"}
+	content:"\f02c"
+}
+
+/*随着文章一起的tag文字*/
 .article-tags a{
 	float:left;
 	padding:0 .3em;
 	margin:.3em;
-	background:#e6e6e6;
+	background:transparent;
 }
 .article-tags a:hover{
-	color:#fff;
-	background:#2ca6cb}
+	color:#ea6753;
+	background:transparent
+}
+/*cate图标*/
 .article-categories{
 	color:#d6d6d6;
 	margin-top:.3em;
@@ -1323,14 +1340,18 @@ footer.article-footer{
 	font-family:"FontAwesome";
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	content:"\f07b"}
+	content:"\f07b"
+}
+/*cate文字*/
 .article-category-link{
 	padding:.5em;
 	margin:0 .3em;
 }
 .article-category-link:hover{
-	color:#fff !important;
-	background:#2ca6cb}
+	color:#ea6753 !important;
+	background:transparent
+}
+
 .article-nav{
 	padding:0 10%;
 }
@@ -1345,8 +1366,9 @@ footer.article-footer{
 	display:block;
 	overflow:hidden}
 .article-nav .prev a:hover,.article-nav .next a:hover{
-	background:#2ca6cb;
-	color:#fff}
+	background:transparent;
+	color:#ea6753
+}
 .article-nav .prev{
 	width:100%;
 	float:left;
