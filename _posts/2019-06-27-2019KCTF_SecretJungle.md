@@ -1,4 +1,13 @@
+---
+layout: post
+title: "2019KCTF_SecretJungle"
+date: 2019-6-27 15:15:44
+categories: WriteUp
+tags: 2019KCTF
+---
+
 2019kctf的第五题，一个包了三层技术简单思路巧妙的android逆向题。
+
 
 # 解题过程
 
