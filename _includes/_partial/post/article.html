@@ -6,8 +6,8 @@
 	{% include _partial/post/header.html %}
 	
 	{% assign count = content | strip_html | strip_newlines | remove: " " | size %}
-	总字数: {{count}}
-	预计阅读时间:{{ count | divided_by: 350 }}
+	<i>    总字数: <u>{{count}}</u></i>
+	<i>    预计阅读时间:<u>{{ count | divided_by: 350 }}</u></i>
 	
 	<div class="article-content">
 		{% if table and site.toc.article %}
