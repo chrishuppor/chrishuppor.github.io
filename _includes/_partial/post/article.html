@@ -4,6 +4,8 @@
   {% endif %}
 	<article itemprop="articleBody"> 
 	{% include _partial/post/header.html %}
+	
+	{{content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} 
 	<div class="article-content">
 		{% if table and site.toc.article %}
 		<div id="toc" class="toc-article toc-content" style="display: none;">
@@ -15,7 +17,7 @@
 		</div>
 		{% endif %}
 		
-		{{ content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }}  
+		{{ content }}  
 	</div>
 	{% include _partial/post/footer.html %}   
 	</article>
