@@ -14,9 +14,9 @@
 		{% endif %}
 		</div>
 		{% endif %}
-		{{ content }}  
+		
+		{{ content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }}  
 	</div>
-	{ content | strip_html | strip_newlines | size | divided_by:350 | round}}
 	{% include _partial/post/footer.html %}   
 	</article>
 	{% include _partial/post/pagination.html %}
