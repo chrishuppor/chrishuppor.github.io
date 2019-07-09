@@ -5,7 +5,10 @@
 	<article itemprop="articleBody"> 
 	{% include _partial/post/header.html %}
 	
-	{{content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} 
+	{% assign count = content | strip_html | strip_newlines | remove: " " | size %}
+	总字数: {{count}}
+	预计阅读时间:{{ count | divided_by: 350 }}
+	
 	<div class="article-content">
 		{% if table and site.toc.article %}
 		<div id="toc" class="toc-article toc-content" style="display: none;">
