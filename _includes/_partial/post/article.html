@@ -7,7 +7,7 @@
 	
 	{% assign count = content | strip_html | strip_newlines | remove: " " | size %}
 	<div style="padding-left: 1.8em">
-		<i>(总字数: <u>{{count}}</u>   预计阅读时间:<u>{{ count | divided_by: 350 }}min )</u></i>
+		<p><i>(总字数: <u>{{count}}</u>   预计阅读时间:<u>{{ count | divided_by: 350 }}min )</u></i></p>
 	</div>
 	
 	<div class="article-content">
