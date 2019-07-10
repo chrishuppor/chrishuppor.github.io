@@ -354,4 +354,44 @@ BOOL CFastDirOpenDlg::PreTranslateMessage(MSG* pMsg)
 }
 ```
 
+## 拖拽文件到CListCtrl
+
+1. 设置控件属性
+
+   控件属性要 ACCEPT FILES TRUE,父控件也要设置。
+
+2. 添加ON_WM_DROPFILES消息映射
+
+代码示例如下：
+
+```c
+//1. 添加消息映射
+BEGIN_MESSAGE_MAP(CMyListCtrl, CListCtrl)
+	ON_WM_DROPFILES()
+END_MESSAGE_MAP()
+
+//2. 添加对应的消息处理程序
+/************************************
+功能：响应CMyListCtrl窗口的文件拖拽消息
+参数：拖拽消息的信息
+返回值：无
+************************************/
+void CMyListCtrl::OnDropFiles(HDROP hDropInfo) //函数原型
+{
+	if (hDropInfo)//拖拽消息指针
+	{
+		TCHAR szFilePath[DEFAULT_SIZE] = { 0 };
+		int nDrag = DragQueryFile(hDropInfo, -1, NULL, 0);//获取一共拖拽的文件的个数
+
+		for (int i = 0; i < nDrag; i++) {
+			RtlZeroMemory(szFilePath, DEFAULT_SIZE);
+			DragQueryFile(hDropInfo, i, szFilePath, 1024);//获得第一个文件的路径m_szFilePath，返回路径长度
+			//todo
+		}
+	}
+
+	DragFinish(hDropInfo);
+}
+```
+
 [示例项目：FastDirOpen](https://github.com/chrishuppor/src/tree/master/MyLittleTools/FastDirOpen)
