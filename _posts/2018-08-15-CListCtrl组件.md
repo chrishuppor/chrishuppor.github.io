@@ -7,11 +7,9 @@ tags: MFC
 ---
 MFC中CListCtrl组件常用的功能介绍及使用代码。*之所以会用到这个组件，主要是觉得windows的快速启动目录不好使，想自己做一个快速启动目录工具，于是就用这个组件打底做了一个*
 
-# CListCtrl组件
-
 [TOC]
 
-## 初始化
+# 初始化
 
 1. 设置样式SetExtendedStyle
 2. 添加列及标题InsertColumn(列号，标题)
@@ -37,7 +35,7 @@ m_FastDirList.SetItemText(m_iRow, STATUS_COL, (PathFileExists(szPath) ? TEXT("�
 m_FastDirList.SetItemText(m_iRow, REMARK_COL, szRemark);
 ```
 
-## 修改列宽
+# 修改列宽
 
 SetColumnWidth(列号，列宽)
 
@@ -61,7 +59,7 @@ BOOL ChangeListTitleSize(CListCtrl *cListCtrl) {
 }
 ```
 
-## 获得点击位置的行列号
+# 获得点击位置的行列号
 
 处理鼠标点击事件时：
 
@@ -85,7 +83,7 @@ int nItem = lvinfo.iItem; //行号
 int nCol = lvinfo.iSubItem; //列号
 ```
 
-## 点击列标题进行排序
+# 点击列标题进行排序
 
 专用的排序函数SortItems(回调函数，组件指针);
 
@@ -145,7 +143,7 @@ void CFastDirOpenDlg::OnLvnColumnclickListFastdir(NMHDR *pNMHDR, LRESULT *pResul
 }
 ```
 
-## 最小化到系统托盘
+# 最小化到系统托盘
 
 这件事总共需要做以下几件事：
 
@@ -240,7 +238,7 @@ LRESULT CFastDirOpenDlg::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 }
 ```
 
-## 两次单击进入编辑状态
+# 两次单击进入编辑状态
 
 这里使用了一个有意思的方式实现列表item文字编辑效果：借用CEdit
 
@@ -337,7 +335,7 @@ void CFastDirOpenDlg::OnNMClickListFastdir(NMHDR *pNMHDR, LRESULT *pResult)
 
 PS.如果想退出编辑时能够获得编辑的内容，需要为m_CEditRemark添加失去焦点的事件处理函数
 
-## 重载回车&ESC按键消息
+# 重载回车&ESC按键消息
 
 重载消息函数：屏蔽esc和enter键，因为按esc默认调用OnCancel，enter默认调用OnOK(当然也可以重载这两个函数来屏蔽esc和enter)
 
@@ -354,7 +352,7 @@ BOOL CFastDirOpenDlg::PreTranslateMessage(MSG* pMsg)
 }
 ```
 
-## 拖拽文件到CListCtrl
+# 拖拽文件到CListCtrl
 
 1. 设置控件属性
 
@@ -391,6 +389,30 @@ void CMyListCtrl::OnDropFiles(HDROP hDropInfo) //函数原型
 	}
 
 	DragFinish(hDropInfo);
+}
+```
+
+#  删除选中的item
+
+删除单行只需要通过GetSelectionMark获取item的index，然后DeleteItem(iIndex)就可以了。
+
+删除多行，尤其是不连续的多行，要使用到GetFirstSelectedItemPosition和GetNextSelectedItem，代码如下：
+
+```c
+//需要要将控件Single Select属性设置为FALSE
+void CMyListCtrl::DelSelectedItem() {
+	POSITION sSelPos = NULL;
+	int iCount = this->GetItemCount();
+
+	while (sSelPos = this->GetFirstSelectedItemPosition())
+	{
+		int iIndex = -1;
+		iIndex = this->GetNextSelectedItem(sSelPos);
+
+		if (iIndex >= 0 && iIndex < iCount){
+			this->DeleteItem(iIndex);
+		}
+	}
 }
 ```
 
