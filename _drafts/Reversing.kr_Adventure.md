@@ -3,7 +3,7 @@ Reversing.kr中的Adventure，怕是这里面最硬核的题了，因为最少�
 # 解题过程
 
 1. 安装时需要修改系统时间到证书的有效时间内，安装程序前需要先安装dependencies里面对应的库。
-2. plm程序调试可以使用plmdebug.exe
+2. plm程序调试可以使用plmdebug.exe。这个是微软提供的调试工具，专门用于调试appx文件。
 
 # 小结
 
