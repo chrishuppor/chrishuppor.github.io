@@ -10,6 +10,8 @@ Reversing.kr中的Adventure，怕是这里面最硬核的题了，因为最少�
 
    ```plmdebug.exe /enableDebug <package> <调试器路径>```
 
+   其中，package是plm程序的包名，一般与程序名称不同，可以通过
+
 4. 运行程序
 
 5. 本来以为可以修改怪物释放时间，但是发现不可以粗暴的修改4043a0函数，因为之后的字符串异或需要用到rand
