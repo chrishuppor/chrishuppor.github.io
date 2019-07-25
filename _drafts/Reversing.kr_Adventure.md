@@ -10,7 +10,7 @@ Reversing.kr中的Adventure，怕是这里面最硬核的题了，因为最少�
 
    ```plmdebug.exe /enableDebug <package> <调试器路径>```
 
-   其中，package是plm程序的包名，一般与程序名称不同，可以通过
+   其中，package是plm程序的包名，一般与程序名称不同，可以通过```plmdebug /query```查询。
 
 4. 运行程序
 
