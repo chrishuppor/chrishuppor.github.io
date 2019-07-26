@@ -1,4 +1,4 @@
-Reversing.kr中的Adventure，怕是这里面最硬核的题了，因为最少人做出来。不过也很可能是MetroApp的问题。
+Reversing.kr中的Adventure，怕是这里面最硬核的题了，因为最少人做出来。不过这主要是很多人不知道appx文件如何动态调试。
 
 # 解题过程
 
