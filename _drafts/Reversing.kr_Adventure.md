@@ -19,7 +19,7 @@ Reversing.kr中的Adventure，怕是这里面最硬核的题了，因为最少�
 
    ```plmdebug.exe /enableDebug <package> <调试器路径>```
 
-   其中，package是plm程序的包名，一般与程序名称不同，可以通过```plmdebug /query```查询。这里我使用的是一个叫x32dbg的调试器，因为OD调试时出现了不可解决的异常。
+   其中，package是plm程序的包名，一般与程序名称不同，可以通过```plmdebug /query```查询，包名一般带有程序名称，所以比较好找。这里我使用的是一个叫x32dbg的调试器，因为OD调试时出现了不可解决的异常。
 
 3. 运行程序，查看字符串，发现了两个明显的字符串“Flag1”和“Flag2”。追踪到对应位置，然后根据offset在IDA中查看反编译源码。
 
