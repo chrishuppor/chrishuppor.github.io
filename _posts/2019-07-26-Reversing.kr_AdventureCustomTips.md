@@ -1,4 +1,13 @@
+---
+layout: post
+title: "Reversing.kr_AdventureCustomTips"
+date: 2019-7-26 16:8:7
+categories: WriteUp
+tags: Reversing_kr
+---
+
 最后两个题逻辑不是很难，难点在于调试——一个需要AVR环境，一个要用到plmdebug。只要找对了调试的方法，就相当于破解了，剩下的就很简单了。
+
 
 # Adventure
 
