@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Reversing.kr_CRC1"
-date: 2019-6-23 13:20:13
+date: 2019-06-11 8:8:8
 categories: WriteUp
 tags: Reversing_kr
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "2019TSCTF_LongCheck"
 date: 2019-6-12 22:10:6
 categories: WriteUp
-tags: TSCTF2019
+tags: CTF
 ---
 
 2019年TSCTF的一道Reverse，主要考察指令流获取。[[题目及IDB文件下载](https://github.com/chrishuppor/attachToBlog/tree/master)]

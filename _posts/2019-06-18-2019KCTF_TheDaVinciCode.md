@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "2019KCTF_TheDaVinciCode"
-date: 2019-6-27 15:15:59
+date: 2019-06-18 8:8:8
 categories: WriteUp
-tags: 2019KCTF
+tags: CTF
 ---
 
 2018KCTF的TheDaVinciCode，一个需要应手工具的RE题。
