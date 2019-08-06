@@ -18,7 +18,7 @@
 
 ```
 cmp eax, 0
-jz XXXX
+jz XXX
 ```
 
 # switch结构
