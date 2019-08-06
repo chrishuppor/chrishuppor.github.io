@@ -15,9 +15,10 @@
 
 用cmp、test等比较指令和jz、jnz等跳转指令组合形成if结构。
 例如，```if(x == 0){...}```可表示为
+
 ```
 cmp eax, 0
-jz XXX
+jz XXXX
 ```
 
 # switch结构
