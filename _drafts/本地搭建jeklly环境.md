@@ -8,12 +8,14 @@
 
 ##  jekyll安装
 
+官网：[<https://jekyllrb.com/>](https://jekyllrb.com/)
+
 cmd下运行命令```gem install jekyll```
 
 安装完成后
 
 1. 进入jeklly模板目录
-2. 运行命令```jekyll server```
+2. 运行命令```bundle exec jekyll server```
 3. 在浏览器输入http://localhost:4000/就可以查看效果了
 
 ## 问题解决
@@ -42,7 +44,7 @@ cmd下运行命令```gem install jekyll```
 
    原因：包版本冲突
 
-   解决：在`jekyll server`前加上`bundle exec`
+   解决：在`jekyll server`前加上`bundle exec`*(其实官网有说，只是某些博主不是这么写的，所以说无论干什么还是先找官方说明)*
 
    ```
    $ bundle exec jekyll server
