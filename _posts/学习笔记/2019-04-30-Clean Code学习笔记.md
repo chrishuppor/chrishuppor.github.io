@@ -6,7 +6,7 @@ categories: LearningNote
 tags: Book
 ---
 
-通过学习CleanCode，对整洁代码有了清楚的认识和理解，现将学习心得记录在此。
+clean code 学习笔记。技术指导类的书，学习的关键是应用。
 
 # Clean Code学习笔记
 
