@@ -111,7 +111,7 @@ Reversing.kr的第十二题，是一个与驱动有关的题目，如果对驱�
 
       1. 如图，使用RH查看exe资源文件，1003正是按钮的ID。
 
-         ![Dialog资源ID查看](https://chrishuppor.github.io/image/Snipaste_2019-05-21_09-15-14.PNG)
+         ![图1 Dialog资源ID查看](https://chrishuppor.github.io/image/Snipaste_2019-05-21_09-15-14.PNG)
 
          所以```GetDlgItemTextW(hDlg, 1003, &String, 512);```获取的是按钮显示的文字。
 

@@ -35,35 +35,35 @@ Reversing.kr的第十题，题如其名，很考研动态调试的一道题，OD
 
          最终EDX = EAX + 0X18，而eax == [FS:30]，所以这里用PEB.ProcessHeap来反调。
 
-         ![图1 PEB.ProcessHeap](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-26-12.PNG)
+         ![图1 检查PEB.ProcessHeap代码](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-26-12.PNG)
 
          如下图，检查PEB.ProcessHeap.Flag是否为2，也就是检查[[FS:30] + 0x18]+0xC是否是2。（非调试时应该不为2）
 
-         ![图2 PEB.ProcessHeap.Flag](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-27-53.PNG)
+         ![图2 检查PEB.ProcessHeap.Flag代码](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-27-53.PNG)
 
          接下来又检查了[[FS:30] + 0x18]+0x40是否为2。（非调试时应该不为2）
 
-         ![图3 FS:30 + 0x18+0x40](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-32-47.PNG)
+         ![图3 检查FS:30 + 0x18+0x40代码](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-32-47.PNG)
 
          接下来再次获取了PEB.ProcessHeap，并检查[[FS:30] + 0x18]+0x44是否为0.（非调试时不为0）
 
-         ![图4](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-34-34.PNG)
+         ![图4 ((FS:30) + 0x18)+0x44)检查代码](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-34-34.PNG)
 
          接下来惊现与0xABABABAB和0xEEFEEEFE的比较。这个是通过堆中数据检查进行反调中常用的比较。查看EDI的来源，果然是来自于堆空间。此时需要将所检查的空间中的0xABABABAB和0xEEFEEEFE改为其他数据才能通过测试，或者修改跳转逻辑。
 
-         ![图5](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-36-55.PNG)
+         ![图5 堆空间检查代码](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-36-55.PNG)
 
          接下来发现注册了一个SEH，将函数403903注册为异常处理函数。
 
-         ![图6](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-47-57.PNG)
+         ![图6 SEH注册代码](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-47-57.PNG)
 
          接下来看到了GetVersion和GetCommand，是不是见到亲人了？没错，这里就是start函数了，之前注册SEH也是start的正常操作。
 
-         ![图7](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-48-55.PNG)
+         ![图7 OEP代码](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-48-55.PNG)
 
          接着根据main函数的参数特点结合个人经验就找到main函数入口了，如下。
 
-         ![图8](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-54-44.PNG)
+         ![图8 main](https://chrishuppor.github.io/image/Snipaste_2019-05-15_22-54-44.PNG)
 
       2. 至此，程序已经恢复了无壳状态，可以dump下来然后修复了。
 

@@ -19,7 +19,7 @@ tags: WriteUp
 
    如图，可以计算出该字符引用偏移为0x1FDE。
 
-   ![图1 ](https://chrishuppor.github.io/image/Snipaste_2019-06-17_23-29-17.PNG)
+   ![图1 查看字符串](https://chrishuppor.github.io/image/Snipaste_2019-06-17_23-29-17.PNG)
 
 4. 将程序拖入IDA，转到偏移0x1FDE处，按F5反编译该函数。该函数为sub_401EA0，简单看一下会发现，这个就是check的关键函数，函数逻辑如下：
 
