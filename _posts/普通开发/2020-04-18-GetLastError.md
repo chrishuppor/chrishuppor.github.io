@@ -7,6 +7,7 @@ tags: Windows
 ---
 GetLastError函数的原理和使用。
 
+
 # GetLastError
 
 ## 原理
@@ -24,7 +25,7 @@ GetLastError函数的原理和使用。
 
 * 用户可以按照如下规则自行定义一个32位错误代码
 
-  ![](F:\22. LIFE GAME\myblog\chrishuppor.github.io\image\Snipaste_2020-04-18_17-58-53.png)
+  ![](https://chrishuppor.github.io/image/Snipaste_2020-04-18_17-58-53.png)
 
 使用
 
@@ -32,11 +33,11 @@ GetLastError函数的原理和使用。
 
 * 在IDE中：如图，在监视器中添加一行“@err,hr”
 
-  ![](F:\22. LIFE GAME\myblog\chrishuppor.github.io\image\Snipaste_2020-04-18_17-44-15.png)
+  ![](https://chrishuppor.github.io/image/Snipaste_2020-04-18_17-44-15.png)
 
 * 在外部：使用vs提供的errlook小工具查询错误码
 
-  ![](F:\22. LIFE GAME\myblog\chrishuppor.github.io\image\Snipaste_2020-04-18_17-55-32.png)
+  ![](https://chrishuppor.github.io/image/Snipaste_2020-04-18_17-55-32.png)
 
 ##在程序中获取错误码描述语句
 
