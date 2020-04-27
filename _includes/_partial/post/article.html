@@ -11,12 +11,15 @@
 			<i>(总字数：
 				<u>{{count}}</u>
 				预计阅读时间:
-				<u id = readtime>{{ count | divided_by: 350 }}</u> min )</i></p>
-		
-		<script>
-			var readtime= document.getElementById("readtime");//给x赋值
-			if (readtime.value==0){readtime.value=1;}
-		</script>
+				<u id = readtime>
+					<script>
+						var num={{ count | divided_by: 350 }};//给x赋值
+						if (num==0){num=1;}
+						document.write(num);
+					</script>
+				</u> min )
+			</i>
+		</p>
 		
 	</div>
 	
