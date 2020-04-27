@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "GetLastError"
-date: 2020-04-18 8:8:8
+pubtime: 2020-04-18 8:8:8
+updatetime: 2020-04-18 8:8:8
 categories: LearningNote
 tags: Windows
 ---

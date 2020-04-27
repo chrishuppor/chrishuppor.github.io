@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "ubuntu系统下INetSim安装指南"
-date: 2019-5-1 21:55:19
+pubtime: 2019-5-1 21:55:19
+updatetime: 2019-5-1 21:55:19
 categories: EnvironmentBuild
 tags: INetSim
 ---

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "2019KCTF_SecretJungle"
-date: 2019-06-20 8:8:8
+pubtime: 2019-06-20 8:8:8
+updatetime: 2019-06-20 8:8:8
 categories: Reverse
 tags: WriteUp
 ---

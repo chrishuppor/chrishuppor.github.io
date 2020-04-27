@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "IDApython学习笔记"
-date: 2019-05-30 8:8:8
+pubtime: 2019-05-30 8:8:8
+updatetime: 2019-05-30 8:8:8
 categories: Reverse
 tags: IDAPython Tools
 ---

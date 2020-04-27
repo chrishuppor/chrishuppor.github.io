@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "IDApython安装"
-date: 2018-04-07 8:8:8
+pubtime: 2018-04-07 8:8:8
+updatetime: 2018-04-07 8:8:8
 categories: Reverse
 tags: IDAPython Tools
 ---

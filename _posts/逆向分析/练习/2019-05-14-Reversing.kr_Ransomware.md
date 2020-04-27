@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Reversing.kr_Ransomware"
-date: 2019-5-14 8:8:8
+pubtime: 2019-5-14 8:8:8
+updatetime: 2019-5-14 8:8:8
 categories: Reverse
 tags: WriteUp
 ---

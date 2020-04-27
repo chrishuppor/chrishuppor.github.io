@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Reversing.kr_1-4"
-date: 2019-04-29 8:8:8
+pubtime: 2019-04-29 8:8:8
+updatetime: 2019-04-29 8:8:8
 categories: Reverse
 tags: WriteUp
 ---
