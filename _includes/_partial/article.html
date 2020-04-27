@@ -38,7 +38,10 @@
            <p itemprop="description" >{{ item.content | slice: 0, 140 }}</p>
       {% endif %}
     {% endif %}
-    <time datetime="{{ item.date }}" itemprop="datePublished">{{ item.date | date: "%F" }}</time>
+    <time datetime="{{ item.date }}" itemprop="datePublished">{{ item.date | date: "%F" }}</time>	
+	
+    <time datetime="{{ item.pubtime }}" itemprop="datePublished"> {{ lang.datepublished }} {{ item.pubtime | pubtime: "%F" }}</time>
+    <time datetime="{{ item.updatetime }}" itemprop="dateupdated"> {{ lang.dateupdated }} {{ item.updatetime | updatetime: "%F" }}</time>
   </a>
 </section>
 {% endif %}
