@@ -3,12 +3,9 @@
 	{% include _partial/post/gallery.html %}
   {% endif %}
 	<article itemprop="articleBody"> 
-	{% include _partial/post/header.html %}
+	{% include _partial/post/about_header.html %}
 	
 	{% assign count = content | strip_html | strip_newlines | remove: " " | size %}
-	<div style="padding-right: 2.0em; float:right">
-		<p><i>(总字数：<u>{{count}}</u>      预计阅读时间：<u>{{ count | divided_by: 350 }}</u> min )</i></p>
-	</div>
 	
 	<div class="article-content">
 		{% if table and site.toc.article %}
