@@ -1,8 +1,8 @@
----
+﻿---
 layout: post
 title: "Reversing.kr_SimpleVM"
-pubtime: 2019-6-8 23:52:51
-updatetime: 2019-6-8 23:52:51
+pubtime: 2019-6-8
+updatetime: 2019-6-8
 categories: Reverse
 tags: WriteUp
 ---

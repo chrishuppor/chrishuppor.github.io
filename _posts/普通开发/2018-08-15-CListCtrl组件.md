@@ -1,8 +1,8 @@
----
+﻿---
 layout: post
 title: "CListCtrl组件"
-pubtime: 2018-08-15 8:8:8
-updatetime: 2018-08-15 8:8:8
+pubtime: 2018-08-15
+updatetime: 2018-08-15
 categories: Program
 tags: MFC
 ---

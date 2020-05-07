@@ -1,8 +1,8 @@
----
+﻿---
 layout: post
 title: "Reversing.kr_HateIntel"
-pubtime: 2019-05-24 8:8:8
-updatetime: 2019-05-24 8:8:8
+pubtime: 2019-05-24
+updatetime: 2019-05-24
 categories: Reverse
 tags: WriteUp
 ---

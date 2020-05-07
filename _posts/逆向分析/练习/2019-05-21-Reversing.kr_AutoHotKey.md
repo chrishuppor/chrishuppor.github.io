@@ -1,8 +1,8 @@
----
+﻿---
 layout: post
 title: "Reversing.kr_AutoHotKey"
-pubtime: 2019-5-21 22:38:45
-updatetime: 2019-5-21 22:38:45
+pubtime: 2019-5-21
+updatetime: 2019-5-21
 categories: Reverse
 tags: WriteUp
 ---

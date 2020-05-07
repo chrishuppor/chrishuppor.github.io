@@ -1,8 +1,8 @@
----
+﻿---
 layout: post
 title: "MyLittleToolsInstruction"
-pubtime: 2019-05-23 8:8:8
-updatetime: 2019-05-23 8:8:8
+pubtime: 2019-05-23
+updatetime: 2019-05-23
 categories: others
 tags: MyTools
 ---

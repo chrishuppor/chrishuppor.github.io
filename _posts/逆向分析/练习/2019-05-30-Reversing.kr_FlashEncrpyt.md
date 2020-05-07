@@ -1,8 +1,8 @@
----
+﻿---
 layout: post
 title: "Reversing.kr_FlashEncrpyt"
-pubtime: 2019-5-30 19:21:16
-updatetime: 2019-5-30 19:21:16
+pubtime: 2019-5-30
+updatetime: 2019-5-30
 categories: Reverse
 tags: WriteUp
 ---

@@ -1,8 +1,8 @@
----
+﻿---
 layout: post
 title: "2019TSCTF_LongCheck"
-pubtime: 2019-6-12 22:10:6
-updatetime: 2019-6-12 22:10:6
+pubtime: 2019-6-12
+updatetime: 2019-6-12
 categories: Reverse
 tags: WriteUp
 ---
