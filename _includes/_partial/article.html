@@ -30,8 +30,6 @@
   {% endif %}
     <h1 itemprop="name">
 	 {{ item.title }}
-	 <time datetime="{{ item.pubtime }}" itemprop="datePublished">{{ item.pubtime | pubtime: "%F" }}</time>
-	 <time datetime="{{ item.updatetime }}" itemprop="dateupdated">{{ item.updatetime | updatetime: "%F" }}</time>
 	</h1>
     {% if desc %}
      {% if item.description %}
