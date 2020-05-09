@@ -28,7 +28,9 @@
   {% else %}
     <a href="{{ site.baseurl }}{{ item.url }}" title="{{ item.title }}" itemprop="url">
   {% endif %}
-    <h1 itemprop="name">{{ item.title }}</h1>
+    <h1 itemprop="name">
+	 {{ item.title }}
+	</h1>
     {% if desc %}
      {% if item.description %}
       <p itemprop="description" >{{ item.description }}</p>
