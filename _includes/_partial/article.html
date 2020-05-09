@@ -3,7 +3,7 @@
 	    {% include _partial/post/gallery.html %}
     {% endif %}
     <article class="post-expand {{ item.layout }}" itemprop="articleBody"> 
-        {% include _partial/post/index_header.html %}
+        {% include _partial/post/header.html %}
     <div class="article-content">
         {% if item.excerpt and index %}
         {{ item.excerpt }}
@@ -40,8 +40,6 @@
            <p itemprop="description" >{{ item.content | slice: 0, 140 }}</p>
       {% endif %}
     {% endif %}	
-    <time datetime="{{ item.pubtime }}" itemprop="datePublished">{{ item.pubtime | pubtime: "%F" }}</time>
-    <time datetime="{{ item.updatetime }}" itemprop="dateupdated">{{ item.updatetime | updatetime: "%F" }}</time>
   </a>
 </section>
 {% endif %}
