@@ -34,5 +34,5 @@
 {% endfor %}
 
 4 主页的标签菜单：_includes\_widget\tag.html
-5 主页文章摘要：_includes\_partial\post\header
+5 主页文章摘要：_includes\_partial\article
 6 文章页相关：_includes\_partial\post
