@@ -2,29 +2,22 @@
 <div class="categorieslist">
 	<p class="asidetitle">{{ lang.categories }}</p>
 		<ul>
-		{% for item in site.categories %}
-		  {% if item[1] | size != 0 %}
-			<li><a href="{{ site.baseurl }}/categories/#{{ item[0] }}" title="{{ item[0] }}">{{ item[0] }}<sup>{{ item[1] | size }}</sup></a></li>
-		  {% endif %}
+		{% capture categories %}
+		  {% for category in site.categories %}
+			{{ category | downcase | replace:' ','-' }}
+		  {% endfor %}
+		{% endcapture %}
+		{% assign sorted_post_categories = categories | split:' ' | sort %}
+		{% for sorted_category in sorted_post_categories %}
+		  {% for category in site.categories %}
+			{% assign downcase_category = category | downcase | replace:' ','-' %}
+			{% if downcase_category == sorted_category %}
+				{% if category[1] | size != 0 %}
+				<li><a href="{{ site.baseurl }}/categories/#{{ category[0] }}" title="{{ category[0] }}">{{ category[0] }}<sup>{{ category[1] | size }}</sup></a></li>
+			  {% endif %}
+			{% endif %}
+		  {% endfor %}
 		{% endfor %}
 		</ul>
 </div>
 {% endif %}
-
-
-	{% capture categories %}
-	  {% for category in site.categories %}
-		{{ category | downcase | replace:' ','-' }}
-	  {% endfor %}
-	{% endcapture %}
-	{% assign sorted_post_categories = categories | split:' ' | sort %}
-	{% for sorted_category in sorted_post_categories %}
-	  {% for category in site.categories %}
-		{% assign downcase_category = category | downcase | replace:' ','-' %}
-		{% if downcase_category == sorted_category %}
-			{% if category[1] | size != 0 %}
-			<li><a href="{{ site.baseurl }}/categories/#{{ category[0] }}" title="{{ category[0] }}">{{ category[0] }}<sup>{{ category[1] | size }}</sup></a></li>
-		  {% endif %}
-		{% endif %}
-	  {% endfor %}
-	{% endfor %}

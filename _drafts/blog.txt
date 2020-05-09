@@ -32,3 +32,5 @@
     {% endif %}
   {% endfor %}
 {% endfor %}
+
+4 主页的标签菜单：_includes\_widget\tag.html
