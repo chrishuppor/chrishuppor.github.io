@@ -16,3 +16,19 @@
 		访问量：<span id="busuanzi_value_page_pv"></span>次
 
 	</span>
+
+3 标签按字母排序
+{% capture tags %}
+  {% for tag in site.tags %}
+    {{ tag | downcase | replace:' ','-' }}
+  {% endfor %}
+{% endcapture %}
+{% assign sorted_post_tags = tags | split:' ' | sort %}
+{% for sorted_tag in sorted_post_tags %}
+  {% for tag in site.tags %}
+    {% assign downcase_tag = tag | downcase | replace:' ','-' %}
+    {% if downcase_tag == sorted_tag %}
+      <a href="{{ page.url }}#{{ tag[0] }}">{{ tag[0] }}</a>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
