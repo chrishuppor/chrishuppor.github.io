@@ -62,12 +62,23 @@ if (page.archive){
   
   <ul class="archive-list">
   <div class="archiveslist archive-float clearfix">
-    {% for category in site.categories  %}
-    <li class="archive-list-item">
-    <a class="archive-list-link" href="#{{ category[0] }}">{{ category[0] }}</a>
-    <span class="archive-list-count">{{ category[1] | size }}</span>
-    </li>
-    {% endfor %}
+    {% capture categories %}
+	  {% for category in site.categories %}
+		{{ category | downcase | replace:' ','-' }}
+	  {% endfor %}
+	{% endcapture %}
+	{% assign sorted_post_categories = categories | split:' ' | sort %}
+	{% for sorted_category in sorted_post_categories %}
+	  {% for category in site.categories %}
+		{% assign downcase_category = category | downcase | replace:' ','-' %}
+		{% if downcase_category == sorted_category %}
+			<li class="archive-list-item">
+			<a class="archive-list-link" href="#{{ category[0] }}">{{ category[0] }}</a>
+			<span class="archive-list-count">{{ category[1] | size }}</span>
+			</li>
+		{% endif %}
+	  {% endfor %}
+	{% endfor %}
  </div>
  </ul>
  {% endif %}
