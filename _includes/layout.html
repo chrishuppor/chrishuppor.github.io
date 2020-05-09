@@ -27,19 +27,6 @@
         {% include _partial/after_footer.html %}
       </body>
      </html>
-{% elsif page.layout == 'about_page' %}
-    {% include _partial/head.html %}
-      <body>
-        <header>
-          {% include _partial/header.html %}
-        </header>
-        <div id="container">
-          {{ content }}
-        </div>
-        <footer>{% include _partial/footer.html %}</footer>
-        {% include _partial/after_footer.html %}
-      </body>
-     </html>
 
 {% elsif page.layout == 'search' %}
 {% include _partial/head.html %}
