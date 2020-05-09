@@ -2,11 +2,22 @@
 <div class="tagslist">
 	<p class="asidetitle">{{ lang.tags }}</p>
 		<ul class="clearfix">
-		{% for item in site.tags %}
-			{% if item[1] | size != 0 %}
-				<li><a href="{{ site.baseurl }}/tags/#{{ item[0] }}" title="{{ item[0] }}">{{ item[0] }}<sup>{{ item[1] | size }}</sup></a></li>
-			{% endif %}
-		{% endfor %}
+		  	{% capture tags %}
+			  {% for tag in site.tags %}
+				{{ tag | downcase | replace:' ','-' }}
+			  {% endfor %}
+			{% endcapture %}
+			{% assign sorted_post_tags = tags | split:' ' | sort %}
+			{% for sorted_tag in sorted_post_tags %}
+			  {% for tag in site.tags %}
+				{% assign downcase_tag = tag | downcase | replace:' ','-' %}
+				{% if downcase_tag == sorted_tag %}
+					{% if tag[1] | size != 0 %}
+						<li><a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}">{{ tag[0] }}<sup>{{ tag[1] | size }}</sup></a></li>
+					{% endif %}
+				{% endif %}
+			  {% endfor %}
+			{% endfor %}
 		</ul>
 </div>
 {% endif %}
