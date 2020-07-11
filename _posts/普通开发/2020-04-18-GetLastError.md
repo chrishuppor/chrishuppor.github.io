@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GetLastError"
 pubtime: 2020-04-18
@@ -6,8 +6,8 @@ updatetime: 2020-04-18
 categories: LearningNote
 tags: Windows
 ---
-GetLastError函数的原理和使用。
 
+GetLastError函数的原理和使用。
 
 # GetLastError
 
