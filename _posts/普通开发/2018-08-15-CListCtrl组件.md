@@ -1,11 +1,12 @@
-﻿---
+---
 layout: post
 title: "CListCtrl组件"
 pubtime: 2018-08-15
-updatetime: 2018-08-15
+updatetime: 2020-07-20
 categories: Program
 tags: MFC
 ---
+
 MFC中CListCtrl组件常用的功能介绍及使用代码。*之所以会用到这个组件，主要是觉得windows的快速启动目录不好使，想自己做一个快速启动目录工具，于是就用这个组件打底做了一个*
 
 # 初始化
@@ -412,6 +413,30 @@ void CMyListCtrl::DelSelectedItem() {
 			this->DeleteItem(iIndex);
 		}
 	}
+}
+```
+
+# 枚举选中项
+
+使用函数GetFirstSelectedItemPosition和GetNextSelectedItem。
+
+```c++
+void CModuleHidderDlg::OnBnClickedHide()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	POSITION sSelPos = NULL;
+	int iIndex = -1;
+	int iCount = m_ModuleList.GetItemCount();
+
+	sSelPos = m_ModuleList.GetFirstSelectedItemPosition();
+	do
+	{
+		iIndex = m_ModuleList.GetNextSelectedItem(sSelPos);
+
+		if (iIndex >= 0 && iIndex < iCount) {
+			MessageBoxW(m_ModuleList.GetItemText(iIndex, 0));
+		}
+	} while (iIndex != -1);
 }
 ```
 
