@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Clean Code学习笔记"
 pubtime: 2019-04-30
@@ -6,6 +6,7 @@ updatetime: 2019-04-30
 categories: LearningNote
 tags: Book
 ---
+
 
 clean code 学习笔记。技术指导类的书，学习的关键是应用。
 
