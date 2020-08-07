@@ -21,7 +21,7 @@ tags: Windows
 
 - 其他函数：WinExec\system\ShellExecute\ShellExecuteEx\库函数
 
-  (**Zw与Nt的关系**：用户态的Nt和Zw是一样的，ntdll中的Nt函数是Zw函数的别名，两种函数都通过中断进入内核；进入内核后ntoskrnl.dll中的Zw函数调用Nt函数实现功能，Zw函数主要用来将用户态修改为内核态并触发中断(与ntdll中的Zw函数并不同)，而Nt就是中断处理函数。在内核中，previous为用户态时Nt函数将对传递的参数进行严格的检查，而为内核态时则不会，所以为避免额外的参数列表检查从而提高效率，在进行内核驱动开发时要尽量使用Zw函数。
+  (**Zw与Nt的关系**：用户态的Nt和Zw是一样的，ntdll中的Nt函数是Zw函数的别名，两种函数都通过中断进入内核；进入内核后ntoskrnl.dll中的Zw函数调用Nt函数实现功能，Zw函数主要用来将用户态修改为内核态并触发中断(与ntdll中的Zw函数并不同)，而Nt就是中断处理函数。在内核中，previous为用户态时Nt函数将对传递的参数进行严格的检查，而为内核态时则不会，所以为避免额外的参数列表检查从而提高效率，在进行内核驱动开发时要尽量使用Zw函数。(**题外外话**：ntdll中的函数为windows系统原生API，一般正常程序不会直接使用，所以如果某个程序直接调用了ntapi，请怀疑它)
 
   **ShellExecuteEx**：可以用来以管理员权限启动新进程，lpVerb设置为“runas”。CreateProcess则无法以新的权限启动新进程。)
 
