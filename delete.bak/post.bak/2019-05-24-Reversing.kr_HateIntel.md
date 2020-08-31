@@ -1,17 +1,8 @@
-﻿---
-layout: post
-title: "Reversing.kr_HateIntel"
-pubtime: 2019-05-24
-updatetime: 2019-05-24
-categories: Reverse
-tags: WriteUp
----
+# 16 HateIntel
 
-Reversing.kr的第十六题，是一个mac系统的程序，之前从未见过mac相关的逆向，可能是我经验不够，不过这个题目难度与EasyELF有一拼。
+是一个mac系统的程序，之前从未见过mac相关的逆向，可能是我经验不够，不过这个题目难度与EasyELF有一拼。
 
-# Reversing.kr_HateIntel
-
-## 解题步骤
+## 16.1 解题步骤
 
 1. 没有mac系统的机器，暂时不能动态调，先拖进IDA看看情况。
 
@@ -119,7 +110,7 @@ Reversing.kr的第十六题，是一个mac系统的程序，之前从未见过ma
         print (res)
         ```
 
-## 小结
+## 16.2 小结
 
 没什么好说的，只是想起了领袖的名言“一切反动派都是纸老虎”。无论题目怎么变化，本质是一样的。
 

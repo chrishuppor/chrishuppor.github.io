@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "IDApython安装"
 pubtime: 2018-04-07
@@ -9,19 +9,19 @@ tags: IDAPython Tools
 
 安装IDApython，高版本的IDA自带IDApython。本文章非原创，在原文基础上进行的修改。[原文地址](http://www.cnblogs.com/blacksunny/p/7215247.html)
 
-# 注意事项
+# 1 注意事项
 1. IDA必须是安装版的，我以前用的是免安装版的。
 2. python版本、IDA版本，IDAPyhton版本必须匹配。（没有对应python3的版本）
 3. python、IDA、IDAPython必须都是32位的或者都是64位的。
 
-# 安装关键文件
+# 2 安装关键文件
 1. python27.dll（我安装的是python2.7,如果安装的是pyhton2.6那就是python26.dll）。
 	* 这个文件在system32中找（需要考虑重定位到sysWOW64）
 2. python.cfg文件。
 3. plugins中的python.plw和python.p64。
 4. python文件夹里的文件。
 
-# 具体安装步骤
+# 3 具体安装步骤
 示例IDA版本是6.6，python版本是2.7。
 1. 安装Python：Python官网http://www.python.org/getit/。
 	* 选择对应操作系统类型及位数。
@@ -35,7 +35,7 @@ tags: IDAPython Tools
 4. 把python27.dll复制到IDA安装目录下。
 	* python的系统位数要和IDAPython的系统位数相同。
 
-# 效果
+# 4 效果
 重启IDA后，
 * File->Script Command选项中可以选择脚本语言为python
 * File->Script files选项中可以选择py文件。

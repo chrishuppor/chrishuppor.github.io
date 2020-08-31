@@ -1,16 +1,9 @@
-﻿---
-layout: post
-title: "Reversing.kr_Multiplicative"
-pubtime: 2019-6-6
-updatetime: 2019-6-6
-categories: Reverse
-tags: WriteUp
----
+# 22 Multiplicative
 
-Reversing.kr的Multiplicative，一个依赖于工具的简单的java逆向题。
+一个依赖于工具的简单的java逆向题。
 
 
-# 解题过程
+### 22.1 解题过程
 
 1. 使用jd-gui查看jar时什么也没有，换jadx查看jar时可以看到main函数。代码如下：
 
@@ -59,11 +52,11 @@ Reversing.kr的Multiplicative，一个依赖于工具的简单的java逆向题�
 
    输出的tmp即flag。
 
-# 工具下载
+## 22.2 工具下载
 
 * [jadx下载地址](https://www.softpedia.com/get/Programming/Other-Programming-Files/Jadx.shtml)
 
-# 小结
+## 22.3 小结
 
 * python中的数学运算符号
 

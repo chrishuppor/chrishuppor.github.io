@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Reversing.kr_AdventureCustomTips"
 pubtime: 2019-7-26
@@ -10,13 +10,13 @@ tags: WriteUp
 最后两个题逻辑不是很难，难点在于调试——一个需要AVR环境，一个要用到plmdebug。只要找对了调试的方法，就相当于破解了，剩下的就很简单了。
 
 
-# Adventure
+# 1 Adventure
 
-## 调试
+## 1.1 调试
 
 与MetroApp一样，是一个appx程序。微软提供了appx的调试工具plmdebug，这个工具能够开启appx程序的调试状态并指定调试器（我使用的x32dbg，因为OD总是报错），可以在winSDK中获得。
 
-## 程序逻辑
+## 1.2 程序逻辑
 
 本程序是一个游戏，每打一个怪可以获得一分，当获得一定分数时程序会显示出flag。
 
@@ -28,13 +28,13 @@ tags: WriteUp
 
 其他请参考：[bendawang](http://www.bendawang.site/2019/06/23/reversing_kr%20writeup[26]/)
 
-# Custom
+# 2 Custom
 
-## 调试
+## 2.1 调试
 
 这是一个AVR架构的单片机程序，需要AVR Studio和hapsim进行动态调试。可以用IDA看汇编代码，需要选择ATmega128平台。
 
-## 程序逻辑
+## 2.2 程序逻辑
 
 程序是一个类似于linux的系统，把flag加密存储在其中的readme中，通过用户输入来解密，然后就可以使用cat查看了。
 
@@ -44,7 +44,7 @@ tags: WriteUp
 
 其他请参考：[bendawang](http://www.bendawang.site/2019/06/23/reversing_kr%20writeup[27]/)
 
-# 后记
+# 3 后记
 
 之前的题可以轻松的在网上找到各路大佬写的wp和flag，所以我也公开了自己的wp。在做CRC2时，我也是参考了大佬的wp才学会解题方法的。
 

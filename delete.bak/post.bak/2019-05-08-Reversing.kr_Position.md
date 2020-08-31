@@ -1,17 +1,6 @@
-﻿---
-layout: post
-title: "Reversing.kr_Position"
-pubtime: 2019-5-8
-updatetime: 2019-5-8
-categories: Reverse
-tags: WriteUp
----
+# 9 Position
 
-Reversing.kr@my_4ear_3hr1s，第7题解题过程及题后思考记录如下。
-
-# Reversing.kr_Position
-
-## 解题过程
+## 9.1 解题过程
 
 1. 阅读readme
 
@@ -189,7 +178,7 @@ Reversing.kr@my_4ear_3hr1s，第7题解题过程及题后思考记录如下。
 
          使用py计算一下可以得到四个结果，其中一个因为要求name四个字符互不相同而去掉，另外三个都可以，其中一个就是Flag。
 
-## 所遇问题
+## 9.2 所遇问题
 
 1. **问题：**因为缺少mfc100u.dll和msvcr100.dll无法运行程序，所以先为分析机安装了这两个dll。之后又会说无法定位输入点xxx与mfc100u.dll，网上说是dll版本与机器不和，装个vs2010就可以了。
 
@@ -203,7 +192,7 @@ Reversing.kr@my_4ear_3hr1s，第7题解题过程及题后思考记录如下。
 
    **解决方案：**额，慢慢查，耐心的看算不算解决办法...其实明白那些奇怪的偏移是在获取类成员变量的值就一切好说了，例如```if ( *(_DWORD *)(v50_name - 12) == 4 )  ```
 
-## 小结
+## 9.3 小结
 
 * 这是个KeyGen的程序，模式是通过用户输入计算出serial，本质上与第二题没有区别。之前也说了，这种程序破解的关键在于获取计算算法的逆算法，这个也是破解难度的关键。
 * 需要熟悉对整数的位操作

@@ -1,17 +1,8 @@
-﻿---
-layout: post
-title: "Reversing.kr_AutoHotKey"
-pubtime: 2019-5-21
-updatetime: 2019-5-21
-categories: Reverse
-tags: WriteUp
----
+# 12 Reversing.kr_AutoHotKey
 
-Reversing.kr的第十三题，一个需要静态分析配合动态调试的题目——动态调试方便看内存数据，断点功能也方便根据功能定位函数的调用；静态分析方便看程序逻辑。
+一个需要静态分析配合动态调试的题目——动态调试方便看内存数据，断点功能也方便根据功能定位函数的调用；静态分析方便看程序逻辑。
 
-# Reversing.kr_AutoHotKey
-
-## 解题过程
+## 12.1 解题过程
 
 1. 阅读Readme，需要找到一个DecryptKey的MD5和exe的MD5。
 
@@ -145,9 +136,10 @@ Reversing.kr的第十三题，一个需要静态分析配合动态调试的题�
 
 6. 将两个MD5解密，分别得到pawn和isolated。
 
-## 小结
+## 12.2 小结
 
 * 逆向题毕竟不是实践，所以其中的算法一般不会很复杂，都是可解的。如果一个算法十分复杂，就要考虑是否可以通过动态运行，利用程序自身进行运算，然后从内存中提取结果。
 * 动静结合分析，通过静态分析找逻辑，通过动态分析找位置。找到位置后可以返回静态进行分析。
 * 通过查看他人writeup，发现AutoHotKey是一个成熟的开源框架，用于将脚本转换为exe，也可以再从exe将脚本提取出来。在转换时需要一个Password，也就是本题中的DecryptKey。如果要从exe中恢复脚本，当然要求exe不能有变化，所以会需要进行exe的md5验证，只不过作者没有直接计算exe的md5，而是自己设计了一个exe完整性校验算法。如此一来，这个题目的背景就清楚了——为从exe中恢复脚本，需保证程序完整性以及获得转换密钥。
 * md5在线解密网址：[http://pmd5.com/](http://pmd5.com/)
+

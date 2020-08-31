@@ -1,17 +1,8 @@
-﻿---
-layout: post
-title: "Reversing.kr_x64Lotto"
-pubtime: 2019-5-29
-updatetime: 2019-5-29
-categories: Reverse
-tags: WriteUp
----
+# 17 x64Lotto
 
-Reversing.kr的x64 Lotto，一个简单的多种解法的x64的题目。
+一个简单的多种解法的x64的题目。
 
-# Reversing.kr_x64Lotto
-
-## 解题过程
+## 17.1 解题过程
 
 1. 使用ExeinfoPe查壳，没有问题。
 
@@ -96,7 +87,7 @@ Reversing.kr的x64 Lotto，一个简单的多种解法的x64的题目。
 
       ![图1 Flag](https://chrishuppor.github.io/image/Snipaste_2019-05-29_11-55-34.PNG)
 
-## 小结
+## 17.2 小结
 
 * 这个题有多种解法，每种解法难度不同，其中自己计算v25的数据难度最大（也最蠢），主要考验逆向的灵活度。
 

@@ -1,17 +1,8 @@
-﻿---
-layout: post
-title: "Reversing.kr_AutoHotKey2"
-pubtime: 2019-5-30
-updatetime: 2019-5-30
-categories: Reverse
-tags: WriteUp
----
+# 18 AutoHotKey2
 
-Reversing.kr的AutoHotKey2，当年绕过的坎总要再走一遍。
+还记得AutoHotKey1中投过的机吗，当年绕过的坎总要再走一遍。
 
-# Reversing.kr_AutoHotKey2
-
-## 解题过程
+## 18.1 解题过程
 
 1. 查看readme得知本题的目标就是正确解密文件。打开程序发现没有输入的地方，说明需要对程序某些地方进行修改。
 
@@ -161,7 +152,7 @@ Reversing.kr的AutoHotKey2，当年绕过的坎总要再走一遍。
 
    ![图2 Flag信息](https://chrishuppor.github.io/image/Snipaste_2019-05-30_09-30-11.PNG)
 
-## 启示
+## 18.2 启示
 
 这个题没有过多的启示，主要是动静结合的分析以及见招拆招，考验做题人头脑的灵活性。
 

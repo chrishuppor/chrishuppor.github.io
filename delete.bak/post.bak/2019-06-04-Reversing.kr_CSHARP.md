@@ -1,17 +1,10 @@
-﻿---
-layout: post
-title: "Reversing.kr_CSHARP"
-pubtime: 2019-6-4
-updatetime: 2019-6-4
-categories: Reverse
-tags: WriteUp
----
+# 20 CSHARP
 
 
-Reversing.kr的CSHARP，是一个动态解密函数的程序。
+是一个动态解密函数的程序。
 
 
-# 解题过程
+## 20.1 解题过程
 
 1. 拖入PEiD得知这是一个C#程序。
 
@@ -210,7 +203,7 @@ Reversing.kr的CSHARP，是一个动态解密函数的程序。
    print (resstr)
    ```
 
-# 小结
+## 20.2 小结
 
 * MetMett函数二进制代码解密算法十分简单，因此也可以自己脚本解密。
 * MetMett函数在exe文件中的地址要自己查，dnSpy给出的不靠谱。

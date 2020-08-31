@@ -1,18 +1,6 @@
-﻿---
-layout: post
-title: "Reversing.kr_Direct3DFPS"
-pubtime: 2019-05-08
-updatetime: 2019-05-08
-categories: Reverse
-tags: WriteUp
----
+# 7 Direct3DFPS
 
-
-Reversing.kr@my_4ear_3hr1s，第8题解题过程及题后思考记录如下。
-
-# Reversing.kr_Direct3DFPS
-
-## 解题过程
+## 7.1 解题过程
 
 1. 照例拖进PEiD、virustotal、PEView。发现IAT中有MessageBox，可能用于显示Flag。没有其他异常。
 
@@ -184,7 +172,7 @@ Reversing.kr@my_4ear_3hr1s，第8题解题过程及题后思考记录如下。
    print(out_str)
    ```
 
-## 小结
+## 7.2 小结
 
 * 游戏类型的题目的Flag触发条件往往是达到一定的分数或杀光敌人。
 

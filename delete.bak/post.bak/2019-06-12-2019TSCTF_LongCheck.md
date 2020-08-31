@@ -1,16 +1,10 @@
-﻿---
-layout: post
-title: "2019TSCTF_LongCheck"
-pubtime: 2019-6-12
-updatetime: 2019-6-12
-categories: Reverse
-tags: WriteUp
----
+3 LongCheck
+===
 
-2019年TSCTF的一道Reverse，主要考察指令流获取。[[题目及IDB文件下载](https://github.com/chrishuppor/attachToBlog/tree/master)]
+主要考察指令流获取。[[题目及IDB文件下载](https://github.com/chrishuppor/attachToBlog/tree/master)]
 
 
-# 解题思路
+## 3.1 解题思路
 
 1. 拖入IDA，程序根本无法看。
 
@@ -63,7 +57,7 @@ tags: WriteUp
 
 ![图1 脚本运行结果](https://chrishuppor.github.io/image/Snipaste_2019-06-12_21-38-43.PNG)
 
-# 解题脚本
+## 3.2 解题脚本
 
 IDAPython脚本如下
 
@@ -191,13 +185,13 @@ for i in range (0, flaglen):
 print (flagstr)
 ```
 
-# 总结
+## 3.3 总结
 
 本题关键在于指令流的获取，其中用到了jmp和call的地址计算。
 
 * jmp/call xxx = 当前地址 + yyy + 指令长度 (其中xxx为无符号数，yyy为xxx的有符号版本；jmp的指令长度为2，call的指令长度为5)
 
-# PS
+## 3.4 PS
 
 这个题是比赛后很久才做出来的。当时有想过使用idapython自行解析机器码来获取数据，但是不运行程序的话难以获得ret指令的跳转地址，所以放弃了。学习过SimpleVM后，今天尝试使用pintools的inscount来解决这个题，但是因为check不是按顺序来的，也不知道input长度，而且check时匹配的是位，难以设置输入参数，所以也没有成功。
 

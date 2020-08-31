@@ -1,16 +1,9 @@
-﻿---
-layout: post
-title: "Reversing.kr_SimpleVM"
-pubtime: 2019-6-8
-updatetime: 2019-6-8
-categories: Reverse
-tags: WriteUp
----
+# 23 SimpleVM
 
-Reversing.kr的SimpleVM，一个加了VM壳的ELF程序，不是很simple，用到了pin和IDA远程调试。
+一个加了VM壳的ELF程序，不是很simple，用到了pin和IDA远程调试。
 
 
-# 解题过程
+## 23.1 解题过程
 
 1. 运行程序，提示Access Denied。使用root账户运行程序，发现可以正常运行。所以这个程序要求root权限。
 
@@ -20,7 +13,7 @@ Reversing.kr的SimpleVM，一个加了VM壳的ELF程序，不是很simple，用�
 
 3. 黔驴技穷了，只好去看大佬的WP，看懂了再复现一遍。
 
-# 复现过程
+## 23.2 复现过程
 
 1. 使用IDA远程调试程序，从内存中将脱壳后的代码数据dump出来。
 
@@ -156,23 +149,23 @@ Reversing.kr的SimpleVM，一个加了VM壳的ELF程序，不是很simple，用�
 
    ![图2 运行示例](https://chrishuppor.github.io/image/Snipaste_2019-06-08_23-38-07.PNG)
 
-# 参考文档
+## 23.3 参考文档
 
 * [windows下使用IDA远程调试linux(ubuntu)下编译的程序](https://blog.csdn.net/lacoucou/article/details/71079552)
 
-# 参考WP
+## 23.4 参考WP
 
 * [Reversing.kr题目之SimpleVM详解](https://www.freebuf.com/news/164664.html)
 * [171012 逆向-Reversing.kr（SimpleVM)](https://blog.csdn.net/whklhhhh/article/details/78221365)
 * [invicsfate-Reversing.kr](http://invicsfate.cc/2017/09/18/reversing-kr/?nsukey=7EFkQUzSz2nFYRDmRCeolHMtQnmzZBoGYHUU50QI7Bc0xMkHYUIBvpOYNYXJDfrzX4pfToRQKC0iR9Vuzb0y42tJYAvOAmpKODlZ82UZKKYrY639VbLrXMa69bX2Ycyb%2FNlQkylQ23gn2rpzL2wTMyn0lEwegX2xrByI4fkkIwv9u3aZsbMgcRC2D9XNX1iPdo5DrhoVlI%2BFbh9S9xCs0A%3D%3D)
 
-# 小结
+## 23.5 小结
 
 * IDA远程调试需要在远程启动相应的server，这个server文件在IDA目录的dbgsrv文件夹中。
 * linux下pin安装要对应好版本（gcc版本和系统位数），否则在编译时就是一堆堆的err。以下是我的一些经验：
   * 在ubuntu 18.04 64位机器上安装pin-3.7，可以编译目标平台为intel64的程序，但是ia32的程序就各种报错。
   * 在ubuntu 16.04 32位机器上安装pin-2.7，因为gcc版本不匹配报错；安装pin-3.7，十分舒适。
 
-# 其他
+## 23.6 其他
 
 [[脚本及IDB文件下载](https://github.com/chrishuppor/attachToBlog/tree/master/SimpleVM.idb)]

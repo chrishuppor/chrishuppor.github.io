@@ -1,17 +1,8 @@
-﻿---
-layout: post
-title: "Reversing.kr_Twist1"
-pubtime: 2019-05-15
-updatetime: 2019-05-15
-categories: Reverse
-tags: WriteUp
----
+# 11 Twist1
 
-Reversing.kr的第十题，题如其名，很考研动态调试的一道题，OD用的熟不熟很关键。
+题如其名，很考研动态调试的一道题，OD用的熟不熟很关键。
 
-# Reversing.kr_Twist1
-
-## 解题过程
+## 11.1 解题过程
 
 1. 拖入PEiD和virustotal没有发现异常。
 
@@ -121,7 +112,7 @@ Reversing.kr的第十题，题如其名，很考研动态调试的一道题，OD
                7. [0x40CFFC] rol 4 == 0x14，所以input[5] == 0x14 ror 4 == 0x65 == 'A'。
 
 
-## 小结
+## 11.2 小结
 
 * 这道题一共有三个点，每个点都有一定难度，稍有不慎就要重来。
   * 脱壳找到OEP

@@ -1,17 +1,6 @@
-﻿---
-layout: post
-title: "Reversing.kr_Ransomware"
-pubtime: 2019-5-14
-updatetime: 2019-5-14
-categories: Reverse
-tags: WriteUp
----
+# 10 Ransomware
 
-Reversing.kr@my_4ear_3hr1s，第9题解题过程及题后思考记录如下。
-
-# Reversing.kr_Ransomware
-
-## 解题过程
+## 10.1 解题过程
 
 1. 查看文件
 
@@ -175,7 +164,7 @@ Reversing.kr@my_4ear_3hr1s，第9题解题过程及题后思考记录如下。
 
    运行run.exe，输入密钥，得到解密的file。修改file后缀，运行file.exe。输出了一个字符串，根据提示信息，这个就是Flag了。*(作者的Flag不叫flag，而是key，我又孤陋寡闻了...)*
 
-## 小结
+## 10.2 小结
 
 * 刚开始看readme时会一头雾水，因为把Decrypt File理解成了“解密某个文件”，而实际上这里的File是文件中的file的文件名。*（如果是解密某个文件，应该为Decrypt a File。英语还得学呀，要不然注意不到这些细节的差别。）*
 * 代码混淆的一种——程序中含有大量的垃圾代码

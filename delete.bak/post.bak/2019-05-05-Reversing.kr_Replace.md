@@ -1,19 +1,6 @@
-﻿---
-layout: post
-title: "Reversing.kr_Replace"
-pubtime: 2019-5-5
-updatetime: 2019-5-5
-categories: Reverse
-tags: WriteUp
----
+# 5.Replace
 
-Reversing.kr@my_4ear_3hr1s，5题解题过程及题后思考记录如下。
-
-# Reversing.kr_Replace
-
-## 5.Replace
-
-### 破解过程
+## 5.1 破解过程
 
 1. 运行程序
 
@@ -68,7 +55,7 @@ Reversing.kr@my_4ear_3hr1s，5题解题过程及题后思考记录如下。
 
    5. 追溯EAX值的来源——来自[0x4084D0]。而[0x4084D0]正是对输入整数处理后的结果存储地址，易得[0x4084D0] = （<input_int>+ 2 + 0x601605c7 + 2）mod 0x100000000。当输入能够使[0x4084D0] = 0x401071时，程序破解成功。所以 <input_int> = （0x401071 - 0x601605c7 - 4）mod 0x100000000。
 
-   ### 小结
+   ## 5.2 小结
 
    * 出题思路：通过输入的数据覆写程序代码，从而篡改程序逻辑。
    * 该类题目一般都会有以下某个特征：

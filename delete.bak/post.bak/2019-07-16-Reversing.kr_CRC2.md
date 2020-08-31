@@ -1,16 +1,9 @@
-﻿---
-layout: post
-title: "Reversing.kr_CRC2"
-pubtime: 2019-07-16
-updatetime: 2019-07-16
-categories: Reverse
-tags: WriteUp
----
+# 25 CRC2
 
-Reversing.kr的CRC2，使用到了CRC算法的线性特征以及掩码的思想。
+使用到了CRC算法的线性特征以及掩码的思想。
 
 
-# 解题过程
+## 25.1 解题过程
 
 1. 拖进IDA，搜索字符串，定位到401490函数中。F5后会发现很多奇怪的JUMP，查看汇编指令，发现这些JUMP都对应着如下代码：
 
@@ -303,7 +296,7 @@ Reversing.kr的CRC2，使用到了CRC算法的线性特征以及掩码的思想�
 
       结果会输出一堆字符串，其中有一个看着像一句话，这个就是Flag了。
 
-# 小结
+## 25.2 小结
 
 解题关键在于CRC算法线性特征的利用，引入了掩码的思想，还考察了线性方程求解的知识。
 
@@ -312,10 +305,10 @@ Reversing.kr的CRC2，使用到了CRC算法的线性特征以及掩码的思想�
 * ^在python中表示异或，在sage中表示乘方。sage中使用^^表示异或。([sage官方文档](http://doc.sagemath.org/html/en/faq/faq-usage.html))
 * 二维数组python中下标使用[i\][j]，sage中使用[i, j]
 
-# 感想
+## 25.3 感想
 
 第一次切实意识到线性代数的应用意义，也是第一次使用sage，实在强大。
 
-# 大佬WP
+## 25.4 大佬WP
 
 [https://github.com/DoubleLabyrinth/reversing.kr/tree/master/CRC2](https://github.com/DoubleLabyrinth/reversing.kr/tree/master/CRC2)

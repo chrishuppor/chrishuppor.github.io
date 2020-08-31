@@ -9,16 +9,16 @@ tags: Windows
 
 GetLastError函数的原理和使用。
 
-# GetLastError
+# 1 GetLastError
 
-## 原理
+## 1.1 原理
 
 当一个windows函数运行失败后，会将一个32位的错误代码存储在**线程本地存储器**，直到下一个windows函数运行失败后才会被修改。
 
 * 一个线程保存一个错误代码，不同的线程有不同的错误代码
 * 多个windows函数运行失败，只保留最后一个错误代码
 
-## 使用
+## 1.2 使用
 
 声明
 
@@ -40,7 +40,7 @@ GetLastError函数的原理和使用。
 
   ![](https://chrishuppor.github.io/image/Snipaste_2020-04-18_17-55-32.png)
 
-##在程序中获取错误码描述语句
+##1.3 在程序中获取错误码描述语句
 
 关键函数：GetLastError、FormatMessage
 

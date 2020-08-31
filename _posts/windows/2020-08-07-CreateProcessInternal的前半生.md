@@ -11,7 +11,7 @@ tags: Windows
 
 # CreateProcessInternal的前半生
 
-## windows进程创建函数的关系
+## 1 windows进程创建函数的关系
 
 在用户层启动windows进程大致可以分为三类：
 
@@ -27,7 +27,7 @@ tags: Windows
 
 这三类函数是存在调用关系的：其他函数》winAPI》NtAPI，即所有函数最终都是调用NtApi完成进程创建的，不同的是调用的NtApi。
 
-### NtAPI创建进程
+### 1.1 NtAPI创建进程
 
 不同版本的系统调用的NtAPI不同（都未公开）：
 
@@ -39,7 +39,7 @@ tags: Windows
 
   使用NtAPI创建进程时，不能直接调用NtCreateProcess和NtCreateProcessEx，需要先用NtOpenFile打开exe文件，用NtCreateSection将文件映射到内存；NtCreateUserProcess对这个过程进行了封装。(*这里目前只学懂了这些*)
 
-### winAPI创建进程
+### 1.2 winAPI创建进程
 
 有两个关键函数CreateProcessW和CreateProcessInternalW
 
@@ -65,7 +65,7 @@ CreateProcessInternalW（未公开）
 
   win平台下，用户层进程创建的最深层函数，介于winAPI与NtAPI之间，CreateProcess和CreateProcessAsUser最终都会直接调用kernelbase!CreateProcessInternalW，即用户层所有进程创建API最终都是调用kernelbase!CreateProcessInternalW完成的进程创建。
 
-## CreateProcessInternalW内部分析(上)
+## 2 CreateProcessInternalW内部分析(上)
 
 **起因**
 

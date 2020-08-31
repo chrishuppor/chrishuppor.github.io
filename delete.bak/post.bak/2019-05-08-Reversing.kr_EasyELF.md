@@ -1,19 +1,8 @@
-﻿---
-layout: post
-title: "Reversing.kr_EasyELF"
-pubtime: 2019-5-8
-updatetime: 2019-5-8
-categories: Reverse
-tags: WriteUp
----
-
-Reversing.kr@my_4ear_3hr1s，第11题解题过程及题后思考记录如下。
-
-# Reversing.kr_EasyELF
+# 8 EasyELF
 
 emmm...这个题大概是按分类放的...
 
-## 解题过程
+## 8.1 解题过程
 
 1. 拖入IDA
 
@@ -60,6 +49,6 @@ emmm...这个题大概是按分类放的...
 
    不过也不难看出，因为inputstr_804A020是接收输入字符串的指针地址，那么接下的地址当然是存储input[1]、input[2]...的。
 
-## 小结
+## 8.2 小结
 
 * 看出byte_804A021、byte_804A022这些是input[1]，input[2]就没什么了...十分友好的一道题

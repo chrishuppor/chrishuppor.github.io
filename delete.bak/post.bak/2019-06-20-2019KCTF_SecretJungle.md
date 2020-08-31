@@ -1,16 +1,9 @@
-﻿---
-layout: post
-title: "2019KCTF_SecretJungle"
-pubtime: 2019-06-20
-updatetime: 2019-06-20
-categories: Reverse
-tags: WriteUp
----
+# 2 SecretJungle
 
 2019kctf的第五题，一个包了三层技术简单思路巧妙的android逆向题。
 
 
-# 解题过程
+## 2.1 解题过程
 
 1. 将apk拖入jadx，查看MainActivity。
 
@@ -245,7 +238,7 @@ tags: WriteUp
    print(flag) #K9nXu3_2o1q2_w3bassembly_r3vers3
    ```
 
-# 小结
+## 2.2 小结
 
 * 本程序使用JNI调用了c编写的so库。
   * JNI是在java中调用c代码的一种方法，有约定好的数据结构和函数样式，数据结构定义在jni.h文件中。
@@ -253,17 +246,17 @@ tags: WriteUp
 * 本程序通过socket来在函数之间传递数据，方法奇妙。*（PS：我猜也可以抓包获得字符串，未验证。）*
 * 本题在js中通过webassembly解析wasm二进制代码来动态调用函数，这是在js中调用c代码的一种方式。wasm二进制代码是由c源码逐步生成，可以通过wasm2c工具反编译为c文件。但是这个c文件是很难看的，可以使用gcc再编译获得o文件，使用IDA分析o文件。
 
-#  总结
+##  2.3 总结
 
 * 逆向的知识千千万，学是不可能学完的，关键要学会搜索。
 
-# 参考博客
+## 2.4 参考博客
 
 * [TSCTF Android Reverse - Open Sesame!](https://thinkycx.me/posts/2019-05-13-TSCTF-Android-Reverse-Open-Sesame!.html)
 * [android jni.h源码](https://blog.csdn.net/kevinffk/article/details/84740699)
 * [一种Wasm逆向静态分析方法](https://xz.aliyun.com/t/5170)
 * [使用wasm2c反编译wasm代码](https://blog.csdn.net/weixin_33748818/article/details/88110604) (ps. wabt的编译最好参考该项目中的readme文件)
 
-# 附录
+## 2.5 附录
 
 解题过程中生成的中间文件:[SecretJungle解题中间文件.zip](https://github.com/chrishuppor/attachToBlog/tree/master/SecretJungle解题中间文件.zip)

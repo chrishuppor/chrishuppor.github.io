@@ -1,16 +1,9 @@
-﻿---
-layout: post
-title: "Reversing.kr_MetroApp"
-pubtime: 2019-06-05
-updatetime: 2019-06-05
-categories: Reverse
-tags: WriteUp
----
+# 21 MetroApp
 
-Reversing.kr的MetroApp，一个我觉得学了也没有用的题目。
+一个我觉得学了也没有用的题目。
 
 
-# 解题过程
+## 21.1 解题过程
 
 1. 安装MetroApp程序，查看程序运行情况。
 
@@ -109,13 +102,13 @@ Reversing.kr的MetroApp，一个我觉得学了也没有用的题目。
       8O
       ```
 
-# 参考文章
+## 21.2 参考文章
 
 * MetroApp程序安装
   * [【UWP开发】uwp应用安装失败](https://blog.csdn.net/egostudio/article/details/77408126)
   * [如何在Windows 10中手动安装.appx文件](https://www.sysgeek.cn/windows-10-install-appx-uwp/)
 
-# 小结
+## 21.3 小结
 
 * string.exe和IDA string功能得到的字符串结果不同。
 

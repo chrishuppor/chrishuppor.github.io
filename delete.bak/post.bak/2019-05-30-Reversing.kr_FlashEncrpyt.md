@@ -1,20 +1,8 @@
-﻿---
-layout: post
-title: "Reversing.kr_FlashEncrpyt"
-pubtime: 2019-5-30
-updatetime: 2019-5-30
-categories: Reverse
-tags: WriteUp
----
+# 19 FlashEncrpyt
 
+一个地地道道的Misc签到题。
 
-Reversing.kr的FlashEncrpyt，一个地地道道的Misc签到题。
-
-
-
-# Reversing.kr_FlashEncrpyt
-
-## 解题过程
+## 19.1 解题过程
 
 1. 将文件拖入flash分析工具FFDec.
 
@@ -32,7 +20,7 @@ Reversing.kr的FlashEncrpyt，一个地地道道的Misc签到题。
 
 4. 从脚本中可以得知每一帧对应的数字，从第一帧开始逐个输入，最终会转到frame7，并显示出Flag.
 
-## 启示
+## 19.2 启示
 
 * FFDec确实是个好使的flash分析软件
 * 不管什么类型的文件，运行在什么平台，使用什么语言写的，逆向的本质就是找出功能与代码的对应关系。

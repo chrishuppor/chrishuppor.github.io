@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Reversing.kr_ImagePrc"
 pubtime: 2019-5-6
@@ -11,9 +11,9 @@ Reversing.kr@my_4ear_3hr1s，第6题解题过程及题后思考记录如下。
 
 # Reversing.kr_ImagePrc
 
-## 6.ImagePrc
+# 6 ImagePrc
 
-### 解题过程
+## 6.1 解题过程
 
 1. 拖进PEiD，virustotal没有发现异常。
 
@@ -117,7 +117,7 @@ Reversing.kr@my_4ear_3hr1s，第6题解题过程及题后思考记录如下。
 
       *当然可以在网上搜到大佬写的writeup中的简洁代码，这里只贴了拙作*
 
-### 小结
+## 6.2 小结
 
 * 使用图像显示出Flag的想法很独特，但是难度不大，通过关键的API也很容易猜出作者意图。解题的关键就在于看出图片比较的代码。
 * PIL是python用于处理图像数据的库，需要安装pillow，使用时引入PIL库。

@@ -8,7 +8,7 @@ tags: IDAPython Tools
 ---
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;IDApython，对使用中学习的函数整理记录如下。曾使用IDApython辅助程序分析，还是很好用的。
 
-# 普通地址操作
+# 1 普通地址操作
 1.  MinEA():获取本模块最小地址  
     MaxEA():获取本模块最大地址  
     eg：
@@ -32,7 +32,7 @@ tags: IDAPython Tools
         print "valid addr"
     ```
 
-# 普通字符串
+# 2 普通字符串
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;Names() #获取程序中所有符号的列表（和字符串不是一个东西，但是字符的信息可以在这里找到，而且对标点进行了变化）  
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;Strings() #获取字符串列表  
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;eg：
@@ -42,7 +42,7 @@ for item in Strings():
     print Strings.StringItem.__str__(item) #这个也行
 ```
 
-# 二进制数据操作
+# 3 二进制数据操作
 
 1. dump内存数据
 ```python
@@ -61,7 +61,7 @@ import ida_bytes
 ida_bytes.put_bytes(ea, x) #其中type(x) == str
 ```
 
-# 指令
+# 4 指令
 
 1. 指令地址
     * idc.NextHead(ea)返回下一条指令地址
@@ -85,7 +85,7 @@ ida_bytes.put_bytes(ea, x) #其中type(x) == str
     * idc.OpOff(ea, n, base)：将操作数转换为offset，base为offset基地址，n为index
     * idc.GetOperandValue(ea, n)：得到操作数的值，eg:对于push eax，可以返回eax的值
 
-## eg:打印带有立即数的指令（格式：指令_立即数）
+## 4.1 eg:打印带有立即数的指令（格式：指令_立即数）
 ```
 ea = MinEA() #exe起始地址
 ea_end = MaxEA() #终止地址
@@ -121,15 +121,15 @@ while ea <= ea_end: #从起始地址遍历到终止地址
     ea = idc.NextHead(ea)
 ```
 
-# PE Header信息获取
+# 5 PE Header信息获取
 
-## 程序类型
+## 5.1 程序类型
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;idaapi.get_file_type_name() #返回程序类型字符串，output eg:Portable executable for 80386 (PE)
 
-## 基址
+## 5.2 基址
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;idaapi.get_imagebase()
 
-## 段信息
+## 5.3 段信息
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;idautils.Segments() #return List of segment start addresses  
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;idc.SegName(seg) #返回段名称,seg是段中任意地址  
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;idc.SegStart(seg) #返回段起始地址  
@@ -137,19 +137,19 @@ while ea <= ea_end: #从起始地址遍历到终止地址
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;idc.NextSeg(ea) #返回下一个段起始地址，ea可以是当前段中任意地址  
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;idc.SegByName(name) #根据名称返回段起始地址
 
-### eg:获取段名
+### 5.3.1 eg:获取段名
 ```
 import idautils
 for seg in idautils.Segments():
     print idc.SegName(seg)
 ```
 
-## 导入表
+## 5.4 导入表
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;idaapi.get_import_module_qty() #获取import的模块个数  
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;idaapi.get_import_module_name(i) #获取第i个import模块的名称  
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;idaapi.enum_import_names(i, imp_cb) #列举第i个inport模块的导入函数名称，imp_cb是回调函数参数是(ea, name, ord)，返回值是TRUE/FALSE(参数和返回值是固定的)
 
-### eg:打印导入表信息
+### 5.4.1 eg:打印导入表信息
 ```
 import idaapi
 
@@ -175,7 +175,7 @@ for i in xrange(0, nimps):
     idaapi.enum_import_names(i, imp_cb) #获取导入函数
 ```
 
-# 函数信息
+# 6 函数信息
 1. 地址
     * idautils.Functions() #返回所有函数地址的列表
     * idc.NextFunction(ea) #返回下一个函数起始地址
@@ -194,7 +194,7 @@ for i in xrange(0, nimps):
     * FUNC_HIDDEN- 函数被View - Hide折叠
     * FUNC_THUNK
 
-## eg:获取库函数
+## 6.1 eg:获取库函数
 ```
 import idc, idautils
 
@@ -205,15 +205,15 @@ for func in idautils.Functions(MinEA(), MaxEA()):
         print idc.GetFunctionName(func)
 ```
 
-# 其他
+# 7 其他
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;GetInputFileMD5() #获取输入文件的md5
 
-# 程序静态信息提取脚本
+# 8 程序静态信息提取脚本
 
 [程序静态信息提取脚本示例:static_extract412.py](https://github.com/chrishuppor/src/blob/master/IDAPython/static_extract412.py)
 
-# 参考链接
+# 9 参考链接
 1. [idautils.py函数功能总结by真·技术宅](https://www.0xaa55.com/thread-1586-1-1.html)
 2. [IDAPython备忘byV191](http://blog.sina.com.cn/s/blog_9f5e368a0102wnmm.html):对于指令、操作数、函数、引用、查找、注释等常用的功能有全面的总结，是本文的主要参考
 3. [IDAPython模块+函数+结构说明文档](https://www.hex-rays.com/products/ida/support/idapython_docs/index.html):有的查不到，仅做参考;使用函数时注意import对应的库
-4. [Python idaapi.BADADDR() Examples](https://www.programcreek.com/python/example/84850/idaapi.BADADDR):英文资料，不明觉厉就列在这里充门面...
+4. [Python idaapi.BADADDR() Examples](https://www.programcreek.com/python/example/84850/idaapi.BADADDR):英文资料，不明觉厉
