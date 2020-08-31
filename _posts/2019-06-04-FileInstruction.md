@@ -13,7 +13,7 @@ All My Little Tools
 
 小工具的可执行程序获取地址：[https://github.com/chrishuppor/src/tree/master/MyLittleTools/bin](https://github.com/chrishuppor/src/tree/master/MyLittleTools/bin)
 
-# FormatErrCode
+# 1 FormatErrCode
 
 * 功能：系统错误码描述工具
   * 输入err code回车，程序显示对应英文描述
@@ -22,7 +22,7 @@ All My Little Tools
   * 输入任意字母结束程序
 
 
-# DllInjectTool
+# 2 DllInjectTool
 
 * 功能：dll注入卸载工具
   * dll注入，支持特定进程注入和全部进程注入
@@ -34,19 +34,7 @@ All My Little Tools
   * 参数2-dll绝对路径（未测试中文路径）
   * 参数3-模式“-i”表示注入，“-d”表示卸载，不区分大小写
 
-# Base64
-
-* 功能：base64编解码
-  * 解码base64和字符串base64编码
-* 操作
-  * 输入要处理的字符串，然后输入0或1。（0表示编码，1表示解码）
-* 注意：
-  * 这个程序有输入字符的限制
-  * 没有对输入数据进行判断，默认输入的都是合法数据
-
-ps:所以说这个程序烂的很，比errcode那个还要充数
-
-# FastDirOpen
+# 4 FastDirOpen
 
 * 功能及操作：快速目录启动工具
   * 添加、删除目录——支持多路径拖拽添加，不可以重复添加；右键、Del删除指定路径（仅支持单路径删除）
@@ -69,7 +57,7 @@ PS>点解会有呢个程序嚟？还不是因为windows的快速访问太烂，�
 2. 图标：这图标是模拟人生中我家的一张照片，丑爆了
 3. 删除：支持多路径删除
 
-# MD5Calc
+# 5 MD5Calc
 
 * 功能：计算文件或字符串的md5值
 * 操作：
@@ -79,23 +67,23 @@ PS>点解会有呢个程序嚟？还不是因为windows的快速访问太烂，�
   * 计算：点击Calc按键，如果是文件则支持回车进行计算
 * （MFC源码丢失，只保存了console版源码）
 
-# spell_with_pic.py
+# 6 spell_with_pic.py
 
 * 功能：获取微信好友头像并拼成指定汉字
 * 操作：运行后输入汉字图片路径和头像图片存储文件夹
 * 要求：图片存储文件夹中不能有其他文件
 * 结果：显示出拼好的图片
 
-# FileTimeChanger
+# 7 FileTimeChanger
 
 * 功能：批量修改文件时间（包括创建时间、访问时间、更新时间），支持三中时间之间的同步和自定义时间
 * 操作：很简单，看了就会
 * 目的：有些博客文章希望显示创建时间，有些频繁更新的文章希望显示更新时间，然而已有的修改程序不能满足批量的任意修改文件时间的需求，只好自己动手。
 
-# PrintFileInfoList
+# 8 PrintFileInfoList
 
 * 功能：输出文件夹中文件列表到文件中，同时输出文件的时间信息
 
-# EasyTreeHole
+# 9 EasyTreeHole
 
 * 功能：简易文本透明加密工具。加密后的文本只能使用本软件和对应的密码打开。
