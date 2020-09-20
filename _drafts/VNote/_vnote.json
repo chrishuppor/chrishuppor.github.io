@@ -1,0 +1,19 @@
+{
+    "attachment_folder": "_v_attachments",
+    "created_time": "2020-09-19T03:51:47Z",
+    "files": [
+    ],
+    "image_folder": "",
+    "recycle_bin_folder": "_v_recycle_bin",
+    "sub_directories": [
+        {
+            "name": "程序分析"
+        },
+        {
+            "name": "安全开发"
+        }
+    ],
+    "tags": [
+    ],
+    "version": "1"
+}

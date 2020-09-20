@@ -1,0 +1,43 @@
+{
+    "attachment_folder": "_v_attachments",
+    "created_time": "2020-09-20T03:55:51Z",
+    "files": [
+    ],
+    "image_folder": "",
+    "recycle_bin_folder": "_v_recycle_bin",
+    "sub_directories": [
+        {
+            "name": "windows"
+        },
+        {
+            "name": "各种经验"
+        },
+        {
+            "name": "学习感悟"
+        },
+        {
+            "name": "学习笔记"
+        },
+        {
+            "name": "安全开发"
+        },
+        {
+            "name": "普通开发"
+        },
+        {
+            "name": "环境搭建"
+        },
+        {
+            "name": "程序分析"
+        },
+        {
+            "name": "算法"
+        },
+        {
+            "name": "计网"
+        }
+    ],
+    "tags": [
+    ],
+    "version": "1"
+}
