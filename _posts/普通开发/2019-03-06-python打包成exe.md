@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "python打包成exe"
-pubtime: 2019-09-06
-updatetime: 2019-09-06
+pubtime: 2019-03-06
+updatetime: 2019-03-06
 categories: Program
 tags: Python Tools
 ---
