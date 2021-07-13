@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Reversing.kr_AdventureCustomTips"
-pubtime: 2019-7-26
-updatetime: 2019-7-26
+pubtime: 2019-07-26
+updatetime: 2019-07-26
 categories: Reverse
 tags: WriteUp
 ---
